@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+Code\Easy_bank\Easy_bank_app\migrations\__pycache__
+
 # C extensions
 *.so
 
