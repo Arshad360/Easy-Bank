@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Easy_bank_app import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.home_view,name=''),
+     path('adminclick', views.adminclick_view),
+    path('adminlogin', LoginView.as_view(template_name='Easy_bank_app/adminlogin.html')),
+     path('customerclick', views.customerclick_view),
+    path('customersignup', views.customer_signup_view),  
+    path('customerlogin', LoginView.as_view(template_name='Easy_bank_app/userlogin.html'),name='customerlogin'), 
+    
 ]
