@@ -26,5 +26,5 @@ urlpatterns = [
      path('customerclick', views.customerclick_view),
     path('customersignup', views.customer_signup_view),  
     path('customerlogin', LoginView.as_view(template_name='Easy_bank_app/userlogin.html'),name='customerlogin'), 
-    
+    path('loan/', views.showdata)
 ]
