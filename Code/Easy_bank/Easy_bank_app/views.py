@@ -42,3 +42,7 @@ def customer_signup_view(request):
 def showdata(request): 
     results=models.Loan.objects.all()
     return render(request,'Easy_bank_app/loan.html',{"data": results})
+
+def showdata_credit(request): 
+    results=models.Credit_card.objects.all()
+    return render(request,'Easy_bank_app/credit_card.html',{"data": results})
