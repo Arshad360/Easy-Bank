@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . import forms
 from django.http import HttpResponseRedirect
+from . import models
 
 # Create your views here.
 def home_view(request):
@@ -36,3 +37,8 @@ def customer_signup_view(request):
         return HttpResponseRedirect('customerlogin')
     
     return render(request,'Easy_bank_app/usersignup.html',context=easy_bank_app)
+
+        
+def showdata(request): 
+    results=models.Loan.objects.all()
+    return render(request,'Easy_bank_app/loan.html',{"data": results})
