@@ -50,3 +50,6 @@ def showdata_credit(request):
 
 def slider_view(request):
     return render(request,'Easy_bank_app/slider.html')
+
+def contactus_view(request):
+    return render(request,'Easy_bank_app/contact.html')

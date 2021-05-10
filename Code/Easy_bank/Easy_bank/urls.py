@@ -28,5 +28,6 @@ urlpatterns = [
     path('customerlogin', LoginView.as_view(template_name='Easy_bank_app/userlogin.html'),name='customerlogin'), 
     path('loan/', views.showdata),
     path('credit_card/', views.showdata_credit),
-    path('slider/', views.slider_view)
+    path('slider/', views.slider_view),
+    path('contactus/',views.contactus_view)
 ]
