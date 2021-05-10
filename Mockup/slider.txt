@@ -11,3 +11,27 @@
     <title>Easy Bank</title>
   </head>
   <body>
+
+   <style>
+      
+        .carousel-item{
+
+          height: 32rem;
+         
+          background: #777;
+          color: white;
+          position: relative;
+          background:fixed;
+        }
+
+
+        .con{
+        
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           padding-bottom: 50px;
+           background: fixed;
+
+        }
