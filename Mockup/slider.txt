@@ -24,7 +24,6 @@
           background:fixed;
         }
 
-
         .con{
         
            position: absolute;
@@ -35,7 +34,6 @@
            background: fixed;
 
         }
-
          </style>
   
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
