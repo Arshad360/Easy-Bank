@@ -46,3 +46,7 @@ def showdata(request):
 def showdata_credit(request): 
     results=models.Credit_card.objects.all()
     return render(request,'Easy_bank_app/credit_card.html',{"data": results})
+
+
+def slider_view(request):
+    return render(request,'Easy_bank_app/slider.html')
