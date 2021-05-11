@@ -15,4 +15,7 @@ class CustomerForm(forms.ModelForm):
         model=models.Customer
         fields=['address','mobile']
         
-
+class ContactusForm(forms.ModelForm):
+    class Meta:
+        model=models.Contact_us
+        fields=['name','message']
