@@ -53,3 +53,7 @@ def slider_view(request):
 
 def contactus_view(request):
     return render(request,'Easy_bank_app/contact.html')
+
+    
+def compare_view(request):
+    return render(request,'Easy_bank_app/compareandapply.html')
