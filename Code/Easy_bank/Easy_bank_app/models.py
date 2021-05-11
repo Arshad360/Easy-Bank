@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.fields import EmailField
 # Create your models here.
 
 class Customer(models.Model):
@@ -35,3 +36,14 @@ class Credit_card(models.Model):
     joining_perks= models.CharField(max_length=50, null=False)
     class meta: 
         db_table="Easy_bank_app_credit_card"
+
+class Contact_us(models.Model):
+    name=models.CharField(max_length=40)
+    email=models.EmailField
+    phone=models.CharField(max_length=11)
+    message=models.CharField(max_length=500)
+    date= models.DateField(auto_now_add=True,null=True)
+    def __str__(self):
+        return self.name
+    class meta:
+        db_table="Easy_bank_app_contact_us"
