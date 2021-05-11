@@ -54,6 +54,14 @@ def slider_view(request):
 def contactus_view(request):
     return render(request,'Easy_bank_app/contact.html')
 
-    
 def compare_view(request):
     return render(request,'Easy_bank_app/compareandapply.html')
+
+def contactus_sent_view(request):
+    contactusForm=forms.ContactusForm()
+    if request.method == 'POST':
+        contactusForm = forms.ContactusForm(request.POST)
+        if contactusForm.is_valid():
+            contactusForm.save()
+            return render(request, '')
+    return render(request, '', {'contactusForm':contactusForm})
