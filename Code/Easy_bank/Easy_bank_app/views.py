@@ -65,3 +65,12 @@ def contactus_sent_view(request):
             contactusForm.save()
             return render(request, '')
     return render(request, 'Easy_bank_app/contact_us.html', {'contactusForm':contactusForm})
+
+def contactus_sent_view_2(request):
+    contactusForm=forms.ContactusForm()
+    if request.method == 'POST':
+        contactusForm = forms.ContactusForm(request.POST)
+        if contactusForm.is_valid():
+            contactusForm.save()
+            return render(request, '')
+    return render(request, 'Easy_bank_app/contact.html', {'contactusForm':contactusForm})
