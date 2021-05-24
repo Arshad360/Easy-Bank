@@ -78,14 +78,15 @@ WSGI_APPLICATION = 'Easy_bank.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'Arshadul97',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'easy_bank_app',
+        'USER': 'easy_bank',
+        'PASSWORD': 'Easy_bank_app_499A',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 

@@ -39,11 +39,10 @@ class Credit_card(models.Model):
 
 class Contact_us(models.Model):
     name=models.CharField(max_length=40)
-    email=models.EmailField
+    email=models.EmailField()
     phone=models.CharField(max_length=11)
     message=models.CharField(max_length=500)
     date= models.DateField(auto_now_add=True,null=True)
     def __str__(self):
         return self.name
-    class meta:
-        db_table="Easy_bank_app_contact_us"
+    

@@ -29,7 +29,7 @@ urlpatterns = [
     path('loan/', views.showdata),
     path('credit_card/', views.showdata_credit),
     path('slider/', views.slider_view),
-    path('contactus/',views.contactus_view),
+    path('contactus/',views.contactus_sent_view),
     path('compareandapply/',views.compare_view)
     
    

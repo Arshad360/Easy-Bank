@@ -18,4 +18,4 @@ class CustomerForm(forms.ModelForm):
 class ContactusForm(forms.ModelForm):
     class Meta:
         model=models.Contact_us
-        fields=['name','message']
+        fields = '__all__'
