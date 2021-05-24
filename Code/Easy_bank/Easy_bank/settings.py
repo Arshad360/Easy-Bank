@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'easy_bank_app',
         'USER': 'easy_bank',
-        'PASSWORD': 'Easy_bank_app_499A',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
