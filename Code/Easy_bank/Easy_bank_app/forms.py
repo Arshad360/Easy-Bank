@@ -17,5 +17,5 @@ class CustomerForm(forms.ModelForm):
         
 class ContactusForm(forms.ModelForm):
     class Meta:
-        model=models.Contact_us
+        model=models.Contactus
         fields = '__all__'
