@@ -82,7 +82,7 @@ def contactus_view(request):
             saverecord.phone=request.POST.get('phone')
             saverecord.message=request.POST.get('message')
             saverecord.save()
-            messages.success(request,'Record Saved Successfully!!!!!')
+            messages.success(request,'Your message sent successfully. Thank you for contacting us!!!')
             return render(request,'Easy_bank_app/contact_us.html')
     else:
             return render(request,'Easy_bank_app/contact_us.html')
