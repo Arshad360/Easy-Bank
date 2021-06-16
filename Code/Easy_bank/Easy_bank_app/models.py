@@ -40,7 +40,7 @@ class Credit_card(models.Model):
 class Contactus(models.Model):
     name=models.CharField(max_length=100)
     email=models.CharField(max_length=500)
-    phone=models.IntegerField(max_length=11)
+    phone=models.IntegerField
     message=models.CharField(max_length=500)
     class meta:
         db_table="Easy_bank_app_contact_us"
