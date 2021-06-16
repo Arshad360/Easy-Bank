@@ -86,7 +86,7 @@ DATABASES = {
         'USER': 'easy_bank',
         'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '3307',
     }
 }
 
