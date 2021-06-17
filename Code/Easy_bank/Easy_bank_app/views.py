@@ -86,3 +86,6 @@ def contactus_view(request):
             return render(request,'Easy_bank_app/contact_us.html')
     else:
             return render(request,'Easy_bank_app/contact_us.html')
+
+def brac_view(request):     
+    return render(request,'Easy_bank_app/brac.html')
