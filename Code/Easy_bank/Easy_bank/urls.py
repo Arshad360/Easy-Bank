@@ -32,7 +32,8 @@ urlpatterns = [
     path('contact/',views.contactus_sent_view_2),
     path('compareandapply/',views.compare_view),
     path('contactus/',views.contactus_view),
-    path('brac/',views.brac_view)
+    path('brac/',views.brac_view),
+    path('contactusview/', views.view_feedback_view)
     
    
 ]
