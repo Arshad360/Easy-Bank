@@ -93,3 +93,6 @@ def brac_view(request):
 def view_feedback_view(request):
     feedbacks=models.Contactus.objects.all().order_by('-id')
     return render(request,'Easy_bank_app/contact_us_view.html',{'feedbacks':feedbacks})
+
+def car_loan_view(request):
+    return render(request,'Easy_bank_app/carloan1.html')
