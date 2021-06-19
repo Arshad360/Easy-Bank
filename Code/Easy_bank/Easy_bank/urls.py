@@ -35,6 +35,8 @@ urlpatterns = [
     path('brac/',views.brac_view),
     path('contactusview/', views.view_feedback_view),
     path('carloan/', views.car_loan_view),
-    path('educationloan/', views.education_loan_view)
+    path('educationloan/', views.education_loan_view),
+    path('homeloan/', views.home_loan_view),
+    path('businessloan/', views.business_loan_view)
      
 ]

@@ -99,3 +99,9 @@ def car_loan_view(request):
 
 def education_loan_view(request):   
     return render(request, 'Easy_bank_app/educationloan.html')
+
+def home_loan_view(request):   
+    return render(request, 'Easy_bank_app/Home_loan.html')
+
+def business_loan_view(request):     
+    return render(request, 'Easy_bank_app/businessloan.html') 
