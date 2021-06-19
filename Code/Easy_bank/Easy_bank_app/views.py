@@ -3,6 +3,7 @@ from . import forms
 from django.http import HttpResponseRedirect
 from . import models
 from django.contrib import messages
+from django.core.mail import send_mail
 
 # Create your views here.
 def home_view(request):
@@ -57,6 +58,23 @@ def compare_view(request):
 
 def contactus_view(request):
     if request.method=='POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        phone=request.POST.get('phone')
+        message=request.POST.get('message')
+        
+        data = {
+            'name': name,
+            'email': email,
+            'phone': phone,
+            'message': message
+        }
+        message = '''
+        New message : {}
+        
+        From: {}
+        '''.format(data['message'], data['email'])
+        send_mail(data['email'], message, '', ['easybank444@gmail.com'])
         if request.POST.get('name') and request.POST.get('email') and request.POST.get('phone') and request.POST.get('message'):
             saverecord=models.Contactus()
             saverecord.name=request.POST.get('name')
@@ -64,7 +82,7 @@ def contactus_view(request):
             saverecord.phone=request.POST.get('phone')
             saverecord.message=request.POST.get('message')
             saverecord.save()
-            
+        
             return render(request,'Easy_bank_app/contact_us_sent.html')
     else:
             return render(request,'Easy_bank_app/contact_us.html')
