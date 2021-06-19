@@ -82,7 +82,17 @@ def contactus_view(request):
             saverecord.phone=request.POST.get('phone')
             saverecord.message=request.POST.get('message')
             saverecord.save()
-            messages.success(request,'Your message sent successfully. Thank you for contacting us!!!')
-            return render(request,'Easy_bank_app/contact_us.html')
+            
+            return render(request,'Easy_bank_app/contact_us_sent.html')
     else:
             return render(request,'Easy_bank_app/contact_us.html')
+
+def brac_view(request):     
+    return render(request,'Easy_bank_app/brac.html')
+
+def view_feedback_view(request):
+    feedbacks=models.Contactus.objects.all().order_by('-id')
+    return render(request,'Easy_bank_app/contact_us_view.html',{'feedbacks':feedbacks})
+
+def car_loan_view(request):
+    return render(request,'Easy_bank_app/carloan1.html')
