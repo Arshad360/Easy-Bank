@@ -29,12 +29,13 @@ urlpatterns = [
     path('loan/', views.showdata),
     path('credit_card/', views.showdata_credit),
     path('slider/', views.slider_view),
-    path('contact/',views.contactus_sent_view_2),
     path('compareandapply/',views.compare_view),
     path('contactus/',views.contactus_view),
     path('brac/',views.brac_view),
     path('contactusview/', views.view_feedback_view),
     path('carloan/', views.car_loan_view),
-    path('educationloan/', views.education_loan_view)
+    path('educationloan/', views.education_loan_view),
+    path('homeloan/', views.home_loan_view),
+    path('businessloan/', views.business_loan_view)
      
 ]

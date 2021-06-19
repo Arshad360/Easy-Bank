@@ -55,24 +55,6 @@ def slider_view(request):
 def compare_view(request):
     return render(request,'Easy_bank_app/compareandapply.html')
 
-def contactus_sent_view(request):
-    contactusForm=forms.ContactusForm()
-    if request.method == 'POST':
-        contactusForm = forms.ContactusForm(request.POST)
-        if contactusForm.is_valid():
-            contactusForm.save()
-            return render(request, '')
-    return render(request, 'Easy_bank_app/contact_us.html', {'contactusForm':contactusForm})
-
-def contactus_sent_view_2(request):
-    contactusForm=forms.ContactusForm()
-    if request.method == 'POST':
-        contactusForm = forms.ContactusForm(request.POST)
-        if contactusForm.is_valid():
-            contactusForm.save()
-            return render(request, '')
-    return render(request, 'Easy_bank_app/contact.html', {'contactusForm':contactusForm})
-
 def contactus_view(request):
     if request.method=='POST':
         if request.POST.get('name') and request.POST.get('email') and request.POST.get('phone') and request.POST.get('message'):
@@ -99,3 +81,9 @@ def car_loan_view(request):
 
 def education_loan_view(request):   
     return render(request, 'Easy_bank_app/educationloan.html')
+
+def home_loan_view(request):   
+    return render(request, 'Easy_bank_app/Home_loan.html')
+
+def business_loan_view(request):     
+    return render(request, 'Easy_bank_app/businessloan.html') 
