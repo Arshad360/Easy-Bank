@@ -35,6 +35,5 @@ urlpatterns = [
     path('brac/',views.brac_view),
     path('contactusview/', views.view_feedback_view),
     path('carloan/', views.car_loan_view)
-    
-   
+     
 ]
