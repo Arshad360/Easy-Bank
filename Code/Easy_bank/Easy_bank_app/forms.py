@@ -14,8 +14,10 @@ class CustomerForm(forms.ModelForm):
     class Meta:
         model=models.Customer
         fields=['address','mobile']
-        
-class ContactusForm(forms.ModelForm):
-    class Meta:
-        model=models.Contactus
-        fields = '__all__'
+    
+#for contact us page
+class ContactusForm(forms.Form):
+    Name = forms.CharField(max_length=30)
+    Email = forms.EmailField()
+    Phone=forms.IntegerField
+    Message = forms.CharField(max_length=500,widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}))
