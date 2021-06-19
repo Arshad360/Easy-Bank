@@ -34,6 +34,7 @@ urlpatterns = [
     path('contactus/',views.contactus_view),
     path('brac/',views.brac_view),
     path('contactusview/', views.view_feedback_view),
-    path('carloan/', views.car_loan_view)
+    path('carloan/', views.car_loan_view),
+    path('educationloan/', views.education_loan_view)
      
 ]
