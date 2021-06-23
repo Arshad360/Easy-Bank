@@ -103,8 +103,14 @@ def education_loan_view(request):
 def home_loan_view(request):   
     return render(request, 'Easy_bank_app/Home_loan.html')
 
-def business_loan_view(request):     
-    return render(request, 'Easy_bank_app/businessloan.html') 
-
 def emi_calculator_view(request):    
     return render(request, 'Easy_bank_app/emi_calculator.html')
+
+def personal_loan_view(request):   
+    return render(request, 'Easy_bank_app/personal.html')
+
+def startup_loan_view(request):   
+    return render(request, 'Easy_bank_app/Startup.html')
+
+def loan_ag_pro_view(request):   
+    return render(request, 'Easy_bank_app/Loanagainstproperty.html')
