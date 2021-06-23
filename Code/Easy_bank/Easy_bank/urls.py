@@ -36,7 +36,9 @@ urlpatterns = [
     path('carloan/', views.car_loan_view),
     path('educationloan/', views.education_loan_view),
     path('homeloan/', views.home_loan_view),
-    path('businessloan/', views.business_loan_view), 
+    path('startuploan/', views.startup_loan_view),
+    path('loanagainstproperty/', views.loan_ag_pro_view),
+    path('personalloan/', views.personal_loan_view), 
     path('emicalculator/', views.emi_calculator_view)
      
 ]
