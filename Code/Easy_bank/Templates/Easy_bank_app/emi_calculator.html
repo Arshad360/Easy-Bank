@@ -89,11 +89,11 @@
             <input type=number id="amount" style="border-radius:5px" required autocomplete="off"><br>
         </div>
          <div class='aprBlock'>
-            <h3>Interest Rate</h3>
+            <h3>Interest Rate (%)</h3>
             <input type="number" name="apr" id="apr" style="border-radius:5px" required autocomplete="off"><br>
          </div>
           <div class='tenureBlock'>
-          <h3>Time Periods(yrs)</h3>
+          <h3>Time Periods (In Years)</h3>
          <input type=number name="tenure" id="tenure" style="border-radius:5px" required autocomplete="off"><br>
          <br>
           </div>
@@ -126,18 +126,25 @@
         var interestRate=document.getElementById('apr').value;
         var tenure=document.getElementById('tenure').value;
        
-        //var interest=loan*tenure*(interestRate/100);
-        // totalAmt=loan+interest;
+        /* 
+        we used the given formula for calculating the EMI
         
-        var noOfMonths=Math.floor(tenure)*12; // if a year is 2 then nom=2*12=24; tenure means year
-        var monthlyRate=interestRate/(100*12); // 7%=0.07
-        var onePlusR=Math.pow(1+monthlyRate,noOfMonths)
+        EMI=loan Amount * ((Rate Of Interest(Rate Of Interest + 1)^ tenure)/((Rate Of Interest + 1)^ tenure-1))
+
+        */
+        var noOfMonths=tenure*12; // if a year is 2 then nom=2*12=24; tenure means year
+        var monthlyRate=(interestRate/100)/12; // 7%=0.07
+        var onePlusR=Math.pow((1+monthlyRate),noOfMonths);
         var denominator=onePlusR-1;
-        var emi=(loan*monthlyRate*(onePlusR/denominator)).toPrecision(5);
-        //var emi= total/(tenure*12).toPrecision(5);
-        var totalAmt=noOfMonths*parseFloat(emi);
-        var totalInt=Math.floor(totalAmt-loan);
-    
+        var sp= onePlusR/denominator;
+        var emi1=((loan*monthlyRate)* sp).toPrecision(5);
+        var emi = Math.round(emi1);
+        
+        var totalAmt1=noOfMonths*emi;
+        var totalAmt = Math.round(totalAmt1);
+        var totalInt1=totalAmt-loan;
+        var totalInt = Math.round(totalInt1);
+     
         var payableEmi=document.getElementById('emi');
         var payableamount=document.getElementById('totalAmt');
         var payableInt=document.getElementById('totalInt');
