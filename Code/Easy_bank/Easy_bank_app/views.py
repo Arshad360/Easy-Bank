@@ -114,3 +114,7 @@ def startup_loan_view(request):
 
 def loan_ag_pro_view(request):   
     return render(request, 'Easy_bank_app/Loanagainstproperty.html')
+
+def loan_calculator_view(request):   
+    return render(request, 'Easy_bank_app/loancalculator.html')
+

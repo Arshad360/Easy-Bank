@@ -39,6 +39,7 @@ urlpatterns = [
     path('startuploan/', views.startup_loan_view),
     path('loanagainstproperty/', views.loan_ag_pro_view),
     path('personalloan/', views.personal_loan_view), 
-    path('emicalculator/', views.emi_calculator_view)
+    path('emicalculator/', views.emi_calculator_view),
+    path('loancalculator/', views.loan_calculator_view)
      
 ]

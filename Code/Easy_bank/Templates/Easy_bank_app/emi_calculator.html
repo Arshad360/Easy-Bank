@@ -116,7 +116,7 @@
         </div>
            
   </div>
-  <script src='https://raw.githubusercontent.com/Arshad360/Easy-Bank/main/Code/Easy_bank/Static/Easy_bank_app/index.js'> </script>
+  <script src=''> </script>
   <script>
     document.querySelector('#find').addEventListener('click',function(e){
    
@@ -126,11 +126,15 @@
         var interestRate=document.getElementById('apr').value;
         var tenure=document.getElementById('tenure').value;
        
-        var noOfMonths=Math.floor(tenure)*12;
-        var monthlyRate=interestRate/(12*100);
+        //var interest=loan*tenure*(interestRate/100);
+        // totalAmt=loan+interest;
+        
+        var noOfMonths=Math.floor(tenure)*12; // if a year is 2 then nom=2*12=24; tenure means year
+        var monthlyRate=interestRate/(100*12); // 7%=0.07
         var onePlusR=Math.pow(1+monthlyRate,noOfMonths)
         var denominator=onePlusR-1;
         var emi=(loan*monthlyRate*(onePlusR/denominator)).toPrecision(5);
+        //var emi= total/(tenure*12).toPrecision(5);
         var totalAmt=noOfMonths*parseFloat(emi);
         var totalInt=Math.floor(totalAmt-loan);
     
