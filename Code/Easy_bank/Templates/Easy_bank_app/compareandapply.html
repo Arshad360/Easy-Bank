@@ -1,180 +1,393 @@
-{% include 'Easy_bank_app/navbar.html' %}
-<html>
-<had><title>Easy Bank</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/compare.css">
-</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="css/compare.css">
+    </head>
 
 
+    <style>
+        
 
-<style>
-    *{
+        *
+{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
-.table-box
+body
 {
-    margin: 50px auto;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    background-attachment: fixed;
 
-.table-row{
-    display: table;
-    width: 80%;
-    margin: 10px auto;
-    font-family: sans-serif;
-    background: transparent;
-    padding: 12px 0;
-    color: #555;
-    font-size: 13px;
-    box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
 }
-.table-head{
-    background: #8665f7;
-    box-shadow: none;
-    color: #fff;
-    font-weight: 600;
+.container
+{
+    position: relative;
+    padding: 20px;
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.table-head .table-cell{
-    border-right: none;
+.container .card
+{
+    position: relative;
+    width: 300px;
+    height: 420px;
+    background: cornsilk;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transition: 0.5s;
 }
-.table-cell{
-    display: table-cell;
-    width: 20%;
+.container:hover .card
+{
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+.container .card:hover
+{
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+.container .card .circle
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+    clip-path: circle(180px at center 0);
     text-align: center;
-    padding: 4px 0;
-    border-right: 1px solid #d6d4d4;
-    vertical-align: middle;
 }
-.first-cell{
-    text-align: left;
-    padding-left: 10px;
+
+.container .card .circle h2
+{
+    color: white;
+    font-size: 2.5em;
+    padding: 30px;
+
 }
-.last-cell{
-    border-right: none;
+
+.container .card .content
+{
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    text-align: center;
 }
-a{
+.container .card .content p
+{
+    color: #666;
+}
+.container .card .content a
+{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border-radius: 40px;
     text-decoration: none;
-    color: #555;
+    margin-top: 20px
 }
-
-@media only screen and (max-width: 600px) {
-  .table-row {
-    font-size: 11px;
-  }
+.container .card:nth-child(1) .circle,
+.container .card:nth-child(1) .content a
+{
+    background: #ffaf00;
 }
-</style>
-<body>
-<div class="table-box">
-        <div class="table-row table-head">
-            <div class="table-cell first-cell">
-                <p>Bank Name</p>
-            </div>
-            <div class="table-cell">
-                <p>Percentage</p>
-            </div>
-            <div class="table-cell last-cell">
-                <p>Apply Now </p>
-            </div> 
+.container .card:nth-child(2) .circle,
+.container .card:nth-child(2) .content a
+{
+    background: #b700ff;
+}
+    </style>
+    <body>
+        <div class="container">
+
+        <div class="card">
+        <div class="circle">
+            <h2>City Bank</h2>
+        </div>
+        <div class="content">
+            <p>We provide 4 different type of credit card</p>
+            <p>Platinum Card</p>
+            <p>Gold Card</p>
+            <p>Silver Card</p>
+            <p>Tara Card</p>
+            <a href="#">Apply Now</a>
+        </div>
         </div>
 
+        <div class="container">
 
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>Bangladesh Bank</p>
+            <div class="card">
+            <div class="circle">
+                <h2>Mutual Trust Bank</h2>
             </div>
-            <div class="table-cell">
-                <p>4.9%</p>
+            <div class="content">
+                <p>We provide 4 different type of credit card</p>
+                <p>Platinum Card</p>
+                <p>Gold Card</p>
+                <p>Silver Card</p>
+                <p>Tara Card</p>
+                <a href="#">Apply Now</a>
             </div>
-            <div class="table-cell last-cell">
-                <a> APPLY </a>
-            </div>   
+            </div>
+
+            <div class="container">
+
+                <div class="card">
+                <div class="circle">
+                    <h2>UCB Bank</h2>
+                </div>
+                <div class="content">
+                    <p>We provide 4 different type of credit card</p>
+                    <p>Platinum Card</p>
+                    <p>Gold Card</p>
+                    <p>Silver Card</p>
+                    <p>Tara Card</p>
+                    <a href="#">Apply Now</a>
+                </div>
+                </div>
+
+                <div class="container">
+
+                    <div class="card">
+                    <div class="circle">
+                        <h2>Grameen Bank</h2>
+                    </div>
+                    <div class="content">
+                        <p>We provide 4 different type of credit card</p>
+                        <p>Platinum Card</p>
+                        <p>Gold Card</p>
+                        <p>Silver Card</p>
+                        <p>Tara Card</p>
+                        <a href="#">Apply Now</a>
+                    </div>
+                    </div>
+
+                    <div class="container">
+
+                        <div class="card">
+                        <div class="circle">
+                            <h2>Jamuna Bank</h2>
+                        </div>
+                        <div class="content">
+                            <p>We provide 4 different type of credit card</p>
+                            <p>Platinum Card</p>
+                            <p>Gold Card</p>
+                            <p>Silver Card</p>
+                            <p>Tara Card</p>
+                            <a href="#">Apply Now</a>
+                        </div>
+                        </div>
+
+                        <div class="container">
+
+                            <div class="card">
+                            <div class="circle">
+                                <h2>Prime Bank</h2>
+                            </div>
+                            <div class="content">
+                                <p>We provide 4 different type of credit card</p>
+                                <p>Platinum Card</p>
+                                <p>Gold Card</p>
+                                <p>Silver Card</p>
+                                <p>Tara Card</p>
+                                <a href="#">Apply Now</a>
+                            </div>
+                            </div>
+
+                            <div class="container">
+
+                                <div class="card">
+                                <div class="circle">
+                                    <h2>Brac Bank</h2>
+                                </div>
+                                <div class="content">
+                                    <p>We provide 4 different type of credit card</p>
+                                    <p>Platinum Card</p>
+                                    <p>Gold Card</p>
+                                    <p>Silver Card</p>
+                                    <p>Tara Card</p>
+                                    <a href="#">Apply Now</a>
+                                </div>
+                                </div>
+
+                                <div class="container">
+
+                                    <div class="card">
+                                    <div class="circle">
+                                        <h2>Islami Bank</h2>
+                                    </div>
+                                    <div class="content">
+                                        <p>We provide 4 different type of credit card</p>
+                                        <p>Platinum Card</p>
+                                        <p>Gold Card</p>
+                                        <p>Silver Card</p>
+                                        <p>Tara Card</p>
+                                        <a href="#">Apply Now</a>
+                                    </div>
+                                    </div>
+
+                                    <div class="container">
+
+                                        <div class="card">
+                                        <div class="circle">
+                                            <h2>Dutch Bangla Bank</h2>
+                                        </div>
+                                        <div class="content">
+                                            <p>We provide 4 different type of credit card</p>
+                                            <p>Platinum Card</p>
+                                            <p>Gold Card</p>
+                                            <p>Silver Card</p>
+                                            <p>Tara Card</p>
+                                            <a href="#">Apply Now</a>
+                                        </div>
+                                        </div>
+
+                                        <div class="container">
+
+                                            <div class="card">
+                                            <div class="circle">
+                                                <h2>HSBC Bank</h2>
+                                            </div>
+                                            <div class="content">
+                                                <p>We provide 4 different type of credit card</p>
+                                                <p>Platinum Card</p>
+                                                <p>Gold Card</p>
+                                                <p>Silver Card</p>
+                                                <p>Tara Card</p>
+                                                <a href="#">Apply Now</a>
+                                            </div>
+                                            </div>
+
+                                            <div class="container">
+
+                                                <div class="card">
+                                                <div class="circle">
+                                                    <h2>Sonali Bank</h2>
+                                                </div>
+                                                <div class="content">
+                                                    <p>We provide 4 different type of credit card</p>
+                                                    <p>Platinum Card</p>
+                                                    <p>Gold Card</p>
+                                                    <p>Silver Card</p>
+                                                    <p>Tara Card</p>
+                                                    <a href="#">Apply Now</a>
+                                                </div>
+                                                </div>
+
+                                                <div class="container">
+
+                                                    <div class="card">
+                                                    <div class="circle">
+                                                        <h2>Standard Chartered Bank</h2>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>We provide 4 different type of credit card</p>
+                                                        <p>Platinum Card</p>
+                                                        <p>Gold Card</p>
+                                                        <p>Silver Card</p>
+                                                        <p>Tara Card</p>
+                                                        <a href="#">Apply Now</a>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class="container">
+
+                                                        <div class="card">
+                                                        <div class="circle">
+                                                            <h2>Habib Bank</h2>
+                                                        </div>
+                                                        <div class="content">
+                                                            <p>We provide 4 different type of credit card</p>
+                                                            <p>Platinum Card</p>
+                                                            <p>Gold Card</p>
+                                                            <p>Silver Card</p>
+                                                            <p>Tara Card</p>
+                                                            <a href="#">Apply Now</a>
+                                                        </div>
+                                                        </div>
+
+                                                        <div class="container">
+
+                                                            <div class="card">
+                                                            <div class="circle">
+                                                                <h2>Eastern Bank</h2>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p>We provide 4 different type of credit card</p>
+                                                                <p>Platinum Card</p>
+                                                                <p>Gold Card</p>
+                                                                <p>Silver Card</p>
+                                                                <p>Tara Card</p>
+                                                                <a href="#">Apply Now</a>
+                                                            </div>
+                                                            </div>
+
+                                                            <div class="container">
+
+                                                                <div class="card">
+                                                                <div class="circle">
+                                                                    <h2>Dhaka Bank</h2>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>We provide 4 different type of credit card</p>
+                                                                    <p>Platinum Card</p>
+                                                                    <p>Gold Card</p>
+                                                                    <p>Silver Card</p>
+                                                                    <p>Tara Card</p>
+                                                                    <a href="#">Apply Now</a>
+                                                                </div>
+                                                                </div>
+
+                                                                <div class="container">
+
+                                                                    <div class="card">
+                                                                    <div class="circle">
+                                                                        <h2>Uttara Bank</h2>
+                                                                    </div>
+                                                                    <div class="content">
+                                                                        <p>We provide 4 different type of credit card</p>
+                                                                        <p>Platinum Card</p>
+                                                                        <p>Gold Card</p>
+                                                                        <p>Silver Card</p>
+                                                                        <p>Tara Card</p>
+                                                                        <a href="#">Apply Now</a>
+                                                                    </div>
+                                                                    </div>
+
+                                                                    <div class="container">
+
+                                                                        <div class="card">
+                                                                        <div class="circle">
+                                                                            <h2>Janata Bank</h2>
+                                                                        </div>
+                                                                        <div class="content">
+                                                                            <p>We provide 4 different type of credit card</p>
+                                                                            <p>Platinum Card</p>
+                                                                            <p>Gold Card</p>
+                                                                            <p>Silver Card</p>
+                                                                            <p>Tara Card</p>
+                                                                            <a href="#">Apply Now</a>
+                                                                        </div>
+                                                                        </div>
+
+                                                                   
+
+
         </div>
-
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>South East Bank</p>
-            </div>
-            <div class="table-cell">
-                <p>5.9%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a>APPLY</a>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>Paddma Bank</p>
-            </div>
-            <div class="table-cell">
-                <p>4.3%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a >APPLY</a>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>Brac Bank</p>
-            </div>
-            <div class="table-cell">
-                <p>6.9%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a>APPLY</a>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>United Commercial Bank</p>
-            </div>
-            <div class="table-cell">
-                <p>5.8%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a>APPLY</a>
-            </div>
-        </div>
-
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>City Bank</p>
-            </div>
-            <div class="table-cell">
-                <p>7.9%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a>APPLY</a>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>Islami Bank Bangladesh</p>
-            </div>
-            <div class="table-cell">
-                <p>1.2%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a >APPLY</a>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>Rupali Bank</p>
-            </div>
-            <div class="table-cell">
-                <p>7.2%</p>
-            </div>
-            <div class="table-cell last-cell">
-                <a >APPLY</a>
-            </div>
-        </div>
-</div>   
-</body>
+    </body>
 </html>
