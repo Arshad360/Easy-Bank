@@ -132,7 +132,6 @@
 		<div class="contact-box">
 			<div class="left"></div>
 			<div class="right">
-               
 				    <h2>Contact Us</h2>
                     <form method="POST">
                         {% csrf_token %}
@@ -141,7 +140,6 @@
 				    <input type="text" class="field" placeholder="Your Email" name="email" required autocomplete="off">
 				    <input type="text" class="field" placeholder="Phone" name="phone" required autocomplete="off">
 				    <textarea placeholder="Message" class="field" name="message" required autocomplete="off"></textarea>
-            
 				    <input type="submit" class="btn" value="Send"/>
                     <br><br>
                     {% if messages %}
