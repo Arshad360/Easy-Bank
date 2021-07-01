@@ -118,3 +118,50 @@ def loan_ag_pro_view(request):
 def loan_calculator_view(request):   
     return render(request, 'Easy_bank_app/loancalculator.html')
 
+def brac_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/brac.html')
+
+def city_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/city.html')
+
+def dhaka_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/dhkbank.html')
+
+def eastern_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/easternbank.html')
+
+def grameen_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/grameenbank.html')
+
+def habib_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/habibbank.html')
+
+def hsbc_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/hsbcbank.html')
+
+def jamuna_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/jamuna.html')
+
+def janata_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/janata.html')
+
+def mitb_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/mitb.html')
+
+def one_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/one.html')
+
+def prime_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/prime.html')
+
+def sonali_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/sonali.html')
+
+def standard_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/standard.html')
+
+def ucb_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/ucb.html')
+
+def uttara_bank_form_view(request):
+    return render(request, 'Loan_form/carloan/uttara.html')
