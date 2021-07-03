@@ -118,6 +118,8 @@ def loan_ag_pro_view(request):
 def loan_calculator_view(request):   
     return render(request, 'Easy_bank_app/loancalculator.html')
 
+#### VIEWS STARTED FOR APPLICATION FORM OF CAR LOAN
+
 def brac_bank_form_view(request):
     return render(request, 'Loan_form/carloan/brac.html')
 
@@ -165,3 +167,11 @@ def ucb_bank_form_view(request):
 
 def uttara_bank_form_view(request):
     return render(request, 'Loan_form/carloan/uttara.html')
+
+#### VIEWS ENDED FOR APPLICATION FORM OF CAR LOAN
+
+#### VIEWS STARTED FOR APPLICATION FORM OF EDUCATION LOAN
+
+
+
+#### VIEWS ENDED FOR APPLICATION FORM OF EDUCATION LOAN
