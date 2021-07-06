@@ -67,22 +67,45 @@ urlpatterns = [
 
     #### URL PATH STARTED FOR APPLICATION FORM OF EDUCATION LOAN
 
-    path('bracbank/', views.brac_bank_edu_form_view),
-    path('citybank/', views.city_bank_edu_form_view),
-    path('dhakabank/', views.dhaka_bank_edu_form_view),
-    path('easternbank/', views.eastern_bank_edu_form_view),
-    path('grameenbank/', views.grameen_bank_edu_form_view),
-    path('habibbank/', views.habib_bank_edu_form_view),
-    path('hsbcbank/', views.hsbc_bank_edu_form_view),
-    path('jamunabank/', views.jamuna_bank_edu_form_view),
-    path('janatabank/', views.janata_bank_edu_form_view),
-    path('mitbbank/', views.mitb_bank_edu_form_view),
-    path('onebank/', views.one_bank_edu_form_view),
-    path('primebank/', views.prime_bank_edu_form_view),
-    path('dutchbanglabank/', views.dbbl_bank_edu_form_view),
-    path('standardbank/', views.standard_bank_edu_form_view),
-    path('ucbbank/', views.ucb_bank_edu_form_view),
-    path('uttarabank/', views.uttara_bank_edu_form_view)
+    path('bracbankedu/', views.brac_bank_edu_form_view),
+    path('citybankedu/', views.city_bank_edu_form_view),
+    path('dhakabankedu/', views.dhaka_bank_edu_form_view),
+    path('easternbankedu/', views.eastern_bank_edu_form_view),
+    path('grameenbankedu/', views.grameen_bank_edu_form_view),
+    path('habibbankedu/', views.habib_bank_edu_form_view),
+    path('hsbcbankedu/', views.hsbc_bank_edu_form_view),
+    path('jamunabankedu/', views.jamuna_bank_edu_form_view),
+    path('janatabankedu/', views.janata_bank_edu_form_view),
+    path('mitbbankedu/', views.mitb_bank_edu_form_view),
+    path('onebankedu/', views.one_bank_edu_form_view),
+    path('primebankedu/', views.prime_bank_edu_form_view),
+    path('dutchbanglabankedu/', views.dbbl_bank_edu_form_view),
+    path('standardbankedu/', views.standard_bank_edu_form_view),
+    path('ucbbankedu/', views.ucb_bank_edu_form_view),
+    path('uttarabankedu/', views.uttara_bank_edu_form_view),
 
     #### URL PATH ENDED FOR APPLICATION FORM OF EDUCATION LOAN
+
+    #### URL PATH STARTED FOR APPLICATION FORM OF HOME LOAN
+
+    path('bracbankhome/', views.brac_bank_home_form_view),
+    path('citybankhome/', views.city_bank_home_form_view),
+    path('dutchbanglabankhome/', views.dbbl_home_edu_form_view),
+    path('dhakabankhome/', views.dhaka_bank_home_form_view),
+    path('easternbankhome/', views.eastern_bank_home_form_view),
+    path('grameenbankhome/', views.grameen_bank_home_form_view),
+    path('habibbankhome/', views.habib_bank_home_form_view),
+    path('hsbcbankhome/', views.hsbc_bank_home_form_view),
+    path('jamunabankhome/', views.jamuna_bank_home_form_view),
+    path('janatabankhome/', views.janata_bank_home_form_view),
+    path('mitbbankhome/', views.mitb_bank_home_form_view),
+    path('onebankhome/', views.one_bank_home_form_view),
+    path('primebankhome/', views.prime_bank_home_form_view),
+    path('sonalibankhome/', views.sonali_bank_home_form_view),
+    path('standardbankhome/', views.standard_bank_home_form_view),
+    path('ucbbankhome/', views.ucb_bank_home_form_view),
+    path('uttarabankhome/', views.uttara_bank_home_form_view)
+
+
+    #### URL PATH ENDED FOR APPLICATION FORM OF HOME LOAN
 ]

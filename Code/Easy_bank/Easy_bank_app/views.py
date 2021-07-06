@@ -220,3 +220,58 @@ def uttara_bank_edu_form_view(request):
     return render(request, 'Loan_form/educationloan/uttara.html')
   
 #### VIEWS ENDED FOR APPLICATION FORM OF EDUCATION LOAN
+
+#### VIEWS STARTED FOR APPLICATION FORM OF HOME LOAN
+
+def brac_bank_home_form_view(request):
+     return render(request, 'Loan_form/homeloan/brac.html')
+
+def city_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/city.html')
+
+def dbbl_home_edu_form_view(request):
+    return render(request, 'Loan_form/homeloan/dbbl.html')
+
+def dhaka_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/dhkbank.html')
+
+def eastern_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/eastern.html')
+
+def grameen_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/grameenbank.html')
+
+def habib_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/habib.html')
+
+def hsbc_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/hsbc.html')
+
+def jamuna_bank_home_form_view(request):
+    return render(request, 'Loan_formhomeloan/jamuna.html')
+
+def janata_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/janata.html')
+
+def mitb_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/mitb.html')
+
+def one_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/one.html')
+
+def prime_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/prime.html')
+
+def sonali_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/sonali.html')
+
+def standard_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/standard.html')
+
+def ucb_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/ucb.html')
+
+def uttara_bank_home_form_view(request):
+    return render(request, 'Loan_form/homeloan/uttara.html')
+
+#### VIEWS ENDED FOR APPLICATION FORM OF HOME LOAN
