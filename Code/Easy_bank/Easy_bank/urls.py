@@ -39,7 +39,6 @@ urlpatterns = [
     path('startuploan/', views.startup_loan_view),
     path('loanagainstproperty/', views.loan_ag_pro_view),
     path('personalloan/', views.personal_loan_view), 
-
     path('emicalculator/', views.emi_calculator_view),
     path('loancalculator/', views.loan_calculator_view),
 
@@ -90,7 +89,7 @@ urlpatterns = [
 
     path('bracbankhome/', views.brac_bank_home_form_view),
     path('citybankhome/', views.city_bank_home_form_view),
-    path('dutchbanglabankhome/', views.dbbl_home_edu_form_view),
+    path('dutchbanglabankhome/', views.dbbl_home_form_view),
     path('dhakabankhome/', views.dhaka_bank_home_form_view),
     path('easternbankhome/', views.eastern_bank_home_form_view),
     path('grameenbankhome/', views.grameen_bank_home_form_view),
@@ -104,8 +103,30 @@ urlpatterns = [
     path('sonalibankhome/', views.sonali_bank_home_form_view),
     path('standardbankhome/', views.standard_bank_home_form_view),
     path('ucbbankhome/', views.ucb_bank_home_form_view),
-    path('uttarabankhome/', views.uttara_bank_home_form_view)
+    path('uttarabankhome/', views.uttara_bank_home_form_view),
 
 
     #### URL PATH ENDED FOR APPLICATION FORM OF HOME LOAN
+
+
+    #### URL PATH STARTED FOR APPLICATION FORM OF LOAN AGAINST PROPERTY
+    path('bracbanklap/', views.brac_bank_lap_form_view),
+    path('citybanklap/', views.city_bank_lap_form_view),
+    path('dutchbanglabanklap/', views.dbbl_lap_form_view),
+    path('dhakabanklap/', views.dhaka_bank_lap_form_view),
+    path('easternbanklap/', views.eastern_bank_lap_form_view),
+    path('grameenbanklap/', views.grameen_bank_lap_form_view),
+    path('habibbanklap/', views.habib_bank_lap_form_view),
+    path('hsbcbanklap/', views.hsbc_bank_lap_form_view),
+    path('jamunabanklap/', views.jamuna_bank_lap_form_view),
+    path('janatabanklap/', views.janata_bank_lap_form_view),
+    path('mitbbanklap/', views.mitb_bank_lap_form_view),
+    path('onebanklap/', views.one_bank_lap_form_view),
+    path('primebanklap/', views.prime_bank_lap_form_view),
+    path('sonalibanklap/', views.sonali_bank_lap_form_view),
+    path('standardbanklap/', views.standard_bank_lap_form_view),
+    path('ucbbanklap/', views.ucb_bank_lap_form_view),
+    path('uttarabanklap/', views.uttara_bank_lap_form_view)
+    #### URL PATH ENDED FOR APPLICATION FORM OF LOAN AGAINST PROPERTY
+
 ]
