@@ -171,7 +171,52 @@ def uttara_bank_form_view(request):
 #### VIEWS ENDED FOR APPLICATION FORM OF CAR LOAN
 
 #### VIEWS STARTED FOR APPLICATION FORM OF EDUCATION LOAN
+def brac_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/brac.html')
 
+def city_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/city.html')
 
+def dhaka_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/dhkbank.html')
 
+def eastern_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/eastern.html')
+
+def grameen_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/grameenbank.html')
+
+def habib_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/habib.html')
+
+def hsbc_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/hsbc.html')
+
+def jamuna_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/jamuna.html')
+
+def janata_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/janata.html')
+
+def mitb_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/mitb.html')
+
+def one_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/one.html')
+
+def prime_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/prime.html')
+
+def dbbl_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/dbbl.html')
+
+def standard_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/standard.html')
+
+def ucb_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/ucb.html')
+
+def uttara_bank_edu_form_view(request):
+    return render(request, 'Loan_form/educationloan/uttara.html')
+  
 #### VIEWS ENDED FOR APPLICATION FORM OF EDUCATION LOAN
