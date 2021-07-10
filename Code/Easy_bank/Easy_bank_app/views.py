@@ -54,7 +54,13 @@ def slider_view(request):
     return render(request,'Easy_bank_app/slider.html')
  
 def compare_view(request):
-    return render(request,'Easy_bank_app/compareandapply.html')
+    return render(request,'Easy_bank_app/compare.html')
+
+def compare_loan_view(request):
+    return render(request, 'Easy_bank_app/allloan.html')
+
+def credit_card_compare_view(request):
+    return render(request, 'Easy_bank_app/compareandapply.html')
 
 def contactus_view(request):
     if request.method=='POST':

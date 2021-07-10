@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 from Easy_bank_app import views
@@ -41,6 +42,8 @@ urlpatterns = [
     path('personalloan/', views.personal_loan_view), 
     path('emicalculator/', views.emi_calculator_view),
     path('loancalculator/', views.loan_calculator_view),
+    path('comparecreditcard/', views.credit_card_compare_view),
+    path('compareloan/', views.compare_loan_view),
 
 
     #### URL PATH STARTED FOR APPLICATION FORM OF CAR LOAN
