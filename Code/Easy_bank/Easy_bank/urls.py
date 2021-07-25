@@ -129,7 +129,15 @@ urlpatterns = [
     path('sonalibanklap/', views.sonali_bank_lap_form_view),
     path('standardbanklap/', views.standard_bank_lap_form_view),
     path('ucbbanklap/', views.ucb_bank_lap_form_view),
-    path('uttarabanklap/', views.uttara_bank_lap_form_view)
+    path('uttarabanklap/', views.uttara_bank_lap_form_view),
     #### URL PATH ENDED FOR APPLICATION FORM OF LOAN AGAINST PROPERTY
+
+    #### URL PATH STARTED FOR ELIGIBILITY CHECK FORM OF HOME LOAN
+
+    path('homeloaneligibility/', views.homeloaneligibility_view ),
+    path('carloaneligibility/', views.carloaneligibility_view),
+    path('educationloaneligibility/', views.educationloaneligibility_view ),
+    path('personalloaneligibility/', views.personalloaneligibility_view),
+    path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view)
 
 ]

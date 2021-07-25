@@ -336,3 +336,18 @@ def uttara_bank_lap_form_view(request):
     return render(request, 'Loan_form/loanagainstproperty/uttara.html')
 
 #### VIEWS ENDED FOR APPLICATION FORM OF LOAN AGAIST PROPERTY
+
+def homeloaneligibility_view(request):
+    return render(request, 'Eligibility_Form/homeloan.html')
+
+def carloaneligibility_view(request):
+    return render(request, 'Eligibility_Form/carloan.html')
+
+def educationloaneligibility_view(request):
+    return render(request, 'Eligibility_Form/educationloan.html')
+
+def personalloaneligibility_view(request):
+    return render(request, 'Eligibility_Form/personalloan.html')
+
+def loanagainstpropertyeligibility_view(request):
+     return render(request, 'Eligibility_Form/loanagainst.html')
