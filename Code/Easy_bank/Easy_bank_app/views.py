@@ -22,7 +22,7 @@ def is_customer(user):
 
 def afterlogin_view(request): 
     if is_customer(request.user):
-        return 
+        return render(request, 'Easy_bank_app/customer_home.html')
     else:
         return render(request, 'Easy_bank_app/admin_dashboard.html')
 
