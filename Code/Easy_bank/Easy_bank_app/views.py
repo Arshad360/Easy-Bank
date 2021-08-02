@@ -1,9 +1,12 @@
-from django.shortcuts import render
-from . import forms
-from django.http import HttpResponseRedirect
-from . import models
-from django.contrib import messages
+
 from django.core.mail import send_mail
+from django.shortcuts import render, redirect, reverse
+from . import forms, models
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.models import Group, User, auth
+from django.conf import settings
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
 
 # Create your views here.
 def home_view(request):
@@ -13,6 +16,36 @@ def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
     return HttpResponseRedirect('adminlogin')
+
+def is_customer(user):
+    return user.groups.filter(name='CUSTOMER').exists()
+
+def afterlogin_view(request): 
+    if is_customer(request.user):
+        return 
+    else:
+        return render(request, 'Easy_bank_app/admin_dashboard.html')
+
+@login_required(login_url='adminlogin') 
+def admin_dashboard_view(request):
+    customercount=models.Customer.objects.all().count()
+    
+    easy_bank_app={
+        'customercount':customercount,
+        
+    }
+    return render(request,'Easy_Bank_app/admin_dashboard.html',context=easy_bank_app)
+
+
+@login_required(login_url='customerlogin')
+@user_passes_test(is_customer)
+def customer_home_view(request):
+    return render(request,'Easy_bank_app/customer_home.html')
+    
+@login_required(login_url='adminlogin')
+def view_customer_view(request):
+    customers=models.Customer.objects.all()
+    return render(request,'Easy_bank_app/view_customer.html',{'customers':customers})
 
 
 def customerclick_view(request):
@@ -34,8 +67,8 @@ def customer_signup_view(request):
             customer=customerForm.save(commit=False)
             customer.user=user
             customer.save()
-            my_user_group = Group.objects.get_or_create(name='CUSTOMER')
-            my_user_group[0].user_set.add(user)
+            my_customer_group = Group.objects.get_or_create(name='CUSTOMER')
+            my_customer_group[0].user_set.add(user)
         return HttpResponseRedirect('customerlogin')
     
     return render(request,'Easy_bank_app/usersignup.html',context=easy_bank_app)
@@ -351,3 +384,5 @@ def personalloaneligibility_view(request):
 
 def loanagainstpropertyeligibility_view(request):
      return render(request, 'Eligibility_Form/loanagainst.html')
+
+
