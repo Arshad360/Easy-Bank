@@ -17,16 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Easy_bank_app import views
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home_view,name=''),
-     path('adminclick', views.adminclick_view),
+    path('adminclick', views.adminclick_view),
     path('adminlogin', LoginView.as_view(template_name='Easy_bank_app/adminlogin.html')),
-     path('customerclick', views.customerclick_view),
+    path('afterlogin', views.afterlogin_view,name='afterlogin'),
+    path('customerclick', views.customerclick_view),
     path('customersignup', views.customer_signup_view),  
     path('customerlogin', LoginView.as_view(template_name='Easy_bank_app/userlogin.html'),name='customerlogin'), 
+    path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
+    path('customer-home', views.customer_home_view,name='customer-home'), 
+    path('logout', LogoutView.as_view(template_name='Easy_bank_app/logout.html'), name='logout'),
+    path('homebase', LoginView.as_view(template_name='Easy_bank_app/homebase.html'), name='homebase'),
     path('loan/', views.showdata),
     path('credit_card/', views.showdata_credit),
     path('slider/', views.slider_view),
