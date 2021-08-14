@@ -34,7 +34,7 @@ urlpatterns = [
     path('logout', LogoutView.as_view(template_name='Easy_bank_app/logout.html'), name='logout'),
     path('homebase', LoginView.as_view(template_name='Easy_bank_app/homebase.html'), name='homebase'),
     path('loan/', views.showdata),
-    path('credit_card/', views.showdata_credit),
+    path('Credit_card/', views.credit_card_view),
     path('slider/', views.slider_view),
     path('compareandapply/',views.compare_view),
     path('contactus/',views.contactus_view),

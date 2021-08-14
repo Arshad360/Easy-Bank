@@ -385,4 +385,7 @@ def personalloaneligibility_view(request):
 def loanagainstpropertyeligibility_view(request):
      return render(request, 'Eligibility_Form/loanagainst.html')
 
+def credit_card_view(request):
+    return render(request,'Easy_bank_app/credit_card.html')
+
 
