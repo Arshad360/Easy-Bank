@@ -50,7 +50,7 @@ urlpatterns = [
     path('comparecreditcard/', views.credit_card_compare_view),
     path('compareloan/', views.compare_loan_view),
     path('Credit_card/', views.credit_card_view),
-
+    path('Insertcareligibility/', views.Insertcareligibility),
 
     #### URL PATH STARTED FOR APPLICATION FORM OF CAR LOAN
     path('bracbank/', views.brac_bank_form_view),

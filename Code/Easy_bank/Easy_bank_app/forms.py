@@ -21,3 +21,12 @@ class ContactusForm(forms.Form):
     Email = forms.EmailField()
     Phone=forms.IntegerField
     Message = forms.CharField(max_length=500,widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}))
+
+class CarloaneligibilityForm(forms.Form):
+    Bangladeshi = forms.CharField(max_length=100)
+    Username = forms.CharField(max_length=100)
+    Age	= forms.CharField(max_length=100)
+    Number = forms.CharField(max_length=100)
+    Gender = forms.CharField(max_length=100)
+    Net_income = forms.CharField(max_length=100)
+    Email = forms.CharField(max_length=100)

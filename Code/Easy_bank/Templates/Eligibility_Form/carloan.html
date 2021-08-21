@@ -123,7 +123,8 @@ font-size:16px;
 </head>
 
 <body>
-
+        <form method="POST">
+                {% csrf_token %}
 <title>FeedBack</title>
 	<div class = "container">
 
@@ -132,26 +133,29 @@ font-size:16px;
       <center>
                 
  <fieldset>
-          
-          <h4>Car Loan Eligibility</h4>
-       
         
+          <h4>Car Loan Eligibility</h4>
+        
+        
+          
         <table cellspacing="9" align="center" >
         <tr>
+        
         <td >
+        
 
                  Are You a Bangladeshi : 
 
-       </td>
+        </td>
         <td>
 
-                      <input type="radio" id="one" name="student" value="male">
+                      <input type="radio" id="one" name="bangladeshi" value="male" required>
                       <label for="male">Yes</label>
                       
-                      <input type="radio" id="one" name="student" value="female">
+                      <input type="radio" id="one" name="bangladeshi" value="female" required>
                       <label for="female">No</label>
                       
-                      <input type="radio" id="one" name="student" value="other">
+                      <input type="radio" id="one" name="bangladeshi" value="other" required>
                       <label for="other">Foreigner</label>   
             
         </td>
@@ -165,7 +169,7 @@ font-size:16px;
         </td>
         <td>
 
-            <input type="text" placeholder="Enter Username here" id="three" >
+            <input type="text" placeholder="Enter Username here" id="three" name="username" required >
         </td>
         </tr>
         
@@ -177,13 +181,13 @@ font-size:16px;
         </td>
         <td>
         
-                      <input type="radio"  name="year" value="male">
+                      <input type="radio"  name="year" value="male" name="age" required >
                       <label for="male">18-25</label>
                       
-                      <input type="radio"  name="year" value="female">
+                      <input type="radio"  name="year" value="female" name="age" required >
                       <label for="female">25-40</label>
                       
-                      <input type="radio"  name="year" value="other">
+                      <input type="radio"  name="year" value="other" name="age" required >
                       <label for="other">40 Plus</label>
          
         </td>
@@ -196,7 +200,7 @@ font-size:16px;
         </td>
         <td>
            
-            <input type="text" placeholder="Enter Number here" id="four" >
+            <input type="text" placeholder="Enter Number here" id="four" required  >
 
         </td>
         </tr>
@@ -209,7 +213,7 @@ font-size:16px;
         </td>
         <td>
 
-            <input type="text" placeholder="Enter Number here" id="five">
+            <input type="text" placeholder="Enter Number here" id="five" name="number" required>
 
         </td>
         </tr>
@@ -222,13 +226,13 @@ font-size:16px;
         </td>
         <td>
         
-                      <input type="radio" id="seven" name="gender" value="male">
+                      <input type="radio" id="seven" name="gender" value="male" name="gender" required>
                       <label for="male">Male</label>
                       
-                      <input type="radio" id="seven" name="gender" value="female">
+                      <input type="radio" id="seven" name="gender" value="female" name="gender" required>
                       <label for="female">Female</label>
                       
-                      <input type="radio" id="seven" name="gender" value="other">
+                      <input type="radio" id="seven" name="gender" value="other" name="gender" required>
                       <label for="other">Other</label>
          
         </td>
@@ -242,13 +246,13 @@ font-size:16px;
         <td>
                
                       
-                      <input type="radio" id = "eight" name="status" value="Java">
+                      <input type="radio" id = "eight" name="status" value="Java" name="net_income" required>
                       <label for="Java">20K</label>
                       
-                      <input type="radio" id = "eight" name="status" value="Android">
+                      <input type="radio" id = "eight" name="status" value="Android" name="net_income" required>
                       <label for="Android">20K-35K</label>
                       
-                      <input type="radio" id = "eight" name="status" value="Ruby">
+                      <input type="radio" id = "eight" name="status" value="Ruby" name="net_income" required>
                       <label for="Ruby">35K-50K</label>
 
                      
@@ -265,7 +269,7 @@ font-size:16px;
         </td>
         <td>
 
-            <input type="text" placeholder="" id="two"  >
+            <input type="text" placeholder="" id="two" name="email" required  >
 
         </td>
         </tr>
@@ -280,15 +284,17 @@ font-size:16px;
         <td>
         
         <input type="submit" value="Submit"  onclick="form_valid()" ></td>
+        
         </tr>
         </table>
+        
         
         
         </div>
 
             </center>
 	</div>
-
+        </form>
 </body>
  
     </header> 

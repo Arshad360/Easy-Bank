@@ -44,3 +44,14 @@ class Contactus(models.Model):
     message=models.CharField(max_length=500)
     class meta:
         db_table="Easy_bank_app_contact_us"
+
+class Carloaneligibility(models.Model):
+    bangladeshi = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
+    age	= models.CharField(max_length=100)
+    number = models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    net_income = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    class meta:
+        db_table="car_loan_eligibility"

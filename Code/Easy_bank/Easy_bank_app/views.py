@@ -388,4 +388,38 @@ def loanagainstpropertyeligibility_view(request):
 def credit_card_view(request):
     return render(request,'Easy_bank_app/credit_card.html')
 
+def Insertcareligibility(request):
+    if request.method=='POST':
+        
+        bangladeshi=request.POST.get('bangladeshi')
+        username=request.POST.get('username')
+        age=request.POST.get('age')
+        number=request.POST.get('number')
+        gender=request.POST.get('gender')
+        net_income=request.POST.get('net_income')
+        email=request.POST.get('email')
+        data = {
+            'bangladeshi': bangladeshi,
+            'username': username,
+            'age':  age,
+            'number': number,
+            'gender':gender,
+            'net_income':net_income,
+            'email': email
+        }
+        if request.POST.get('bangladeshi') and request.POST.get('username') and request.POST.get('age') and request.POST.get('number') and request.POST.get('gender') and request.POST.get('net_income') and request.POST.get('email'):
+            saverecord=models.Carloaneligibility()
+            saverecord.bangladeshi=request.POST.get('bangladeshi')
+            saverecord.username=request.POST.get('username')
+            saverecord.age=request.POST.get('age')
+            saverecord.number=request.POST.get('number')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.net_income=request.POST.get('net_income')
+            saverecord.email=request.POST.get('email')
+            saverecord.save()
+        return HttpResponse('brac')
+           
+    else:
+             return render(request,'Eligibility_Form\carloan.html')
 
+         
