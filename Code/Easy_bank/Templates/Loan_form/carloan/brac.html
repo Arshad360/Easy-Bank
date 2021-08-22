@@ -101,7 +101,9 @@
               
               
               <body>
-              
+              <form method="POST">
+                  {% csrf_token %}
+
               <title>Bracbank</title>
                   <div class = "container">
               
@@ -123,7 +125,7 @@
                      </td>
                       <td>
               
-                          <input type="text" placeholder="Enter name here" id="one" >
+                          <input type="text" placeholder="Enter name here" id="one" name="applicants_name" required >
                       </td>
                       </tr>
                       
@@ -135,7 +137,7 @@
                       </td>
                       <td>
               
-                        <input type="text" placeholder="Enter full name here" id="two" >
+                        <input type="text" placeholder="Enter full name here" id="two" name="applicants_full_name" required>
                     </td>
                     </tr>
                     
@@ -147,7 +149,7 @@
                     </td>
                     <td>
                          
-                        <input type="text" placeholder="Enter father name here" id="three" >
+                        <input type="text" placeholder="Enter father name here" id="three" name="applicants_father_name" required >
                     </td>
                     </tr>
                     
@@ -159,7 +161,7 @@
                     </td>
                     <td>
               
-                          <input type="text" placeholder="Enter Mothers name" id="five">
+                          <input type="text" placeholder="Enter Mothers name" id="five" name="applicants_mother_name" required>
               
                       </td>
                       </tr>
@@ -172,7 +174,7 @@
                         </td>
                         <td>
                   
-                              <input type="text" placeholder="Enter nationality" id="five">
+                              <input type="text" placeholder="Enter nationality" id="five" name="nationality" required>
                   
                           </td>
                           </tr>
@@ -185,13 +187,13 @@
                       </td>
                       <td>
                       
-                                    <input type="radio" id="seven" name="gender" value="male">
+                                    <input type="radio" id="seven" name="gender" value="male" name="gender" required>
                                     <label for="male">Male</label>
                                     
-                                    <input type="radio" id="seven" name="gender" value="female">
+                                    <input type="radio" id="seven" name="gender" value="female" name="gender" required>
                                     <label for="female">Female</label>
                                     
-                                    <input type="radio" id="seven" name="gender" value="other">
+                                    <input type="radio" id="seven" name="gender" value="other" name="gender" required>
                                     <label for="other">Other</label>
                        
                       </td>
@@ -207,7 +209,7 @@
                       </td>
                       <td>
               
-                          <input type="text" placeholder="" id="six" >
+                          <input type="text" placeholder="" id="six" name="contatct_no" required>
               
                       </td>
                       </tr>
@@ -220,7 +222,7 @@
                       </td>
                       <td>
               
-                          <input type="text" placeholder="" id="two"  >
+                          <input type="text" placeholder="" id="two" name="email" required >
               
                       </td>
                       </tr>
@@ -233,7 +235,7 @@
                         </td>
                         <td>
                 
-                            <input type="text" placeholder="" id="six" >
+                            <input type="text" placeholder="" id="six" name="nid" required >
                 
                         </td>
                         </tr>
@@ -310,7 +312,7 @@
                            </td>
                             <td>
                     
-                                <input type="text" placeholder="Enter here" id="one" >
+                                <input type="text" placeholder="Enter here" id="one" name="full_address" required>
                             </td>
                             </tr>
                             
@@ -322,7 +324,7 @@
                             </td>
                             <td>
                     
-                              <input type="text" placeholder="Enter full name here" id="two" >
+                              <input type="text" placeholder="Enter full name here" id="two" name="city" required>
                           </td>
                           </tr>
                           
@@ -334,7 +336,7 @@
                           </td>
                           <td>
                                
-                              <input type="text" placeholder="Enter here" id="three" >
+                              <input type="text" placeholder="Enter here" id="three" name="postal_code" required>
                           </td>
                           </tr>
                           
@@ -346,7 +348,7 @@
                           </td>
                           <td>
                     
-                                <input type="text" placeholder="Enter here" id="five">
+                                <input type="text" placeholder="Enter here" id="five" name="p_address" required>
                     
                             </td>
                         </tr>
@@ -361,7 +363,7 @@
                             </td>
                             <td>
                     
-                                <input type="text" placeholder="" id="six" >
+                                <input type="text" placeholder="" id="six" name="second_contact_no" required>
                     
                             </td>
                             </tr>
@@ -374,7 +376,7 @@
                             </td>
                             <td>
                     
-                                <input type="text" placeholder="" id="two"  >
+                                <input type="text" placeholder="" id="two" name=" " required>
                     
                             </td>
                             </tr>
@@ -430,7 +432,7 @@
                      </td>
                       <td>
               
-                          <input type="text" placeholder="Enter name here" id="one" >
+                          <input type="text" placeholder="Enter name here" id="one" name="organisation_name" required>
                       </td>
                       </tr>
                       
@@ -442,7 +444,7 @@
                       </td>
                       <td>
               
-                        <input type="text" placeholder="Enter here" id="two" >
+                        <input type="text" placeholder="Enter here" id="two" name="designation_department" required>
                     </td>
                     </tr>
                     
@@ -454,7 +456,7 @@
                     </td>
                     <td>
                          
-                        <input type="text" placeholder="Enter here" id="three" >
+                        <input type="text" placeholder="Enter here" id="three" name="office_address" required>
                     </td>
                     </tr>
                     
@@ -466,7 +468,7 @@
                     </td>
                     <td>
               
-                          <input type="text" placeholder="Enter here" id="five">
+                          <input type="text" placeholder="Enter here" id="five" name="allowness	" required>
               
                       </td>
                       </tr>
@@ -479,7 +481,7 @@
                         </td>
                         <td>
                   
-                              <input type="text" placeholder="Enter here" id="five">
+                              <input type="text" placeholder="Enter here" id="five" name="additional_income" required>
                   
                           </td>
                           </tr>
@@ -494,7 +496,7 @@
                       </td>
                       <td>
               
-                          <input type="text" placeholder="" id="six" >
+                          <input type="text" placeholder="" id="six" name="salary_total" required>
               
                       </td>
                       </tr>
@@ -507,7 +509,7 @@
                         </td>
                         <td>
                 
-                            <input type="text" placeholder="" id="six" >
+                            <input type="text" placeholder="" id="six" name="office_no" required>
                 
                         </td>
                         </tr>
@@ -553,7 +555,7 @@
                            </td>
                             <td>
                     
-                                <input type="text" placeholder="Enter here" id="one" >
+                                <input type="text" placeholder="Enter here" id="one" name="car_model" required >
                             </td>
                             </tr>
                             
@@ -565,7 +567,7 @@
                             </td>
                             <td>
                     
-                              <input type="text" placeholder="Enter here" id="two" >
+                              <input type="text" placeholder="Enter here" id="two" name="loan_requested" required>
                           </td>
                           </tr>
                           
@@ -577,7 +579,7 @@
                           </td>
                           <td>
                                
-                              <input type="text" placeholder="Enter here" id="three" >
+                              <input type="text" placeholder="Enter here" id="three" name="balance_amount" required>
                           </td>
                           </tr>
                           
@@ -589,7 +591,7 @@
                           </td>
                           <td>
                     
-                                <input type="text" placeholder="Enter here" id="five">
+                                <input type="text" placeholder="Enter here" id="five" name="payment_source" required>
                     
                             </td>
                             </tr>
@@ -602,7 +604,7 @@
                               </td>
                               <td>
                         
-                                    <input type="text" placeholder="Enter here" id="five">
+                                    <input type="text" placeholder="Enter here" id="five" name=" " required>
                         
                                 </td>
                                 </tr>
@@ -615,10 +617,10 @@
                             </td>
                             <td>
                             
-                                          <input type="radio" id="seven" name="property" value="yes">
+                                          <input type="radio" id="seven" name="property" value="yes" name=" " required>
                                           <label for="Yes">Yes</label>
                                           
-                                          <input type="radio" id="seven" name="property" value="no">
+                                          <input type="radio" id="seven" name="property" value="no" name=" " required>
                                           <label for="No">No</label>
                                           
                              
@@ -635,7 +637,7 @@
                             </td>
                             <td>
                     
-                                <input type="text" placeholder="" id="six" >
+                                <input type="text" placeholder="" id="six" name=" " required >
                     
                             </td>
                             </tr>
@@ -648,7 +650,7 @@
                             </td>
                             <td>
                     
-                                <input type="text" placeholder="" id="two"  >
+                                <input type="text" placeholder="" id="two" name=" " required>
                     
                             </td>
                             </tr>
@@ -697,7 +699,7 @@
                                    </td>
                                     <td>
                             
-                                        <input type="text" placeholder="Enter name here" id="one" >
+                                        <input type="text" placeholder="Enter name here" id="one" name=" " required>
                                     </td>
                                     </tr>
                                     
@@ -709,7 +711,7 @@
                                     </td>
                                     <td>
                             
-                                      <input type="text" placeholder="Enter full name here" id="two" >
+                                      <input type="text" placeholder="Enter full name here" id="two" name=" " required>
                                   </td>
                                   </tr>
                                   
@@ -723,7 +725,7 @@
                                   </td>
                                   <td>
                             
-                                        <input type="text" placeholder="Enter here" id="five">
+                                        <input type="text" placeholder="Enter here" id="five" name="tin_no	" required>
                             
                                     </td>
                                     </tr>
@@ -736,7 +738,7 @@
                                       </td>
                                       <td>
                                 
-                                            <input type="text" placeholder="Enter nationality" id="five">
+                                            <input type="text" placeholder="Enter nationality" id="five" name=" " required>
                                 
                                         </td>
                                         </tr>
@@ -753,7 +755,7 @@
                                     </td>
                                     <td>
                             
-                                        <input type="text" placeholder="" id="six" >
+                                        <input type="text" placeholder="" id="six" name=" " required>
                             
                                     </td>
                                     </tr>
@@ -766,7 +768,7 @@
                                     </td>
                                     <td>
                             
-                                        <input type="text" placeholder="" id="two"  >
+                                        <input type="text" placeholder="" id="two" name=" " required>
                             
                                     </td>
                                     </tr>
@@ -779,7 +781,7 @@
                                       </td>
                                       <td>
                               
-                                          <input type="text" placeholder="" id="six" >
+                                          <input type="text" placeholder="" id="six" name=" " required >
                               
                                       </td>
                                       </tr>
@@ -795,7 +797,7 @@
                           
                                     </table>
                                     
-                                    
+               </form>
                                     </div>
                             
                                         </center>

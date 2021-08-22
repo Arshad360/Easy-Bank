@@ -1,6 +1,7 @@
+
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.fields import EmailField
+from django.db.models.fields import  EmailField
 # Create your models here.
 
 class Customer(models.Model):
@@ -55,3 +56,34 @@ class Carloaneligibility(models.Model):
     email = models.CharField(max_length=100)
     class meta:
         db_table="car_loan_eligibility"
+
+class Bracbankloan(models.Model):
+    applicants_name = models.CharField(max_length=250)
+    applicants_full_name= models.CharField(max_length=200)
+    applicants_father_name= models.CharField(max_length=200)
+    applicants_mother_name= models.CharField(max_length=200)
+    nationality= models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    contatct_no= models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    nid = models.CharField(max_length=100)
+   # loan_type= models.CharField(max_length=200)
+    full_address= models.CharField(max_length=200)
+    city= models.CharField(max_length=100)
+    postal_code= models.CharField(max_length=100)
+    p_address= models.CharField(max_length=200)
+    second_contact_no= models.CharField(max_length=100)
+    organisation_name= models.CharField(max_length=100)
+    designation_department= models.CharField(max_length=100)
+    office_address= models.CharField(max_length=200)
+    allowness= models.CharField(max_length=100)
+    additional_income= models.CharField(max_length=100)
+    salary_total= models.CharField(max_length=100)
+    office_no= models.CharField(max_length=100)
+    car_model = models.CharField(max_length=100)
+    loan_requested= models.CharField(max_length=100)
+    balance_amount= models.CharField(max_length=100)
+    payment_source= models.CharField(max_length=100)
+    tin_no = models.CharField(max_length=100)
+    class meta:
+        db_table="brac_loan_form"
