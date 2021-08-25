@@ -7,6 +7,8 @@ from django.contrib.auth.models import Group, User, auth
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 # Create your views here.
 def home_view(request):
@@ -443,4 +445,38 @@ def Insertcareligibility(request):
     else:
              return render(request,'Eligibility_Form\carloan.html')
 
-         
+
+def show_contacts(request):
+    contacts=models.Contactus.objects.all()
+
+    context= {
+        'contacts':contacts
+    }
+
+    return render(request, 'Easy_bank_app/showinfo.html', context)
+
+
+def pdf_report_create(request):
+    contacts=models.Contactus.objects.all()
+
+    template_path = 'Easy_bank_app/contactpdf.html'
+
+    context = {'contacts': contacts}
+
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="contactus_report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funy view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+
+    
