@@ -35,15 +35,14 @@ font-size:16px;
 </Style>
 <script>
   
-  
   function form_valid()
         {
      
-                var email= document.getElementById("two").value;
-                var username= document.getElementById("three").value;
+                var email= document.getElementById("username").value;
+                var username= document.getElementById("age").value;
                 var contact= document.getElementById("four").value;                   
-                var recontact= document.getElementById("five").value;
-                var gender= document.getElementById("seven").value;
+                var recontact= document.getElementById("number").value;
+                var gender= document.getElementById("gender").value;
             
 
                 console.log(username);
@@ -55,8 +54,6 @@ font-size:16px;
                 let regEx1 = /^[A-Za-z]+$/;     
                 let regEx2 = /^[0-9]{11}$/
                 
-             
-
                 
                 if(username=='')
                 {
@@ -101,21 +98,14 @@ font-size:16px;
                 }
         }
         
-
   </script>
 <head>
 
 <title > Car Eligibility</title>
 
 </head>
-<body>
-      <header>
-        
-
-      </div>
-       
-       
-        </div>
+<body>  
+      
 <head>
       
       <link rel= "stylesheet" href ="css/carloan.css">
@@ -123,9 +113,8 @@ font-size:16px;
 </head>
 
 <body>
-        <form method="POST">
-                {% csrf_token %}
-<title>FeedBack</title>
+        
+<title>car loan eligibility</title>
 	<div class = "container">
 
     <center><h1>C.Loan Eligibility</h1></center>
@@ -136,9 +125,9 @@ font-size:16px;
         
           <h4>Car Loan Eligibility</h4>
         
-        
-          
         <table cellspacing="9" align="center" >
+        <form action="/carloaneligibility" method="POST">
+                {% csrf_token %}
         <tr>
         
         <td >
@@ -149,13 +138,13 @@ font-size:16px;
         </td>
         <td>
 
-                      <input type="radio" id="one" name="bangladeshi" value="male" required>
+                      <input type="radio" id="bangladeshi" name="bangladeshi" value="male" required>
                       <label for="male">Yes</label>
                       
-                      <input type="radio" id="one" name="bangladeshi" value="female" required>
+                      <input type="radio" id="bangladeshi" name="bangladeshi" value="female" required>
                       <label for="female">No</label>
                       
-                      <input type="radio" id="one" name="bangladeshi" value="other" required>
+                      <input type="radio" id="bangladeshi" name="bangladeshi" value="other" required>
                       <label for="other">Foreigner</label>   
             
         </td>
@@ -169,7 +158,7 @@ font-size:16px;
         </td>
         <td>
 
-            <input type="text" placeholder="Enter Username here" id="three" name="username" required >
+            <input type="text" placeholder="Enter Username here" id="username" name="username" required >
         </td>
         </tr>
         
@@ -181,13 +170,13 @@ font-size:16px;
         </td>
         <td>
         
-                      <input type="radio"  value="male" name="age" required >
+                      <input type="radio"  value="male" id="age" name="age" required >
                       <label for="male">18-25</label>
                       
-                      <input type="radio"  value="female" name="age" required >
+                      <input type="radio"  value="female" id="age" name="age" required >
                       <label for="female">25-40</label>
                       
-                      <input type="radio"  value="other" name="age" required >
+                      <input type="radio"  value="other" id="age" name="age" required >
                       <label for="other">40 Plus</label>
          
         </td>
@@ -213,7 +202,7 @@ font-size:16px;
         </td>
         <td>
 
-            <input type="text" placeholder="Enter Number here" id="five" name="number" required>
+            <input type="text" placeholder="Enter Number here" id="number" name="number" required>
 
         </td>
         </tr>
@@ -226,13 +215,13 @@ font-size:16px;
         </td>
         <td>
         
-                      <input type="radio" id="seven" value="male" name="gender" required>
+                      <input type="radio" id="gender" value="male" name="gender" required>
                       <label for="male">Male</label>
                       
-                      <input type="radio" id="seven"  value="female" name="gender" required>
+                      <input type="radio" id="gender"  value="female" name="gender" required>
                       <label for="female">Female</label>
                       
-                      <input type="radio" id="seven"  value="other" name="gender" required>
+                      <input type="radio" id="gender"  value="other" name="gender" required>
                       <label for="other">Other</label>
          
         </td>
@@ -246,13 +235,13 @@ font-size:16px;
         <td>
                
                       
-                      <input type="radio" id = "eight" value="Java" name="net_income" required>
+                      <input type="radio" id = "net_income" value="Java" name="net_income" required>
                       <label for="Java">20K</label>
                       
-                      <input type="radio" id = "eight" value="Android" name="net_income" required>
+                      <input type="radio" id = "net_income" value="Android" name="net_income" required>
                       <label for="Android">20K-35K</label>
                       
-                      <input type="radio" id = "eight" value="Ruby" name="net_income" required>
+                      <input type="radio" id = "net_income" value="Ruby" name="net_income" required>
                       <label for="Ruby">35K-50K</label>
 
                      
@@ -269,7 +258,7 @@ font-size:16px;
         </td>
         <td>
 
-            <input type="text" placeholder="" id="two" name="email" required  >
+            <input type="text" placeholder="" id="email" name="email" required  >
 
         </td>
         </tr>
@@ -283,9 +272,10 @@ font-size:16px;
         <td></td>
         <td>
         
-        <input type="submit" value="Submit"  onclick="form_valid()" ></td>
+        <input type="submit" name="insert" value="Submit"  onclick="form_valid()" ></td>
         
         </tr>
+        </form>
         </table>
         
         
@@ -294,7 +284,7 @@ font-size:16px;
 
             </center>
 	</div>
-        </form>
+        
 </body>
  
     </header> 
@@ -302,3 +292,4 @@ font-size:16px;
 </body>
 
 </html>
+

@@ -130,13 +130,14 @@ urlpatterns = [
     #### URL PATH STARTED FOR ELIGIBILITY CHECK FORM OF HOME LOAN
 
     path('homeloaneligibility/', views.homeloaneligibility_view ),
-    path('carloaneligibility/', views.carloaneligibility_view),
+    path('carloaneligibility', views.carloaneligibility_view),
     path('educationloaneligibility/', views.educationloaneligibility_view ),
     path('personalloaneligibility/', views.personalloaneligibility_view),
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
-    path('createpdf',views.pdf_report_create, name='createpdf')
+    path('createpdf',views.pdf_report_create, name='createpdf'),
+    path('testhomeapp', views.homeloan_one_view, name='testhomeapp')
 
     
 

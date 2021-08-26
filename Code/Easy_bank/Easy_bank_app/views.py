@@ -430,7 +430,26 @@ def credit_card_view(request):
 
 def Insertcareligibility(request):
     if request.method=='POST':
-        if request.POST.get('bangladeshi') and request.POST.get('username') and request.POST.get('age') and request.POST.get('number') and request.POST.get('gender') and request.POST.get('net_income') and request.POST.get('email'):
+        
+        bangladeshi = request.POST.get('bangladeshi')
+        username = request.POST.get('username')
+        age = request.POST.get('age')
+        number = request.POST.get('number')
+        gender = request.POST.get('gender')
+        net_income = request.POST.get('net_income')
+        email = request.POST.get('email')
+
+        data = {
+            'bangladeshi':  bangladeshi,
+            'username': username,
+            'age': age,
+            'number':number,
+            'gender':gender,
+            'net_income':net_income,
+            'email':email
+        }
+
+        if request.POST.get('name') and request.POST.get('email') and request.POST.get('phone') and request.POST.get('message'):
             saverecord=models.Carloaneligibility()
             saverecord.bangladeshi=request.POST.get('bangladeshi')
             saverecord.username=request.POST.get('username')
@@ -440,10 +459,42 @@ def Insertcareligibility(request):
             saverecord.net_income=request.POST.get('net_income')
             saverecord.email=request.POST.get('email')
             saverecord.save()
-        return HttpResponse('brac')
+
+       # if request.POST.get('bangladeshi') and request.POST.get('username') and request.POST.get('age') and request.POST.get('number') and request.POST.get('gender') and request.POST.get('net_income') and request.POST.get('email'):
+        #    saverecord=models.Carloaneligibility()
+        #    saverecord.bangladeshi=request.POST.get('bangladeshi')
+         #   saverecord.username=request.POST.get('username')
+         #   saverecord.age=request.POST.get('age')
+         #   saverecord.number=request.POST.get('number')
+         #   saverecord.gender=request.POST.get('gender')
+         #  saverecord.net_income=request.POST.get('net_income')
+         #   saverecord.email=request.POST.get('email')
+         #   saverecord.save()
+        # return HttpResponse('brac')
            
-    else:
-             return render(request,'Eligibility_Form\carloan.html')
+    # else:
+        return render(request,'Eligibility_Form/carloan.html')
+
+def homeloan_one_view(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
+
+            saverecord=models.homeloanappform()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.loan_type=request.POST.get('loan_type')
+            saverecord.save()
+            return render(request, 'Loan_form/homeloan/testaphome.html')
+            
+
+    return render(request, 'Loan_form/homeloan/testaphome.html')
 
 
 def show_contacts(request):

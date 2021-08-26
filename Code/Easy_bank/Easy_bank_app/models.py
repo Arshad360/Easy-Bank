@@ -55,7 +55,7 @@ class Carloaneligibility(models.Model):
     net_income = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     class meta:
-        db_table="car_loan_eligibility"
+        db_table="easy_bank_app_car_loan_eligibility"
 
 class Bracbankloan(models.Model):
     applicants_name = models.CharField(max_length=250)
@@ -87,3 +87,17 @@ class Bracbankloan(models.Model):
     tin_no = models.CharField(max_length=100)
     class meta:
         db_table="brac_loan_form"
+    
+class homeloanappform(models.Model): 
+    applicants_name = models.CharField(max_length=250)
+    applicants_full_name= models.CharField(max_length=200)
+    applicants_father_name= models.CharField(max_length=200)
+    applicants_mother_name= models.CharField(max_length=200)
+    nationality= models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    contatct_no= models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    nid = models.CharField(max_length=100)
+    loan_type= models.CharField(max_length=200)
+    class meta:
+        db_table="easy_bank_app_home_loan_form_1"
