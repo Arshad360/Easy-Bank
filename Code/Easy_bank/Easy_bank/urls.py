@@ -42,7 +42,7 @@ urlpatterns = [
     path('Insertcareligibility/', views.Insertcareligibility),
 
     #### URL PATH STARTED FOR APPLICATION FORM OF CAR LOAN
-    path('bracbank/', views.brac_bank_form_view),
+    
     path('citybank/', views.city_bank_form_view),
     path('dhakabank/', views.dhaka_bank_form_view),
     path('easternbank/', views.eastern_bank_form_view),
@@ -85,7 +85,7 @@ urlpatterns = [
 
     #### URL PATH STARTED FOR APPLICATION FORM OF HOME LOAN
 
-    path('bracbankhome/', views.brac_bank_home_form_view),
+    
     path('citybankhome/', views.city_bank_home_form_view),
     path('dutchbanglabankhome/', views.dbbl_home_form_view),
     path('dhakabankhome/', views.dhaka_bank_home_form_view),
@@ -137,9 +137,12 @@ urlpatterns = [
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
-    path('hform1', views.homeloan_one_view, name='hform1'),
     path('testhloan', views.testhloan_view, name='testhloan'),
-    path('test2', views.homeloan_one_view, name='test2'),
+    path('hform1', views.homeloan_one_view, name='hform1'),
+    path('hform2', views.homeloan_two_view, name='hform2'),
+    #path('hform3', views.homeloan_three_view, name='hform3'),
+    path('hform4', views.homeloan_four_view, name='hform4'),
+    path('hform5', views.homeloan_five_view, name='hform5'),
     path('newtest', views.testhloan_view, name='newtest'),
     path('hform11',views.homeloanform1, name='hform11'),
     path('hform2',views.homeloanform2, name='hform2'),

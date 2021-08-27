@@ -213,64 +213,63 @@ body{
 </style>
 
 <div class="wrapper">
-    <div class="title">
-     Proposed Property Information
-    </div>
-   
-
-    <form method="POST">
-      {% csrf_token %}
-
+  <div class="title">
+   Proposed Property Information
+  </div>
+ 
+  <form method="POST">
+    {% csrf_token %}
   <div class="form">
      <div class="inputfield">
         <label>Property Type: </label>
-        <input type="text" class="input" name= "property_type">
+        <input type="text" class="input" name="property_type">
      </div>  
       
       <div class="inputfield">
         <label>Floor Size:</label>
-        <input type="text" class="input" name= "floor_size">
+        <input type="text" class="input" name="floor_size">
      </div>  
 
      <div class="inputfield">
       <label>Land Flat/Appartment No: </label>
-      <input type="text" class="input" name= "flat_no">
+      <input type="text" class="input" name="flat_no">
     </div>
 
     <div class="inputfield">
       <label>Nationality: </label>
-      <input type="text" class="input" name= "nationality_2">
+      <input type="text" class="input" name="nationality_2">
     </div>
 
     
      <div class="inputfield">
-       
-          <label>Utility & Others:</label>
-          <input type="text" class="input" name= "utility">
+        <label>Utility & Others:</label>
+        <input type="text" class="input" name="utility">
      </div>
 
       <div class="inputfield">
         <label>Expected Possession:</label>
-        <input type="text" class="input" name= "expected_possesion">
+        <input type="text" class="input" name="expected_possesion">
      </div> 
 
-    <div class="inputfield">
+      <div class="inputfield">
         <label>Date Expected Handed:</label>
-        <input type="text" class="input" name= "date_expected">
+        <input type="text" class="input" name="date_expected">
      </div> 
-      
-      <center>
+     <center>
     
-        <div class="inputfield">
-          <a href="hform4" class= "btn">
-                <input type="submit" value="Next" class="btn"/>
-            </a>
-          </div>
-
-       </center>    
-    </div>
-    </form>
+      <div class="inputfield">
+        <a href="hform4" class= "btn">
+              <input type="submit" value="Next" class="btn"/>
+          </a>
+        </div>
+     </center>   
+    
+  </div>
+  </form>
 </div>
+      
+        
+    
 
 
 

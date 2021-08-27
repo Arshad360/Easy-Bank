@@ -157,13 +157,13 @@ class hloanform2(models.Model):
         db_table="easy_bank_app_hloanform2"
 
 class hloanform3(models.Model): 
-    property_type=models.CharField(max_length=100)
-    floor_size=models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
-    nationality_2=models.CharField(max_length=100)
-    utility=models.CharField(max_length=100)
-    expected_possesion=models.CharField(max_length=100)
-    date_expected=models.CharField(max_length=100)
+    property_type=models.CharField(max_length=1000)
+    floor_size=models.CharField(max_length=1000)
+    flat_no=models.CharField(max_length=1000)
+    nationality_2=models.CharField(max_length=1000)
+    utility=models.CharField(max_length=1000)
+    expected_possesion=models.CharField(max_length=1000)
+    date_expected=models.CharField(max_length=1000)
     
     class meta:
         db_table="easy_bank_app_hloanform3"
