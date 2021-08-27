@@ -139,7 +139,7 @@ urlpatterns = [
     path('createpdf',views.pdf_report_create, name='createpdf'),
     path('testhomeapp', views.homeloan_one_view, name='testhomeapp'),
     path('testhloan', views.testhloan_view, name='testhloan'),
-    path('test3', views.homeloan_one_view, name='test3')
+    path('test2', views.homeloan_one_view, name='test2')
 
     
 

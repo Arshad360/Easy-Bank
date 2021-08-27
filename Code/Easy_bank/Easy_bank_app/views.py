@@ -491,10 +491,10 @@ def homeloan_one_view(request):
             saverecord.nid=request.POST.get('nid')
             saverecord.loan_type=request.POST.get('loan_type')
             saverecord.save()
-            return render(request, 'Loan_form/homeloan/test3.html')
+            return render(request, 'Loan_form/homeloan/test2.html')
             
 
-    return render(request, 'Loan_form/homeloan/test3.html')
+    return render(request, 'Loan_form/homeloan/test2.html')
             #return render(request, 'Loan_form/homeloan/testaphome.html')
             
 
