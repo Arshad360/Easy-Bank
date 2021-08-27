@@ -137,9 +137,16 @@ urlpatterns = [
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
-    path('testhomeapp', views.homeloan_one_view, name='testhomeapp'),
+    path('hform1', views.homeloan_one_view, name='hform1'),
     path('testhloan', views.testhloan_view, name='testhloan'),
-    path('test2', views.homeloan_one_view, name='test2')
+    path('test2', views.homeloan_one_view, name='test2'),
+    path('newtest', views.testhloan_view, name='newtest'),
+    path('hform11',views.homeloanform1, name='hform11'),
+    path('hform2',views.homeloanform2, name='hform2'),
+    path('hform3',views.homeloanform3, name='hform3'),
+    path('hform4',views.homeloanform4, name='hform4'),
+    path('hform5',views.homeloanform5, name='hform5')
+
 
     
 

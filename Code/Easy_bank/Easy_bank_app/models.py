@@ -144,3 +144,51 @@ class hloanform(models.Model):
     
     class meta:
         db_table="easy_bank_app_hloanform"
+
+class hloanform2(models.Model): 
+    full_address= models.CharField(max_length=200)
+    city= models.CharField(max_length=100)
+    postal_code= models.CharField(max_length=100)
+    p_address= models.CharField(max_length=200)
+    second_contact_no= models.CharField(max_length=100)
+    second_email= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_hloanform2"
+
+class hloanform3(models.Model): 
+    property_type=models.CharField(max_length=100)
+    floor_size=models.CharField(max_length=100)
+    flat_no=models.CharField(max_length=100)
+    nationality_2=models.CharField(max_length=100)
+    utility=models.CharField(max_length=100)
+    expected_possesion=models.CharField(max_length=100)
+    date_expected=models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_hloanform3"
+    
+class hloanform4(models.Model): 
+    home_area=models.CharField(max_length=100)
+    loan_requested= models.CharField(max_length=100)
+    balance_amount= models.CharField(max_length=100)
+    payment_source= models.CharField(max_length=100)
+    property_selected=models.CharField(max_length=100)
+    contact_2=models.CharField(max_length=100)
+    email_3=models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_hloanform4"
+
+class hloanform5(models.Model): 
+    organisation_name= models.CharField(max_length=100)
+    designation_department= models.CharField(max_length=100)
+    office_address= models.CharField(max_length=200)
+    allowness= models.CharField(max_length=100,null=True)
+    additional_income= models.CharField(max_length=100,null=True)
+    salary_total= models.CharField(max_length=100,null=True)
+    office_no= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_hloanform5"
+

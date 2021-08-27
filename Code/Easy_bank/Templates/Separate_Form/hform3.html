@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
 body{
   
     margin:0;
@@ -19,7 +20,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 .wrapper{
   max-width: 500px;
   width: 100%;
@@ -33,7 +33,7 @@ body{
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #4FF769;
+  color: #FF2596;
   text-transform: uppercase;
   text-align: center;
 }
@@ -106,12 +106,12 @@ body{
 .wrapper .form .inputfield .input:focus,
 .wrapper .form .inputfield .textarea:focus,
 .wrapper .form .inputfield .custom_select select:focus{
-  border: 1px solid #B124F5;
+  border: 1px solid #FF2596;
 }
 
 .wrapper .form .inputfield p{
    font-size: 14px;
-   color: #B124F5;
+   color: #757575;
 }
 .wrapper .form .inputfield .check{
   width: 15px;
@@ -129,7 +129,7 @@ body{
 .wrapper .form .inputfield .check .checkmark{
   width: 15px;
   height: 15px;
-  border: 1px solid #B124F5;
+  border: 1px solid #fec107;
   display: block;
   position: relative;
 }
@@ -158,7 +158,7 @@ body{
    padding: 8px 10px;
   font-size: 15px; 
   border: 0px;
-  background:  #4FF769;
+  background:  #FF2596;
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -166,7 +166,7 @@ body{
 }
 
 .wrapper .form .inputfield .btn:hover{
-  background: #B124F5;
+  background: #336B35;
 }
 
 .wrapper .form .inputfield:last-child{
@@ -214,50 +214,62 @@ body{
 
 <div class="wrapper">
     <div class="title">
-            Residential Status
+     Proposed Property Information
     </div>
    
 
-    <div class="form">
-       <div class="inputfield">
-          <label>Full Address: </label>
-          <input type="text" class="input">
-       </div>  
-        
-        <div class="inputfield">
-          <label>City:</label>
-          <input type="text" class="input">
-       </div>  
+    <form method="POST">
+      {% csrf_token %}
 
-       <div class="inputfield">
-        <label>Postal Code: </label>
-        <input type="text" class="input">
-      </div>
+  <div class="form">
+     <div class="inputfield">
+        <label>Property Type: </label>
+        <input type="text" class="input" name= "property_type">
+     </div>  
+      
+      <div class="inputfield">
+        <label>Floor Size:</label>
+        <input type="text" class="input" name= "floor_size">
+     </div>  
 
-        <div class="inputfield">
-        <label>Permanent Address: </label>
-        <input type="text" class="input">
-      </div>
-         
-       <div class="inputfield">
-         
-            <label>Contact No:</label>
-            <input type="text" class="input">
-       </div>
+     <div class="inputfield">
+      <label>Land Flat/Appartment No: </label>
+      <input type="text" class="input" name= "flat_no">
+    </div>
 
-        <div class="inputfield">
-          <label>Email Address</label>
-          <input type="text" class="input">
-       </div> 
+    <div class="inputfield">
+      <label>Nationality: </label>
+      <input type="text" class="input" name= "nationality_2">
+    </div>
 
+    
+     <div class="inputfield">
+       
+          <label>Utility & Others:</label>
+          <input type="text" class="input" name= "utility">
+     </div>
+
+      <div class="inputfield">
+        <label>Expected Possession:</label>
+        <input type="text" class="input" name= "expected_possesion">
+     </div> 
+
+    <div class="inputfield">
+        <label>Date Expected Handed:</label>
+        <input type="text" class="input" name= "date_expected">
+     </div> 
+      
       <center>
     
-       <div class="inputfield">
-   
-    <a href="proposed property.html" class= "btn">Next</a>
+        <div class="inputfield">
+          <a href="hform4" class= "btn">
+                <input type="submit" value="Next" class="btn"/>
+            </a>
+          </div>
 
        </center>    
     </div>
+    </form>
 </div>
 
 

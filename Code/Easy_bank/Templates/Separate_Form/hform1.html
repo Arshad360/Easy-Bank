@@ -20,7 +20,7 @@ body{
     background-attachment: fixed;
 }
 .wrapper{
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   background: #fff;
   margin: 50px auto;
@@ -32,7 +32,7 @@ body{
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #D45844;
+  color: #fec107;
   text-transform: uppercase;
   text-align: center;
 }
@@ -105,12 +105,12 @@ body{
 .wrapper .form .inputfield .input:focus,
 .wrapper .form .inputfield .textarea:focus,
 .wrapper .form .inputfield .custom_select select:focus{
-  border: 1px solid #3DF525;
+  border: 1px solid #B124F5;
 }
 
 .wrapper .form .inputfield p{
    font-size: 14px;
-   color: #B124F5;
+   color: #757575;
 }
 .wrapper .form .inputfield .check{
   width: 15px;
@@ -128,7 +128,7 @@ body{
 .wrapper .form .inputfield .check .checkmark{
   width: 15px;
   height: 15px;
-  border: 1px solid #3DF525;
+  border: 1px solid #fec107;
   display: block;
   position: relative;
 }
@@ -157,7 +157,7 @@ body{
    padding: 8px 10px;
   font-size: 15px; 
   border: 0px;
-  background:  #D45844;
+  background:  #fec107;
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -165,7 +165,7 @@ body{
 }
 
 .wrapper .form .inputfield .btn:hover{
-  background: #3DF525;
+  background: #ffd658;
 }
 
 .wrapper .form .inputfield:last-child{
@@ -214,56 +214,103 @@ body{
 
 <div class="wrapper">
     <div class="title">
-            Professional Informantion
+     Home loan Application Form
     </div>
    
 
-    <div class="form">
-       <div class="inputfield">
-          <label>Organization Name: </label>
-          <input type="text" class="input">
-       </div>  
-        
+    <form method="POST">
+      {% csrf_token %}
+     <div class="form">
         <div class="inputfield">
-          <label>Designation:</label>
-          <input type="text" class="input">
-       </div>  
-
-       <div class="inputfield">
-        <label>Office Address: </label>
-        <input type="text" class="input">
-      </div>
-
+           <label>Applicant's Name: </label>
+           <input type="text" class="input" name="applicants_name">
+        </div>  
+         
+         <div class="inputfield">
+           <label>Applicant's F.Name:</label>
+           <input type="text" class="input" name="applicants_full_name">
+        </div>  
+ 
         <div class="inputfield">
-        <label>Allowness: </label>
-        <input type="text" class="input">
-      </div>
-         
-       <div class="inputfield">
-         
-            <label>Additional Income:</label>
-            <input type="text" class="input">
+         <label>Father's Name: </label>
+         <input type="text" class="input" name="applicants_father_name">
        </div>
-
+ 
+         <div class="inputfield">
+         <label>Mother's Name: </label>
+         <input type="text" class="input" name="applicants_mother_name">
+       </div>
+ 
+       <div class="inputfield">
+         <label>Nationality: </label>
+         <input type="text" class="input" name="nationality">
+       </div>
+ 
+         <div class="inputfield">
+           <label>Gender</label>
+           <div class="custom_select">
+             <select name= "gender">
+               <option value="">Select</option>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+             </select>
+           </div>
+        </div>
+          
         <div class="inputfield">
-          <label>Total Salary</label>
-          <input type="text" class="input">
-       </div> 
-
+          
+             <label>Contact No:</label>
+             <input type="text" class="input" name="contatct_no">
+        </div>
+ 
+         <div class="inputfield">
+           <label>Email Address</label>
+           <input type="text" class="input" name="email">
+        </div> 
+ 
+       <div class="inputfield">
+           <label>NID Number:</label>
+           <input type="text" class="input" name="nid">
+        </div> 
+       
         <div class="inputfield">
-          <label>Office Phone No:</label>
-          <input type="text" class="input">
+           <label>Loan Type </label>
+           <div class="custom_select">
+             <select name= "loan_type">
+               <option value="">Select Your Loan</option>
+               <option value="six">6 Month</option>
+               <option value="six">8 Month</option>
+               <option value="six">10 Month</option>
+               <option value="six">12 Month</option>
+             </select>
+           </div>
+        </div>
+      <div class="inputfield terms">
+          <label class="check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <p>Agreed to terms and conditions</p>
        </div> 
-
+      
     <center>
     
-       <div class="inputfield">
+       
+      <div class="inputfield">
+        <a href="hform2" class= "btn">
+              <input type="submit" value="Next" class="btn"/>
+          </a>
+        </div>
    
-     <a href="" class= "btn">Register</a>
+    
 
-       </center>    
+       </center>     
+
+      </div>
+    </form>
     </div>
 </div>
+
 
 
 
