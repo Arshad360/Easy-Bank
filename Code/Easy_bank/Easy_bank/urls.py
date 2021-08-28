@@ -143,12 +143,12 @@ urlpatterns = [
     path('hform3', views.formthreedata, name='hform3'),
     path('hform4', views.homeloan_four_view, name='hform4'),
     path('hform5', views.homeloan_five_view, name='hform5'),
-   # path('newtest', views.testhloan_view, name='newtest'),
-   # path('hform11',views.homeloanform1, name='hform11'),
-   # path('hform22',views.homeloanform2, name='hform22'),
-   # path('hform33',views.homeloan_three_view, name='hform33'),
-   # path('hform44',views.homeloanform4, name='hform44'),
-   # path('hform55',views.homeloanform5, name='hform55')
+    path('brachf1', views.brac_home_loan_1, name='brachf1'),
+    path('brachf2', views.brac_home_loan_2, name='brachf2'),
+    path('brachf3', views.brac_home_loan_3, name='brachf3'),
+    path('brachf4', views.brac_home_loan_4, name='brachf4'),
+    path('brachf5', views.brac_home_loan_5, name='brachf5'),
+  
 
 
     
