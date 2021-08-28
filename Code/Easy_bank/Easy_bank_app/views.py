@@ -481,23 +481,47 @@ def homeloan_two_view(request):
    
 
 #def homeloan_three_view(request):
-#    if request.method=='POST':
+#    if request.method=='POST':   
 #        if request.POST.get('property_type') and request.POST.get('floor_size') and request.POST.get('flat_no') and request.POST.get('nationality_2') and request.POST.get('utility') and request.POST.get('expected_popssesion') and request.POST.get('date_expected'):
-#
-#            saverecord=models.hloanform3()
-#            saverecord.property_type=request.POST.get('property_type')
-#            saverecord.floor_size=request.POST.get('floor_size')
-#            saverecord.flat_no=request.POST.get('flat_no')
-#            saverecord.nationality_2=request.POST.get('nationality_2')
-#            saverecord.utility=request.POST.get('utility')
-#            saverecord.expected_possesion=request.POST.get('expected_possesion')
-#            saverecord.date_expected=request.POST.get('date_expected')
-#            saverecord.save()
-#            return render(request,'Separate_Form/hform4.html')
+
+#            save=models.hloanform3()
+#            save.property_type=request.POST.get('property_type')
+#            save.floor_size=request.POST.get('floor_size')
+#            save.flat_no=request.POST.get('flat_no')
+#            save.nationality_2=request.POST.get('nationality_2')
+#            save.utility=request.POST.get('utility')
+#            save.expected_possesion=request.POST.get('expected_possesion')
+#            save.date_expected=request.POST.get('date_expected')
+#            save.save()
+#        return HttpResponseRedirect('hform4')
 #    
 #    else:
 #         return render(request, 'Separate_Form/hform3.html')
-#
+
+    
+def formthreedata(request):
+    if request.method=='POST':
+        if request.POST.get('property_type') and request.POST.get('floor_size') and request.POST.get('flat_no') and request.POST.get('nationality_2') and request.POST.get('utility') and request.POST.get('expected_possesion') and request.POST.get('date_expected'):
+            save=models.hloanform3()
+            save.property_type =request.POST.get('property_type')
+            save.floor_size =request.POST.get('floor_size')
+            save.flat_no =request.POST.get('flat_no')
+            save.nationality_2=request.POST.get('nationality_2')
+            save.utility =request.POST.get('utility')
+            save.expected_possesion =request.POST.get('expected_possesion')
+            save.date_expected =request.POST.get('date_expected')
+            save.save()
+            return HttpResponseRedirect('hform4')
+
+    else:
+        return render(request,'Separate_Form/hform3.html')
+
+        
+
+    
+    
+    
+
 def homeloan_four_view(request):
     if request.method=='POST':
         if request.POST.get('home_area') and request.POST.get('loan_requested') and request.POST.get('balance_amount') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3'):
@@ -534,55 +558,54 @@ def homeloan_five_view(request):
     else:
          return render(request, 'Separate_Form/hform5.html')
 
-def testhloan_view(request):
+#def testhloan_view(request):
     
-    if request.method=='POST':
-        
-        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') and request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no')and request.POST.get('second_email') and request.POST.get('property_type') and request.POST.get('floor_size') and request.POST.get('flat_no') and request.POST.get('nationality_2') and request.POST.get('utility') and request.POST.get('expected_popssesion') and request.POST.get('date_expected') and request.POST.get('home_area') and request.POST.get('loan_requested') and request.POST.get('balance_amount') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3')and request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no'):
-            saverecord=models.homeloanappform()
-            saverecord.applicants_name=request.POST.get('applicants_name')
-            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
-            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
-            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
-            saverecord.nationality=request.POST.get('nationality')
-            saverecord.gender=request.POST.get('gender')
-            saverecord.contatct_no=request.POST.get('contatct_no')
-            saverecord.email=request.POST.get('email')
-            saverecord.nid=request.POST.get('nid')
-            saverecord.loan_type=request.POST.get('loan_type')
-            saverecord.full_address=request.POST.get('full_address')
-            saverecord.city=request.POST.get('city')
-            saverecord.postal_code=request.POST.get('postal_code')
-            saverecord.p_address=request.POST.get('p_address')
-            saverecord.second_contact_no=request.POST.get('second_contact_no')
-            saverecord.second_email=request.POST.get('second_email')
-            saverecord.property_type=request.POST.get('property_type')
-            saverecord.floor_size=request.POST.get('floor_size')
-            saverecord.flat_no=request.POST.get('flat_no')
-            saverecord.nationality_2=request.POST.get('nationality_2')
-            saverecord.utility=request.POST.get('utility')
-            saverecord.expected_possesion=request.POST.get('expected_possesion')
-            saverecord.date_expected=request.POST.get('date_expected')
-            saverecord.home_area=request.POST.get('home_area')
-            saverecord.loan_requested=request.POST.get('loan_requested')
-            saverecord.balance_amount=request.POST.get('balance_amount')
-            saverecord.payment_source=request.POST.get('payment_source')
-            saverecord.property_selected=request.POST.get('property_selected')
-            saverecord.contact_2=request.POST.get('contact_2')
-            saverecord.email_3=request.POST.get('email_3')
-            saverecord.organisation_name=request.POST.get('organisation_name')
-            saverecord.designation_department=request.POST.get('designation_department')
-            saverecord.office_address=request.POST.get('office_address')
-            saverecord.allowness=request.POST.get('allowness')
-            saverecord.additional_income=request.POST.get('additional_income')
-            saverecord.salary_total=request.POST.get('salary_total')
-            saverecord.office_no=request.POST.get('office_no')
-            saverecord.save()
-            
-            return render(request, 'Loan_form/homeloan/newtest.html')
+#    if request.method=='POST':
+#        
+#        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') and request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no')and request.POST.get('second_email') and request.POST.get('property_type') and request.POST.get('floor_size') and request.POST.get('flat_no') and request.POST.get('nationality_2') and request.POST.get('utility') and request.POST.get('expected_popssesion') and request.POST.get('date_expected') and request.POST.get('home_area') and request.POST.get('loan_requested') and request.POST.get('balance_amount') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3')and request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no'):
+#            saverecord=models.homeloanappform()
+#            saverecord.applicants_name=request.POST.get('applicants_name')
+#            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+#            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+#            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+#            saverecord.nationality=request.POST.get('nationality')
+#            saverecord.gender=request.POST.get('gender')
+#            saverecord.contatct_no=request.POST.get('contatct_no')
+#            saverecord.email=request.POST.get('email')
+#            saverecord.nid=request.POST.get('nid')
+#            saverecord.loan_type=request.POST.get('loan_type')
+#            saverecord.full_address=request.POST.get('full_address')
+#            saverecord.city=request.POST.get('city')
+#            saverecord.postal_code=request.POST.get('postal_code')
+#            saverecord.p_address=request.POST.get('p_address')
+#            saverecord.second_contact_no=request.POST.get('second_contact_no')
+#            saverecord.second_email=request.POST.get('second_email')
+#            saverecord.property_type=request.POST.get('property_type')
+#            saverecord.floor_size=request.POST.get('floor_size')
+#            saverecord.flat_no=request.POST.get('flat_no')
+#            saverecord.nationality_2=request.POST.get('nationality_2')
+#            saverecord.utility=request.POST.get('utility')
+#            saverecord.expected_possesion=request.POST.get('expected_possesion')
+#            saverecord.date_expected=request.POST.get('date_expected')
+#            saverecord.home_area=request.POST.get('home_area')
+#            saverecord.loan_requested=request.POST.get('loan_requested')
+#            saverecord.balance_amount=request.POST.get('balance_amount')
+#            saverecord.payment_source=request.POST.get('payment_source')
+#            saverecord.property_selected=request.POST.get('property_selected')
+##            saverecord.contact_2=request.POST.get('contact_2')
+ #           saverecord.email_3=request.POST.get('email_3')
+#            saverecord.organisation_name=request.POST.get('organisation_name')
+#            saverecord.designation_department=request.POST.get('designation_department')
+#            saverecord.office_address=request.POST.get('office_address')
+#            saverecord.allowness=request.POST.get('allowness')
+#            saverecord.additional_income=request.POST.get('additional_income')
+#            saverecord.salary_total=request.POST.get('salary_total')
+##            saverecord.save()
+ #           
+ #           return render(request, 'Loan_form/homeloan/newtest.html')
             
 
-    return render(request, 'Loan_form/homeloan/newtest.html')
+ #   return render(request, 'Loan_form/homeloan/newtest.html')
 
 def homeloanform1(request):
     return render(request, 'Separate_Form/hform1.html')

@@ -137,18 +137,18 @@ urlpatterns = [
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
-    path('testhloan', views.testhloan_view, name='testhloan'),
+    #path('testhloan', views.testhloan_view, name='testhloan'),
     path('hform1', views.homeloan_one_view, name='hform1'),
     path('hform2', views.homeloan_two_view, name='hform2'),
-    #path('hform3', views.homeloan_three_view, name='hform3'),
+    path('hform3', views.formthreedata, name='hform3'),
     path('hform4', views.homeloan_four_view, name='hform4'),
     path('hform5', views.homeloan_five_view, name='hform5'),
-    path('newtest', views.testhloan_view, name='newtest'),
-    path('hform11',views.homeloanform1, name='hform11'),
-    path('hform2',views.homeloanform2, name='hform2'),
-    path('hform3',views.homeloanform3, name='hform3'),
-    path('hform4',views.homeloanform4, name='hform4'),
-    path('hform5',views.homeloanform5, name='hform5')
+   # path('newtest', views.testhloan_view, name='newtest'),
+   # path('hform11',views.homeloanform1, name='hform11'),
+   # path('hform22',views.homeloanform2, name='hform22'),
+   # path('hform33',views.homeloan_three_view, name='hform33'),
+   # path('hform44',views.homeloanform4, name='hform44'),
+   # path('hform55',views.homeloanform5, name='hform55')
 
 
     
