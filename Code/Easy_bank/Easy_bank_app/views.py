@@ -35,12 +35,15 @@ def afterlogin_view(request):
     else:
         return render(request, 'Easy_bank_app/admin_dashboard.html')
 
+
 @login_required(login_url='adminlogin') 
 def admin_dashboard_view(request):
     customercount=models.Customer.objects.all().count()
+    productcount=models.Product.objects.all().count()
+    
     easy_bank_app={
         'customercount':customercount,
-        
+        'productcount':productcount,
     }
     return render(request,'Easy_Bank_app/admin_dashboard.html',context=easy_bank_app)
 

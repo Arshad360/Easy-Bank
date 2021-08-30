@@ -40,6 +40,7 @@ urlpatterns = [
     path('compareloan/', views.compare_loan_view),
     path('Credit_card/', views.credit_card_view),
     path('Insertcareligibility/', views.Insertcareligibility),
+    path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
 
 
     path('homeloaneligibility/', views.homeloaneligibility_view ),
