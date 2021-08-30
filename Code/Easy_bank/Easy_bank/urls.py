@@ -149,9 +149,9 @@ urlpatterns = [
     path('brachf4', views.brac_home_loan_4, name='brachf4'),
     path('brachf5', views.brac_home_loan_5, name='brachf5'),
 
-    path('showform', views.show_brac_hoan_loan_form, name='showform'),
+    path('showform', views.show_brac_home_loan_form, name='showform'),
     path('createpdf2',views.pdf_report_create2, name='createpdf2'),
-  
+   
 
 
 

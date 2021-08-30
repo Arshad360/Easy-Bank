@@ -1,12 +1,15 @@
 
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, reverse
+from django.views.generic.base import View
 from . import forms, models
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import Group, User, auth
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from io import BytesIO
+from django.template import Context
 
 from django.conf import settings
 from django.http import HttpResponse
@@ -646,7 +649,7 @@ def show_contacts(request):
 
 
 
-def show_brac_hoan_loan_form(request):
+def show_brac_home_loan_form(request):
     brac_home_loan1=models.brac_home_loan_form1.objects.all()
     brac_home_loan2=models.brac_home_loan_form2.objects.all()
     brac_home_loan3=models.brac_home_loan_form3.objects.all()
@@ -666,15 +669,28 @@ def show_brac_hoan_loan_form(request):
 
 
 def pdf_report_create2(request):
-    contacts=models.brac_home_loan_form1.objects.all()
+    brac_home_loan1=models.brac_home_loan_form1.objects.all()
+    brac_home_loan2=models.brac_home_loan_form2.objects.all()
+    brac_home_loan3=models.brac_home_loan_form3.objects.all()
+    brac_home_loan4=models.brac_home_loan_form4.objects.all()
+    brac_home_loan5=models.brac_home_loan_form5.objects.all()
+  
 
     template_path = 'All_home_loan/brac_bank_home_loan_pdf.html'
 
-    context = {'contacts': contacts}
+    context= {
+        'brac_home_loan1':brac_home_loan1,
+        'brac_home_loan2':brac_home_loan2,
+        'brac_home_loan3':brac_home_loan3,
+        'brac_home_loan4':brac_home_loan4,
+        'brac_home_loan5':brac_home_loan5
+    
+    }
+    
 
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="Home_loan_application_form.pdf"'
+    response['Content-Disposition'] = 'attachment; filename="home_loan_application.pdf"'
     # find the template and render it.
     template = get_template(template_path)
     html = template.render(context)
@@ -706,9 +722,11 @@ def pdf_report_create(request):
     # create a pdf
     pisa_status = pisa.CreatePDF(
        html, dest=response)
-    # if error then show some funy view
+   # if error then show some funy view
     if pisa_status.err:
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
+
+
 
 
