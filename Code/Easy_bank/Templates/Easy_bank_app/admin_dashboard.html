@@ -1,2 +1,44 @@
 {% load static %}
 {% include "Easy_bank_app/Admin.html" %}
+<br>
+
+{%include 'Easy_bank_app/admin_dashboard_cards.html'%}
+
+<br><br><br><br><br>
+
+<hr><hr>
+<div class="container" >
+
+    <div class="panel panel-primary" >
+      <div class="panel-heading" style="text-align:center;">
+        <h6 class="panel-title">Recent Applications</h6>
+      </div>
+      <table class="table table-hover" id="dev-table">
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Customer Mobile</th>
+            <th>Status</th>
+
+          </tr>
+        </thead>
+       
+        <tr>
+          {% for c in customers %}
+          <td> {{c.get_name}}</td>
+          <td>{{c.mobile}}</td>
+          
+
+          {% endfor %}
+          
+
+
+
+
+
+      </table>
+
+  </div>
+</div>
+
+
