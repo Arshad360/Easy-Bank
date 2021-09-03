@@ -214,24 +214,24 @@
   
   <div class="wrapper">
     <div class="title">
-     Proposed Property Information
+     Course Information
     </div>
    
     <form method="POST">
       {% csrf_token %}
     <div class="form">
        <div class="inputfield">
-          <label>Property Type: </label>
+          <label>Course Name: </label>
           <input type="text" class="input" name="property_type">
        </div>  
         
         <div class="inputfield">
-          <label>Floor Size:</label>
+          <label>Total Duration:</label>
           <input type="text" class="input" name="floor_size">
        </div>  
   
        <div class="inputfield">
-        <label>Land Flat/Appartment No: </label>
+        <label>Date of complete: </label>
         <input type="text" class="input" name="flat_no">
       </div>
   
@@ -242,19 +242,11 @@
   
       
        <div class="inputfield">
-          <label>Utility & Others:</label>
+          <label>Yearly Expenses:</label>
           <input type="text" class="input" name="utility">
        </div>
   
-        <div class="inputfield">
-          <label>Expected Possession:</label>
-          <input type="text" class="input" name="expected_possesion">
-       </div> 
-  
-        <div class="inputfield">
-          <label>Date Expected Handed:</label>
-          <input type="text" class="input" name="date_expected">
-       </div> 
+        
        <center>
       
         <div class="inputfield">

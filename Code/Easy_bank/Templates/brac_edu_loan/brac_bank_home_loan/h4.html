@@ -212,7 +212,7 @@
   
   <div class="wrapper">
       <div class="title">
-             Proposed Property Information
+             Source of finance
       </div>
      
   
@@ -220,28 +220,25 @@
         {% csrf_token %}
     <div class="form">
        <div class="inputfield">
-          <label>Home Area: </label>
+          <label>Tution fees: </label>
           <input type="text" class="input" name= "home_area">
        </div>  
         
         <div class="inputfield">
-          <label>Loan Requested:</label>
+          <label>Exam fees:</label>
           <input type="text" class="input" name= "loan_requested">
        </div>  
   
        <div class="inputfield">
-        <label>Balance Amount: </label>
+        <label>Books expence: </label>
         <input type="text" class="input" name= "balance_amount">
       </div>
   
-        <div class="inputfield">
-        <label>Source Of Payment: </label>
-        <input type="text" class="input" name= "payment_source">
-      </div>
+        
   
   
         <div class="inputfield">
-          <label>Property Selected</label>
+          <label>Any scholarship?</label>
           <div class="custom_select">
             <select name= "property_selected">
               <option value="">Select</option>

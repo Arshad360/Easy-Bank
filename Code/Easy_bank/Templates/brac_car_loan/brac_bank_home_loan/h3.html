@@ -214,39 +214,34 @@
   
   <div class="wrapper">
     <div class="title">
-     Proposed Property Information
+     Proposed Car Information
     </div>
    
     <form method="POST">
       {% csrf_token %}
     <div class="form">
        <div class="inputfield">
-          <label>Property Type: </label>
+          <label>Model: </label>
           <input type="text" class="input" name="property_type">
        </div>  
         
         <div class="inputfield">
-          <label>Floor Size:</label>
+          <label>Year:</label>
           <input type="text" class="input" name="floor_size">
        </div>  
   
        <div class="inputfield">
-        <label>Land Flat/Appartment No: </label>
+        <label>CC Type: </label>
         <input type="text" class="input" name="flat_no">
       </div>
   
       <div class="inputfield">
-        <label>Nationality: </label>
+        <label>Manufacture Year: </label>
         <input type="text" class="input" name="nationality_2">
       </div>
   
       
-       <div class="inputfield">
-          <label>Utility & Others:</label>
-          <input type="text" class="input" name="utility">
-       </div>
-  
-        <div class="inputfield">
+             <div class="inputfield">
           <label>Expected Possession:</label>
           <input type="text" class="input" name="expected_possesion">
        </div> 

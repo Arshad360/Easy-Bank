@@ -212,7 +212,7 @@
   
   <div class="wrapper">
       <div class="title">
-             Proposed Property Information
+             Showroom Information
       </div>
      
   
@@ -220,12 +220,12 @@
         {% csrf_token %}
     <div class="form">
        <div class="inputfield">
-          <label>Home Area: </label>
+          <label>Total Amount: </label>
           <input type="text" class="input" name= "home_area">
        </div>  
         
         <div class="inputfield">
-          <label>Loan Requested:</label>
+          <label>Reffered Amount:</label>
           <input type="text" class="input" name= "loan_requested">
        </div>  
   
@@ -243,7 +243,7 @@
         <div class="inputfield">
           <label>Property Selected</label>
           <div class="custom_select">
-            <select name= "property_selected">
+            <select name= "Do You have co signer available">
               <option value="">Select</option>
               <option value="male">Yes</option>
               <option value="female">No</option>
