@@ -1,14 +1,21 @@
 
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, reverse
+from django.views.generic.base import View
 from . import forms, models
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import Group, User, auth
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from io import BytesIO
+from django.template import Context
+
+from django.conf import settings
+from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
+from django.contrib.staticfiles import finders
 
 # Create your views here.
 def home_view(request):
@@ -28,13 +35,15 @@ def afterlogin_view(request):
     else:
         return render(request, 'Easy_bank_app/admin_dashboard.html')
 
+
 @login_required(login_url='adminlogin') 
 def admin_dashboard_view(request):
     customercount=models.Customer.objects.all().count()
+    productcount=models.Product.objects.all().count()
     
     easy_bank_app={
         'customercount':customercount,
-        
+        'productcount':productcount,
     }
     return render(request,'Easy_Bank_app/admin_dashboard.html',context=easy_bank_app)
 
@@ -641,6 +650,63 @@ def show_contacts(request):
     return render(request, 'Easy_bank_app/showinfo.html', context)
 
 
+
+def show_brac_home_loan_form(request):
+    brac_home_loan1=models.brac_home_loan_form1.objects.all()
+    brac_home_loan2=models.brac_home_loan_form2.objects.all()
+    brac_home_loan3=models.brac_home_loan_form3.objects.all()
+    brac_home_loan4=models.brac_home_loan_form4.objects.all()
+    brac_home_loan5=models.brac_home_loan_form5.objects.all()
+
+    context= {
+        'brac_home_loan1':brac_home_loan1,
+        'brac_home_loan2':brac_home_loan2,
+        'brac_home_loan3':brac_home_loan3,
+        'brac_home_loan4':brac_home_loan4,
+        'brac_home_loan5':brac_home_loan5
+    }
+
+    return render(request, 'All_home_loan/brac_bank_home.html', context)
+
+
+
+def pdf_report_create2(request):
+    brac_home_loan1=models.brac_home_loan_form1.objects.all()
+    brac_home_loan2=models.brac_home_loan_form2.objects.all()
+    brac_home_loan3=models.brac_home_loan_form3.objects.all()
+    brac_home_loan4=models.brac_home_loan_form4.objects.all()
+    brac_home_loan5=models.brac_home_loan_form5.objects.all()
+  
+
+    template_path = 'All_home_loan/brac_bank_home_loan_pdf.html'
+
+    context= {
+        'brac_home_loan1':brac_home_loan1,
+        'brac_home_loan2':brac_home_loan2,
+        'brac_home_loan3':brac_home_loan3,
+        'brac_home_loan4':brac_home_loan4,
+        'brac_home_loan5':brac_home_loan5
+    
+    }
+    
+
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="home_loan_application.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funy view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+
+
 def pdf_report_create(request):
     contacts=models.Contactus.objects.all()
 
@@ -658,9 +724,11 @@ def pdf_report_create(request):
     # create a pdf
     pisa_status = pisa.CreatePDF(
        html, dest=response)
-    # if error then show some funy view
+   # if error then show some funy view
     if pisa_status.err:
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
+
+
 
 
