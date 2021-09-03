@@ -224,10 +224,8 @@ class brac_loan_against_property_form3(models.Model):
 
 class brac_loan_against_property_form4(models.Model):
     home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
-    balance_amount= models.CharField(max_length=100)
-    payment_source= models.CharField(max_length=100)
-    property_selected=models.CharField(max_length=100)
+    other_expenses= models.CharField(max_length=100)
+    dues= models.CharField(max_length=100)
     contact_2=models.CharField(max_length=100)
     email_3=models.CharField(max_length=100)
     
@@ -274,10 +272,9 @@ class brac_personal_loan_form2(models.Model):
 
 class brac_personal_loan_form3(models.Model):
     property_type=models.CharField(max_length=100)
-    floor_size =models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
-    nationality_2=models.CharField(max_length=100)
-    utility=models.CharField(max_length=100)
+    no_of_property =models.CharField(max_length=100)
+    property_details=models.CharField(max_length=100)
+    others=models.CharField(max_length=100)
     expected_possesion=models.CharField(max_length=100)
     date_expected=models.CharField(max_length=100)
     
@@ -285,7 +282,6 @@ class brac_personal_loan_form3(models.Model):
         db_table="easy_bank_app_brac_personal_loan_form3"
 
 class brac_personal_loan_form4(models.Model):
-    home_area=models.CharField(max_length=100)
     loan_requested= models.CharField(max_length=100)
     balance_amount= models.CharField(max_length=100)
     payment_source= models.CharField(max_length=100)
@@ -335,20 +331,18 @@ class brac_startup_loan_form2(models.Model):
         db_table="easy_bank_app_brac_startup_loan_form2"
 
 class brac_startup_loan_form3(models.Model):
-    property_type=models.CharField(max_length=100)
-    floor_size =models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
-    nationality_2=models.CharField(max_length=100)
+    startup_type=models.CharField(max_length=100)
+    idea_type =models.CharField(max_length=100)
+    loan_tenure_time=models.CharField(max_length=100)
     utility=models.CharField(max_length=100)
     expected_possesion=models.CharField(max_length=100)
-    date_expected=models.CharField(max_length=100)
     
     class meta:
         db_table="easy_bank_app_brac_startup_loan_form3"
 
 class brac_startup_loan_form4(models.Model):
-    home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
+    loan_amount=models.CharField(max_length=100)
+    loan_in_word= models.CharField(max_length=100)
     balance_amount= models.CharField(max_length=100)
     payment_source= models.CharField(max_length=100)
     property_selected=models.CharField(max_length=100)
@@ -386,22 +380,20 @@ class brac_car_loan_form1(models.Model):
         db_table="easy_bank_app_brac_car_loan_form1"
 
 class brac_car_loan_form2(models.Model):
-    full_address= models.CharField(max_length=200)
-    city= models.CharField(max_length=100)
+    present_address= models.CharField(max_length=200)
+    permanent_address= models.CharField(max_length=100)
     postal_code= models.CharField(max_length=100)
-    p_address= models.CharField(max_length=200)
-    second_contact_no= models.CharField(max_length=100)
+    mobile= models.CharField(max_length=11)
     second_email= models.CharField(max_length=100)
     
     class meta:
         db_table="easy_bank_app_brac_car_loan_form2"
 
 class brac_car_loan_form3(models.Model):
-    property_type=models.CharField(max_length=100)
-    floor_size =models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
-    nationality_2=models.CharField(max_length=100)
-    utility=models.CharField(max_length=100)
+    model= models.CharField(max_length=100)
+    year=models.CharField(max_length=100)
+    cc_type =models.CharField(max_length=100)
+    manufacturing_year=models.CharField(max_length=100)
     expected_possesion=models.CharField(max_length=100)
     date_expected=models.CharField(max_length=100)
     
@@ -409,8 +401,8 @@ class brac_car_loan_form3(models.Model):
         db_table="easy_bank_app_brac_car_loan_form3"
 
 class brac_car_loan_form4(models.Model):
-    home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
+    total_amount=models.CharField(max_length=100)
+    reffered_amount= models.CharField(max_length=100)
     balance_amount= models.CharField(max_length=100)
     payment_source= models.CharField(max_length=100)
     property_selected=models.CharField(max_length=100)
@@ -421,9 +413,9 @@ class brac_car_loan_form4(models.Model):
         db_table="easy_bank_app_brac_car_loan_form4"
 
 class brac_car_loan_form5(models.Model): 
-    organisation_name= models.CharField(max_length=100)
-    designation_department= models.CharField(max_length=100)
-    office_address= models.CharField(max_length=200)
+    own_house= models.CharField(max_length=100)
+    total_monthly_expenses= models.CharField(max_length=100)
+    home_address= models.CharField(max_length=200)
     allowness= models.CharField(max_length=100,null=True)
     additional_income= models.CharField(max_length=100,null=True)
     salary_total= models.CharField(max_length=100,null=True)
@@ -459,23 +451,20 @@ class brac_education_loan_form2(models.Model):
         db_table="easy_bank_app_brac_education_loan_form2"
 
 class brac_education_loan_form3(models.Model):
-    property_type=models.CharField(max_length=100)
-    floor_size =models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
+    course_name=models.CharField(max_length=100)
+    total_duration =models.CharField(max_length=100)
+    date_of_complete=models.CharField(max_length=100)
     nationality_2=models.CharField(max_length=100)
-    utility=models.CharField(max_length=100)
-    expected_possesion=models.CharField(max_length=100)
-    date_expected=models.CharField(max_length=100)
+    yearly_expenses=models.CharField(max_length=100)
     
     class meta:
         db_table="easy_bank_app_brac_education_loan_form3"
 
 class brac_education_loan_form4(models.Model):
-    home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
-    balance_amount= models.CharField(max_length=100)
-    payment_source= models.CharField(max_length=100)
-    property_selected=models.CharField(max_length=100)
+    tution_fees=models.CharField(max_length=100)
+    exam_fees= models.CharField(max_length=100)
+    book_expense= models.CharField(max_length=100)
+    scholarship= models.CharField(max_length=100)
     contact_2=models.CharField(max_length=100)
     email_3=models.CharField(max_length=100)
     
@@ -483,18 +472,16 @@ class brac_education_loan_form4(models.Model):
         db_table="easy_bank_app_brac_education_loan_form4"
 
 class brac_education_loan_form5(models.Model): 
-    organisation_name= models.CharField(max_length=100)
-    designation_department= models.CharField(max_length=100)
-    office_address= models.CharField(max_length=200)
-    allowness= models.CharField(max_length=100,null=True)
-    additional_income= models.CharField(max_length=100,null=True)
-    salary_total= models.CharField(max_length=100,null=True)
-    office_no= models.CharField(max_length=100)
+    ssc_gpa= models.CharField(max_length=100)
+    school= models.CharField(max_length=100)
+    hsc_gpa= models.CharField(max_length=200)
+    college= models.CharField(max_length=100,null=True)
+    other_qualification= models.CharField(max_length=100,null=True)
     
     class meta:
         db_table="easy_bank_app_brac_education_loan_form5"
 
-class brac_credit_card_form(models.Model):
+class brac_credit_card_form1(models.Model):
     applicants_name = models.CharField(max_length=250)
     applicants_full_name= models.CharField(max_length=200)
     applicants_father_name= models.CharField(max_length=200)
@@ -504,11 +491,59 @@ class brac_credit_card_form(models.Model):
     contatct_no= models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     nid = models.CharField(max_length=100)
-    loan_type= models.CharField(max_length=200)
+    credit_card_type= models.CharField(max_length=200)
     
     class meta:
-        db_table="easy_bank_app_brac_credit_card_form"
+        db_table="easy_bank_app_brac_credit_card_form1"
+
+class brac_credit_card_form2(models.Model):
+    full_address= models.CharField(max_length=200)
+    city= models.CharField(max_length=100)
+    postal_code= models.CharField(max_length=100)
+    p_address= models.CharField(max_length=200)
+    second_contact_no= models.CharField(max_length=100)
+    second_email= models.CharField(max_length=100)
     
+    class meta:
+        db_table="easy_bank_app_brac_credit_card_form2"
+
+class brac_credit_card_form3(models.Model):
+    organisation_name= models.CharField(max_length=100)
+    designation_department= models.CharField(max_length=100)
+    office_address= models.CharField(max_length=200)
+    allowness= models.CharField(max_length=100,null=True)
+    additional_income= models.CharField(max_length=100,null=True)
+    salary_total= models.CharField(max_length=100,null=True)
+    office_no= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_brac_credit_card_form3"
+
+class brac_credit_card_form4(models.Model):
+    applicants_name = models.CharField(max_length=250)
+    applicants_full_name= models.CharField(max_length=200)
+    applicants_father_name= models.CharField(max_length=200)
+    applicants_mother_name= models.CharField(max_length=200)
+    nationality= models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    contatct_no= models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    nid = models.CharField(max_length=100)
+    credit_card_type= models.CharField(max_length=200)
+    
+    class meta:
+        db_table="easy_bank_app_brac_credit_card_form4"
+
+class brac_credit_card_form5(models.Model): 
+    account_no= models.CharField(max_length=100)
+    account_type= models.CharField(max_length=100)
+    balance_amount= models.CharField(max_length=200)
+    contact_no_2= models.CharField(max_length=100,null=True)
+    email= models.CharField(max_length=100,null=True)
+    
+    class meta:
+        db_table="easy_bank_app_brac_credit_card_form5"
+
 class city_credit_card_form1(models.Model):
     applicants_name = models.CharField(max_length=250)
     applicants_full_name= models.CharField(max_length=200)
@@ -519,10 +554,60 @@ class city_credit_card_form1(models.Model):
     contatct_no= models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     nid = models.CharField(max_length=100)
-    loan_type= models.CharField(max_length=200)
+    credit_card_type= models.CharField(max_length=200)
     
     class meta:
         db_table="easy_bank_app_city_credit_card_form1"
+
+
+class city_credit_card_form2(models.Model):
+    full_address= models.CharField(max_length=200)
+    city= models.CharField(max_length=100)
+    postal_code= models.CharField(max_length=100)
+    p_address= models.CharField(max_length=200)
+    second_contact_no= models.CharField(max_length=100)
+    second_email= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_city_credit_card_form2"
+
+class city_credit_card_form3(models.Model):
+    organisation_name= models.CharField(max_length=100)
+    designation_department= models.CharField(max_length=100)
+    office_address= models.CharField(max_length=200)
+    allowness= models.CharField(max_length=100,null=True)
+    additional_income= models.CharField(max_length=100,null=True)
+    salary_total= models.CharField(max_length=100,null=True)
+    office_no= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_brac_credit_card_form3"
+
+class city_credit_card_form4(models.Model):
+    applicants_name = models.CharField(max_length=250)
+    applicants_full_name= models.CharField(max_length=200)
+    applicants_father_name= models.CharField(max_length=200)
+    applicants_mother_name= models.CharField(max_length=200)
+    nationality= models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    contatct_no= models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    nid = models.CharField(max_length=100)
+    credit_card_type= models.CharField(max_length=200)
+    
+    class meta:
+        db_table="easy_bank_app_city_credit_card_form4"
+
+class city_credit_card_form5(models.Model): 
+    account_no= models.CharField(max_length=100)
+    account_type= models.CharField(max_length=100)
+    balance_amount= models.CharField(max_length=200)
+    contact_no_2= models.CharField(max_length=100,null=True)
+    email= models.CharField(max_length=100,null=True)
+    
+    class meta:
+        db_table="easy_bank_app_city_credit_card_form5"
+
 
 class city_home_loan_form1(models.Model): 
     applicants_name = models.CharField(max_length=250)
@@ -564,11 +649,10 @@ class city_home_loan_form3(models.Model):
         db_table="easy_bank_app_city_home_loan_form3"
 
 class city_home_loan_form4(models.Model): 
-    home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
-    balance_amount= models.CharField(max_length=100)
-    payment_source= models.CharField(max_length=100)
-    property_selected=models.CharField(max_length=100)
+    zip_code=models.CharField(max_length=100)
+    neutral_landmark= models.CharField(max_length=100)
+    city_code= models.CharField(max_length=100)
+    area_code= models.CharField(max_length=100)
     contact_2=models.CharField(max_length=100)
     email_3=models.CharField(max_length=100)
     
@@ -615,21 +699,20 @@ class city_car_loan_form2(models.Model):
 
 
 class city_car_loan_form3(models.Model): 
-    property_type=models.CharField(max_length=100)
-    floor_size =models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
+    amount_of_loan=models.CharField(max_length=100)
+    loan_in_word =models.CharField(max_length=100)
+    no_of_month_to_close=models.CharField(max_length=100)
     nationality_2=models.CharField(max_length=100)
-    utility=models.CharField(max_length=100)
-    expected_possesion=models.CharField(max_length=100)
+    area=models.CharField(max_length=100)
     date_expected=models.CharField(max_length=100)
     
     class meta:
         db_table="easy_bank_app_city_car_loan_form3"
 
 class city_car_loan_form4(models.Model): 
-    home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
-    balance_amount= models.CharField(max_length=100)
+    car_model=models.CharField(max_length=100)
+    manufacturing_year= models.CharField(max_length=100)
+    loan_percentage= models.CharField(max_length=100)
     payment_source= models.CharField(max_length=100)
     property_selected=models.CharField(max_length=100)
     contact_2=models.CharField(max_length=100)
@@ -678,20 +761,18 @@ class city_education_loan_form2(models.Model):
 
 
 class city_education_loan_form3(models.Model): 
-    property_type=models.CharField(max_length=100)
-    floor_size =models.CharField(max_length=100)
-    flat_no=models.CharField(max_length=100)
-    nationality_2=models.CharField(max_length=100)
+    ssc_result=models.CharField(max_length=100)
+    hsc_result =models.CharField(max_length=100)
+    ielts_result=models.CharField(max_length=100)
+    extracuricular_activity=models.CharField(max_length=100)
     utility=models.CharField(max_length=100)
-    expected_possesion=models.CharField(max_length=100)
-    date_expected=models.CharField(max_length=100)
     
     class meta:
         db_table="easy_bank_app_city_education_loan_form3"
 
 class city_education_loan_form4(models.Model): 
-    home_area=models.CharField(max_length=100)
-    loan_requested= models.CharField(max_length=100)
+    amount_of_loan=models.CharField(max_length=100)
+    amount_of_loan_in_word= models.CharField(max_length=100)
     balance_amount= models.CharField(max_length=100)
     payment_source= models.CharField(max_length=100)
     property_selected=models.CharField(max_length=100)
@@ -702,12 +783,12 @@ class city_education_loan_form4(models.Model):
         db_table="easy_bank_app_city_education_loan_form4"
 
 class city_education_loan_form5(models.Model): 
-    organisation_name= models.CharField(max_length=100)
-    designation_department= models.CharField(max_length=100)
-    office_address= models.CharField(max_length=200)
+    institute_name= models.CharField(max_length=100)
+    loan_duration= models.CharField(max_length=100)
+    institution_address= models.CharField(max_length=200)
     allowness= models.CharField(max_length=100,null=True)
-    additional_income= models.CharField(max_length=100,null=True)
-    salary_total= models.CharField(max_length=100,null=True)
+    scholarship= models.CharField(max_length=100,null=True)
+    scholarship_in_words= models.CharField(max_length=100,null=True)
     office_no= models.CharField(max_length=100)
     
     class meta:
@@ -836,3 +917,65 @@ class city_startup_loan_form5(models.Model):
     
     class meta:
         db_table="easy_bank_app_city_startup_loan_form5"
+    
+class city_personal_loan_form1(models.Model):
+    applicants_name = models.CharField(max_length=250)
+    applicants_full_name= models.CharField(max_length=200)
+    applicants_father_name= models.CharField(max_length=200)
+    applicants_mother_name= models.CharField(max_length=200)
+    nationality= models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    contatct_no= models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    nid = models.CharField(max_length=100)
+    loan_type= models.CharField(max_length=200)
+    
+    class meta:
+        db_table="easy_bank_app_city_personal_loan_form1"
+
+class city_personal_loan_form2(models.Model):
+    full_address= models.CharField(max_length=200)
+    city= models.CharField(max_length=100)
+    postal_code= models.CharField(max_length=100)
+    p_address= models.CharField(max_length=200)
+    second_contact_no= models.CharField(max_length=100)
+    second_email= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_city_personal_loan_form2"
+
+class city_personal_loan_form3(models.Model):
+    property_type=models.CharField(max_length=100)
+    floor_size =models.CharField(max_length=100)
+    flat_no=models.CharField(max_length=100)
+    nationality=models.CharField(max_length=100)
+    utility=models.CharField(max_length=100)
+    expected_possesion=models.CharField(max_length=100)
+    date_expected=models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_city_personal_loan_form3"
+
+class city_personal_loan_form4(models.Model):
+    amount_of_loan= models.CharField(max_length=100)
+    loan_in_word= models.CharField(max_length=100)
+    balance_amount= models.CharField(max_length=100)
+    due_time= models.CharField(max_length=100)
+    property_selected=models.CharField(max_length=100)
+    contact_2=models.CharField(max_length=100)
+    email_3=models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_city_personal_loan_form4"
+
+class city_personal_loan_form5(models.Model): 
+    organisation_name= models.CharField(max_length=100)
+    designation_department= models.CharField(max_length=100)
+    office_address= models.CharField(max_length=200)
+    allowness= models.CharField(max_length=100,null=True)
+    additional_income= models.CharField(max_length=100,null=True)
+    salary_total= models.CharField(max_length=100,null=True)
+    office_no= models.CharField(max_length=100)
+    
+    class meta:
+        db_table="easy_bank_app_city_personal_loan_form5"
