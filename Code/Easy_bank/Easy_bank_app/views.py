@@ -9,7 +9,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from io import BytesIO
-from django.template import Context
+from django.template import Context, context
 
 from django.conf import settings
 from django.http import HttpResponse
@@ -36,16 +36,28 @@ def afterlogin_view(request):
         return render(request, 'Easy_bank_app/admin_dashboard.html')
 
 
-@login_required(login_url='adminlogin') 
+
+@login_required(login_url='adminlogin')
 def admin_dashboard_view(request):
+    # for cards on dashboard
+    customer= models.Customer.objects.all()
     customercount=models.Customer.objects.all().count()
-    productcount=models.Product.objects.all().count()
     
-    easy_bank_app={
-        'customercount':customercount,
-        'productcount':productcount,
+    orders=models.Customer.objects.all()
+    ordered_products=[]
+    ordered_bys=[]
+    for order in orders:
+        ordered_product=models.Product.objects.all().filter(id=order.product.id)
+        ordered_by=models.Customer.objects.all().filter(id = order.customer.id)
+        ordered_products.append(ordered_product)
+        ordered_bys.append(ordered_by)
+
+    mydict={
+    'customercount':customercount,
+    'customer': customer,
+    'data':zip(ordered_products,ordered_bys,orders),
     }
-    return render(request,'Easy_Bank_app/admin_dashboard.html',context=easy_bank_app)
+    return render(request,'Easy_Bank_app/admin_dashboard.html',context=mydict)
 
 
 @login_required(login_url='customerlogin')
@@ -56,7 +68,11 @@ def customer_home_view(request):
 @login_required(login_url='adminlogin')
 def view_customer_view(request):
     customers=models.Customer.objects.all()
-    return render(request,'Easy_bank_app/view_customer.html',{'customers':customers})
+
+    cont={
+    'customers': customers, 
+    }
+    return render(request,'Easy_bank_app/view_customer.html',{cont:customers})
 
 
 def customerclick_view(request):

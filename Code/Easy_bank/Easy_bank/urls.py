@@ -65,6 +65,7 @@ urlpatterns = [
 
     path('showform', views.show_brac_home_loan_form, name='showform'),
     path('createpdf2',views.pdf_report_create2, name='createpdf2'),
+    path('render', views.render, name='render'),
 
 
     #### URL PATH STARTED FOR APPLICATION FORM OF CAR LOAN

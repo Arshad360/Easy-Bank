@@ -1,44 +1,57 @@
+{% include 'Easy_bank_app/Admin.html' %}
 {% load static %}
-{% include "Easy_bank_app/Admin.html" %}
+{% block content %}
 <br>
-
 {%include 'Easy_bank_app/admin_dashboard_cards.html'%}
-
 <br><br><br><br><br>
 
 <hr><hr>
-<div class="container" >
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="panel-heading" style="text-align:center;">
+      <h6 class="panel-title">Recent Booking</h6>
+    </div>
+      <div class= "col-md-10">
+           <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  
+                  <th scope="col">Customer Name</th>
+                  <th scope="col">Contact Number</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
 
-    <div class="panel panel-primary" >
-      <div class="panel-heading" style="text-align:center;">
-        <h6 class="panel-title">Recent Applications</h6>
+                 {%for f in contacts%}
+                
+                <tr>
+                  <td>{{f.name}}</td>
+                  <td>{{f.mobile}}</td>
+                  <td>{{f.message}}</td>
+                  
+                  
+                  
+                </tr>
+
+                 {%endfor%}   
+                
+              </tbody>
+
+            </table>
+
       </div>
-      <table class="table table-hover" id="dev-table">
-        <thead>
-          <tr>
-            <th>Customer Name</th>
-            <th>Customer Mobile</th>
-            <th>Status</th>
-
-          </tr>
-        </thead>
-       
-        <tr>
-          {% for c in customers %}
-          <td> {{c.get_name}}</td>
-          <td>{{c.mobile}}</td>
-          
-
-          {% endfor %}
-          
-
-
-
-
-
-      </table>
 
   </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-primary" href="{% url 'createpdf' %}">Create PDF</a> 
+  </div>
+  <!--
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a><button class="btn btn-primary" href="{% url 'createpdf' %}">Create PDF</button></a>
+  </div>
+  -->
 </div>
 
 
+{% endblock content %}
