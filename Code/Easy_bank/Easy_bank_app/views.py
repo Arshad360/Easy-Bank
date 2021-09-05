@@ -412,37 +412,37 @@ def loanagainstpropertyeligibility_view(request):
 def credit_card_view(request):
     return render(request,'Easy_bank_app/credit_card.html')
 
-def Insertcareligibility(request):
-    if request.method=='POST':
-        
-        bangladeshi = request.POST.get('bangladeshi')
-        username = request.POST.get('username')
-        age = request.POST.get('age')
-        number = request.POST.get('number')
-        gender = request.POST.get('gender')
-        net_income = request.POST.get('net_income')
-        email = request.POST.get('email')
+#def Insertcareligibility(request):
+#    if request.method=='POST':
+#        
+#        bangladeshi = request.POST.get('bangladeshi')
+#        username = request.POST.get('username')
+#        age = request.POST.get('age')
+#        number = request.POST.get('number')
+#        gender = request.POST.get('gender')
+#        net_income = request.POST.get('net_income')
+#        email = request.POST.get('email')
 
-        data = {
-            'bangladeshi':  bangladeshi,
-            'username': username,
-            'age': age,
-            'number':number,
-            'gender':gender,
-            'net_income':net_income,
-            'email':email
-        }
+#        data = {
+#            'bangladeshi':  bangladeshi,
+#            'username': username,
+#            'age': age,
+#            'number':number,
+#            'gender':gender,
+#            'net_income':net_income,
+#            'email':email
+#        }
 
-        if request.POST.get('name') and request.POST.get('email') and request.POST.get('phone') and request.POST.get('message'):
-            saverecord=models.Carloaneligibility()
-            saverecord.bangladeshi=request.POST.get('bangladeshi')
-            saverecord.username=request.POST.get('username')
-            saverecord.age=request.POST.get('age')
-            saverecord.number=request.POST.get('number')
-            saverecord.gender=request.POST.get('gender')
-            saverecord.net_income=request.POST.get('net_income')
-            saverecord.email=request.POST.get('email')
-            saverecord.save()
+##        if request.POST.get('name') and request.POST.get('email') and request.POST.get('phone') and request.POST.get('message'):
+ #           saverecord=models.Carloaneligibility()
+ #           saverecord.bangladeshi=request.POST.get('bangladeshi')
+ #           saverecord.username=request.POST.get('username')
+ #           saverecord.age=request.POST.get('age')
+ #           saverecord.number=request.POST.get('number')
+ #           saverecord.gender=request.POST.get('gender')
+ #           saverecord.net_income=request.POST.get('net_income')
+ #           saverecord.email=request.POST.get('email')
+ #           saverecord.save()
 
        # if request.POST.get('bangladeshi') and request.POST.get('username') and request.POST.get('age') and request.POST.get('number') and request.POST.get('gender') and request.POST.get('net_income') and request.POST.get('email'):
         #    saverecord=models.Carloaneligibility()
@@ -457,98 +457,7 @@ def Insertcareligibility(request):
         # return HttpResponse('brac')
            
     # else:
-        return render(request,'Eligibility_Form/carloan.html')
-
-def homeloan_one_view(request):
-    if request.method=='POST':
-        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
-
-            saverecord=models.hloanform()
-            saverecord.applicants_name=request.POST.get('applicants_name')
-            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
-            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
-            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
-            saverecord.nationality=request.POST.get('nationality')
-            saverecord.gender=request.POST.get('gender')
-            saverecord.contatct_no=request.POST.get('contatct_no')
-            saverecord.email=request.POST.get('email')
-            saverecord.nid=request.POST.get('nid')
-            saverecord.loan_type=request.POST.get('loan_type')
-            saverecord.save()
-            return HttpResponseRedirect('hform2')
-            
-    else:
-         return render(request, 'Separate_Form/hform1.html')
-    
-def homeloan_two_view(request):
-    if request.method=='POST':
-        if request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no') and request.POST.get('second_email') :
-
-            saverecord=models.hloanform2()
-            saverecord.full_address=request.POST.get('full_address')
-            saverecord.city=request.POST.get('city')
-            saverecord.postal_code=request.POST.get('postal_code')
-            saverecord.p_address=request.POST.get('p_address')
-            saverecord.second_contact_no=request.POST.get('second_contact_no')
-            saverecord.second_email=request.POST.get('second_email')
-            saverecord.save()
-            return HttpResponseRedirect('hform3')
-    
-    else:
-         return render(request, 'Separate_Form/hform2.html')
-            
-def formthreedata(request):
-    if request.method=='POST':
-        if request.POST.get('property_type') and request.POST.get('floor_size') and request.POST.get('flat_no') and request.POST.get('nationality_2') and request.POST.get('utility') and request.POST.get('expected_possesion') and request.POST.get('date_expected'):
-            save=models.hloanform3()
-            save.property_type =request.POST.get('property_type')
-            save.floor_size =request.POST.get('floor_size')
-            save.flat_no =request.POST.get('flat_no')
-            save.nationality_2=request.POST.get('nationality_2')
-            save.utility =request.POST.get('utility')
-            save.expected_possesion =request.POST.get('expected_possesion')
-            save.date_expected =request.POST.get('date_expected')
-            save.save()
-            return HttpResponseRedirect('hform4')
-
-    else:
-        return render(request,'Separate_Form/hform3.html')
-   
-def homeloan_four_view(request):
-    if request.method=='POST':
-        if request.POST.get('home_area') and request.POST.get('loan_requested') and request.POST.get('balance_amount') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3'):
-
-            saverecord=models.hloanform4()
-            saverecord.home_area=request.POST.get('home_area')
-            saverecord.loan_requested=request.POST.get('loan_requested')
-            saverecord.balance_amount=request.POST.get('balance_amount')
-            saverecord.payment_source=request.POST.get('payment_source')
-            saverecord.property_selected=request.POST.get('property_selected')
-            saverecord.contact_2=request.POST.get('contact_2')
-            saverecord.email_3=request.POST.get('email_3')
-            saverecord.save()
-            return HttpResponseRedirect('hform5')
-            
-    else:
-         return render(request, 'Separate_Form/hform4.html')
-
-def homeloan_five_view(request):
-    if request.method=='POST':
-        if request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
-
-            saverecord=models.hloanform5()
-            saverecord.organisation_name=request.POST.get('organisation_name')
-            saverecord.designation_department=request.POST.get('designation_department')
-            saverecord.office_address=request.POST.get('office_address')
-            saverecord.allowness=request.POST.get('allowness')
-            saverecord.additional_income=request.POST.get('additional_income')
-            saverecord.salary_total=request.POST.get('salary_total')
-            saverecord.office_no=request.POST.get('office_no')
-            saverecord.save()
-            return HttpResponseRedirect('hform1')
-            
-    else:
-         return render(request, 'Separate_Form/hform5.html')
+   #     return render(request,'Eligibility_Form/carloan.html')
 
 def brac_home_loan_1(request):
     if request.method=='POST':
@@ -566,7 +475,7 @@ def brac_home_loan_1(request):
             saverecord.nid=request.POST.get('nid')
             saverecord.loan_type=request.POST.get('loan_type')
             saverecord.save()
-            return HttpResponseRedirect('brachf2')
+            return HttpResponseRedirect('/brachf2')
             
     else:
          return render(request, 'brac_bank_home_loan/h1.html')
@@ -583,7 +492,7 @@ def brac_home_loan_2(request):
             saverecord.second_contact_no=request.POST.get('second_contact_no')
             saverecord.second_email=request.POST.get('second_email')
             saverecord.save()
-            return HttpResponseRedirect('brachf3')
+            return HttpResponseRedirect('/brachf3')
     
     else:
          return render(request, 'brac_bank_home_loan/h2.html')
@@ -600,7 +509,7 @@ def brac_home_loan_3(request):
             save.expected_possesion =request.POST.get('expected_possesion')
             save.date_expected =request.POST.get('date_expected')
             save.save()
-            return HttpResponseRedirect('brachf4')
+            return HttpResponseRedirect('/brachf4')
 
     else:
         return render(request,'brac_bank_home_loan/h3.html')
@@ -618,7 +527,7 @@ def brac_home_loan_4(request):
             saverecord.contact_2=request.POST.get('contact_2')
             saverecord.email_3=request.POST.get('email_3')
             saverecord.save()
-            return HttpResponseRedirect('brachf5')
+            return HttpResponseRedirect('/brachf5')
             
     else:
          return render(request, 'brac_bank_home_loan/h4.html')
@@ -636,25 +545,11 @@ def brac_home_loan_5(request):
             saverecord.salary_total=request.POST.get('salary_total')
             saverecord.office_no=request.POST.get('office_no')
             saverecord.save()
-            return HttpResponseRedirect('brachf1')
+            return HttpResponseRedirect('/brachf1')
             
     else:
          return render(request, 'brac_bank_home_loan/h5.html')      
 
-def homeloanform1(request):
-    return render(request, 'Separate_Form/hform1.html')
-
-def homeloanform2(request):
-    return render(request, 'Separate_Form/hform2.html')
-
-def homeloanform3(request):
-    return render(request, 'Separate_Form/hform3.html')
-
-def homeloanform4(request):
-    return render(request, 'Separate_Form/hform4.html')
-
-def homeloanform5(request):
-    return render(request, 'Separate_Form/hform5.html')
 
 def show_contacts(request):
     contacts=models.Contactus.objects.all()
@@ -664,7 +559,6 @@ def show_contacts(request):
     }
 
     return render(request, 'Easy_bank_app/showinfo.html', context)
-
 
 
 def show_brac_home_loan_form(request):
@@ -746,9 +640,8 @@ def pdf_report_create(request):
     return response
 
 
-def brac_edu_loan_view(request):
-    return render(request, 'brac_edu_loan/h1.html')
+#def brac_edu_loan_view(request):
+#    return render(request, 'brac_edu_loan/h1.html')
 
-def brac_edu_loan_view2(request):
-    return render(request, 'Separate_Form/h1.html')
+
 

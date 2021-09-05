@@ -40,34 +40,41 @@ urlpatterns = [
     path('comparecreditcard/', views.credit_card_compare_view),
     path('compareloan/', views.compare_loan_view),
     path('Credit_card/', views.credit_card_view),
-    path('Insertcareligibility/', views.Insertcareligibility),
+    #path('Insertcareligibility/', views.Insertcareligibility),
     path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
 
 
     path('homeloaneligibility/', views.homeloaneligibility_view ),
     path('carloaneligibility', views.carloaneligibility_view),
     path('educationloaneligibility/', views.educationloaneligibility_view ),
-    path('brac_edu_loan_1/',views.brac_edu_loan_view2, name='brac_edu_loan_1'),
+    #path('brac_edu_loan_1/',views.brac_edu_loan_view, name='brac_edu_loan_1'),
+    
     
     
 
-    path('brac_home_loan_1/', LoginView.as_view(template_name='brac_bank_home_loan/h1.html'), name='brac_home_loan_1'),
+    #path('brachf1/', LoginView.as_view(template_name='brac_bank_home_loan/h1.html'), name='brachf1'),
+    path('brachf1/', views.brac_home_loan_1, name='brachf1'),
+    path('brachf2/', views.brac_home_loan_2, name='brachf2'),
+    path('brachf3/', views.brac_home_loan_3, name='brachf3'),
+    path('brachf4/', views.brac_home_loan_4, name='brachf4'),
+    path('brachf5/', views.brac_home_loan_5, name='brachf5'),
+
     path('personalloaneligibility/', views.personalloaneligibility_view),
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
     #path('testhloan', views.testhloan_view, name='testhloan'),
-    path('hform1', views.homeloan_one_view, name='hform1'),
-    path('hform2', views.homeloan_two_view, name='hform2'),
-    path('hform3', views.formthreedata, name='hform3'),
-    path('hform4', views.homeloan_four_view, name='hform4'),
-    path('hform5', views.homeloan_five_view, name='hform5'),
-    path('brachf1', views.brac_home_loan_1, name='brachf1'),
-    path('brachf2', views.brac_home_loan_2, name='brachf2'),
-    path('brachf3', views.brac_home_loan_3, name='brachf3'),
-    path('brachf4', views.brac_home_loan_4, name='brachf4'),
-    path('brachf5', views.brac_home_loan_5, name='brachf5'),
+    #path('hform1', views.homeloan_one_view, name='hform1'),
+    #path('hform2', views.homeloan_two_view, name='hform2'),
+    #path('hform3', views.formthreedata, name='hform3'),
+    #path('hform4', views.homeloan_four_view, name='hform4'),
+    #path('hform5', views.homeloan_five_view, name='hform5'),
+    #path('brachf1', views.brac_home_loan_1, name='brachf1'),
+    #path('brachf2', views.brac_home_loan_2, name='brachf2'),
+    #path('brachf3', views.brac_home_loan_3, name='brachf3'),
+    #path('brachf4', views.brac_home_loan_4, name='brachf4'),
+    #path('brachf5', views.brac_home_loan_5, name='brachf5'),
 
     #path('brac_edu_loan', views.brac_edu_loan_view, name='brac_edu_loan'),
 
