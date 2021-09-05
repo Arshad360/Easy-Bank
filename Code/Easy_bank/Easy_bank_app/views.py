@@ -12,7 +12,6 @@ from io import BytesIO
 from django.template import Context, context
 
 from django.conf import settings
-from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 from django.contrib.staticfiles import finders
@@ -644,4 +643,92 @@ def pdf_report_create(request):
 #    return render(request, 'brac_edu_loan/h1.html')
 
 
+def brac_car_loan_1(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
+
+            saverecord=models.brac_car_loan_form1()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.loan_type=request.POST.get('loan_type')
+            saverecord.save()
+            return HttpResponseRedirect('/braccl2')
+            
+    else:
+         return render(request, 'brac_car_loan/h1.html')
+
+def brac_car_loan_2(request):
+    if request.method=='POST':
+        if request.POST.get('present_address') and request.POST.get('permanent_address') and request.POST.get('postal_code') and request.POST.get('mobile') and request.POST.get('second_email') :
+
+            saverecord=models.brac_car_loan_form2()
+            saverecord.present_address=request.POST.get('present_address')
+            saverecord.permanent_address=request.POST.get('permanent_address')
+            saverecord.postal_code=request.POST.get('postal_code')
+            saverecord.mobile=request.POST.get('mobile')
+            saverecord.second_email=request.POST.get('second_email')
+            saverecord.save()
+            return HttpResponseRedirect('/braccl3')
+    
+    else:
+         return render(request, 'brac_car_loan/h2.html')
+    
+def brac_car_loan_3(request):
+    if request.method=='POST':
+        if request.POST.get('model') and request.POST.get('year') and request.POST.get('cc_type') and request.POST.get('manufacturing_year') and request.POST.get('expected_possesion') and request.POST.get('date_expected'):
+            save=models.brac_car_loan_form3()
+            save.model =request.POST.get('model')
+            save.year =request.POST.get('year')
+            save.cc_type =request.POST.get('cc_type')
+            save.manufacturing_year=request.POST.get('manufacturing_year')
+            save.expected_possesion =request.POST.get('expected_possesion')
+            save.date_expected =request.POST.get('date_expected')
+            save.save()
+            return HttpResponseRedirect('/braccl4')
+
+    else:
+        return render(request,'brac_car_loan/h3.html')
+
+def brac_car_loan_4(request):
+    if request.method=='POST':
+        if request.POST.get('total_amount') and request.POST.get('reffered_amount') and request.POST.get('balance_amount') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3'):
+            
+            saverecord=models.brac_car_loan_form4()
+            saverecord.total_amount=request.POST.get('total_amount')
+            saverecord.reffered_amount=request.POST.get('reffered_amount')
+            saverecord.balance_amount=request.POST.get('balance_amount')
+            saverecord.payment_source=request.POST.get('payment_source')
+            saverecord.property_selected=request.POST.get('property_selected')
+            saverecord.contact_2=request.POST.get('contact_2')
+            saverecord.email_3=request.POST.get('email_3')
+            saverecord.save()
+            return HttpResponseRedirect('/braccl5')
+            
+    else:
+        return render(request, 'brac_car_loan/h4.html')
+
+def brac_car_loan_5(request):
+    if request.method=='POST':
+        if request.POST.get('own_house') and request.POST.get('total_monthly_expenses') and request.POST.get('home_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
+
+            saverecord=models.brac_car_loan_form5()
+            saverecord.own_house=request.POST.get('own_house')
+            saverecord.total_monthly_expenses=request.POST.get('total_monthly_expenses')
+            saverecord.home_address=request.POST.get('home_address')
+            saverecord.allowness=request.POST.get('allowness')
+            saverecord.additional_income=request.POST.get('additional_income')
+            saverecord.salary_total=request.POST.get('salary_total')
+            saverecord.office_no=request.POST.get('office_no')
+            saverecord.save()
+            return HttpResponseRedirect('/braccl1')
+            
+    else:
+         return render(request, 'brac_car_loan/h5.html')      
 

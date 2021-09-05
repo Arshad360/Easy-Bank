@@ -138,6 +138,8 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'Static')
 
 LOGIN_REDIRECT_URL='/afterlogin'
 
+#APPEND_SLASH=False
+
 #for contact us give your gmail id and password
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

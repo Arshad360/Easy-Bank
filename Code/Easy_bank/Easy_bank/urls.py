@@ -44,8 +44,8 @@ urlpatterns = [
     path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
 
 
-    path('homeloaneligibility/', views.homeloaneligibility_view ),
-    path('carloaneligibility', views.carloaneligibility_view),
+ 
+    
     path('educationloaneligibility/', views.educationloaneligibility_view ),
     #path('brac_edu_loan_1/',views.brac_edu_loan_view, name='brac_edu_loan_1'),
     
@@ -53,11 +53,24 @@ urlpatterns = [
     
 
     #path('brachf1/', LoginView.as_view(template_name='brac_bank_home_loan/h1.html'), name='brachf1'),
+    ###  PATH FOR BRAC BANK HOME LOAN ###
+    path('homeloaneligibility/', views.homeloaneligibility_view ),
+
     path('brachf1/', views.brac_home_loan_1, name='brachf1'),
     path('brachf2/', views.brac_home_loan_2, name='brachf2'),
     path('brachf3/', views.brac_home_loan_3, name='brachf3'),
     path('brachf4/', views.brac_home_loan_4, name='brachf4'),
     path('brachf5/', views.brac_home_loan_5, name='brachf5'),
+
+    ###  PATH FOR BRAC BANK CAR LOAN ###
+    path('carloaneligibility/', views.carloaneligibility_view),
+
+    path('braccl1/', views.brac_car_loan_1, name='braccl1'),
+    path('braccl2/', views.brac_car_loan_2, name='braccl2'),
+    path('braccl3/', views.brac_car_loan_3, name='braccl3'),
+    path('braccl4/', views.brac_car_loan_4, name='braccl4'),
+    path('braccl5/', views.brac_car_loan_5, name='braccl5'),
+
 
     path('personalloaneligibility/', views.personalloaneligibility_view),
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
