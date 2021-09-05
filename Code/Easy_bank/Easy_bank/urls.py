@@ -46,6 +46,7 @@ urlpatterns = [
     path('homeloaneligibility/', views.homeloaneligibility_view ),
     path('carloaneligibility', views.carloaneligibility_view),
     path('educationloaneligibility/', views.educationloaneligibility_view ),
+    #path('brac_edu_loan_1/', LoginView.as_view(template_name='brac_edu_loan/h1.html'), name='brac_edu_loan_1'),
     path('personalloaneligibility/', views.personalloaneligibility_view),
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
 
@@ -63,10 +64,11 @@ urlpatterns = [
     path('brachf4', views.brac_home_loan_4, name='brachf4'),
     path('brachf5', views.brac_home_loan_5, name='brachf5'),
 
+    #path('brac_edu_loan', views.brac_edu_loan_view, name='brac_edu_loan'),
+
     path('showform', views.show_brac_home_loan_form, name='showform'),
     path('createpdf2',views.pdf_report_create2, name='createpdf2'),
-    path('render', views.render, name='render'),
-    path('brac_edu_loan_1', LoginView.as_view(template_name='brac_edu_loan/h1.html'), name='brac_edu_loan_1'),
+   
 
 
     #### URL PATH STARTED FOR APPLICATION FORM OF CAR LOAN
