@@ -746,6 +746,9 @@ def pdf_report_create(request):
     return response
 
 
-#def brac_edu_loan_view(request):
-#    return render(request, 'brac_edu_loan/h1.html')
+def brac_edu_loan_view(request):
+    return render(request, 'brac_edu_loan/h1.html')
+
+def brac_edu_loan_view2(request):
+    return render(request, 'Separate_Form/h1.html')
 

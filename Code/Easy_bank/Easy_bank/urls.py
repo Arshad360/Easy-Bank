@@ -1,4 +1,5 @@
 
+
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path
@@ -46,7 +47,11 @@ urlpatterns = [
     path('homeloaneligibility/', views.homeloaneligibility_view ),
     path('carloaneligibility', views.carloaneligibility_view),
     path('educationloaneligibility/', views.educationloaneligibility_view ),
-    #path('brac_edu_loan_1/', LoginView.as_view(template_name='brac_edu_loan/h1.html'), name='brac_edu_loan_1'),
+    path('brac_edu_loan_1/',views.brac_edu_loan_view2, name='brac_edu_loan_1'),
+    
+    
+
+    path('brac_home_loan_1/', LoginView.as_view(template_name='brac_bank_home_loan/h1.html'), name='brac_home_loan_1'),
     path('personalloaneligibility/', views.personalloaneligibility_view),
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
 
@@ -73,21 +78,21 @@ urlpatterns = [
 
     #### URL PATH STARTED FOR APPLICATION FORM OF CAR LOAN
     
-    #path('citybank/', views.city_bank_form_view),
-    #path('dhakabank/', views.dhaka_bank_form_view),
-    #path('easternbank/', views.eastern_bank_form_view),
-    #path('grameenbank/', views.grameen_bank_form_view),
-    #path('habibbank/', views.habib_bank_form_view),
-    #path('hsbcbank/', views.hsbc_bank_form_view),
-   # path('jamunabank/', views.jamuna_bank_form_view),
-    #path('janatabank/', views.janata_bank_form_view),
-    #path('mitbbank/', views.mitb_bank_form_view),
-    #path('onebank/', views.one_bank_form_view),
-   # path('primebank/', views.prime_bank_form_view),
-   # path('sonalibank/', views.sonali_bank_form_view),
-    #path('standardbank/', views.standard_bank_form_view),
-    #path('ucbbank/', views.ucb_bank_form_view),
-    #path('uttarabank/', views.uttara_bank_form_view),
+    path('citybank/', views.city_bank_form_view),
+    path('dhakabank/', views.dhaka_bank_form_view),
+    path('easternbank/', views.eastern_bank_form_view),
+    path('grameenbank/', views.grameen_bank_form_view),
+    path('habibbank/', views.habib_bank_form_view),
+    path('hsbcbank/', views.hsbc_bank_form_view),
+    path('jamunabank/', views.jamuna_bank_form_view),
+    path('janatabank/', views.janata_bank_form_view),
+    path('mitbbank/', views.mitb_bank_form_view),
+    path('onebank/', views.one_bank_form_view),
+    path('primebank/', views.prime_bank_form_view),
+    path('sonalibank/', views.sonali_bank_form_view),
+    path('standardbank/', views.standard_bank_form_view),
+    path('ucbbank/', views.ucb_bank_form_view),
+    path('uttarabank/', views.uttara_bank_form_view),
 
     #### URL PATH ENDED FOR APPLICATION FORM OF CAR LOAN
   
