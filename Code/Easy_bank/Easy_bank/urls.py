@@ -44,8 +44,10 @@ urlpatterns = [
     path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
 
 
-    ###  PATH FOR BRAC BANK HOME LOAN ###
+    ###  PATH FOR HOME LOAN ###
     path('homeloaneligibility/', views.homeloaneligibility_view ),
+
+    ### BRAC BANK ###
 
     path('brachf1/', views.brac_home_loan_1, name='brachf1'),
     path('brachf2/', views.brac_home_loan_2, name='brachf2'),
@@ -54,8 +56,10 @@ urlpatterns = [
     path('brachf5/', views.brac_home_loan_5, name='brachf5'),
 
 
-    ###  PATH FOR BRAC BANK CAR LOAN ###
+    ###  PATH FOR CAR LOAN ###
     path('carloaneligibility/', views.carloaneligibility_view),
+  
+    ### BRAC BANK ###
 
     path('braccl1/', views.brac_car_loan_1, name='braccl1'),
     path('braccl2/', views.brac_car_loan_2, name='braccl2'),
@@ -64,8 +68,10 @@ urlpatterns = [
     path('braccl5/', views.brac_car_loan_5, name='braccl5'),
 
 
-    ###  PATH FOR BRAC BANK LOAN AGAINST PROPERTY ###
+    ###  PATH FOR LOAN AGAINST PROPERTY ###
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
+  
+    ### BRAC BANK ###
 
     path('braclap1/', views.brac_loan_against_property_view1, name='braclap1'),
     path('braclap2/', views.brac_loan_against_property_view2, name='braclap2'),
@@ -74,8 +80,10 @@ urlpatterns = [
     path('braclap5/', views.brac_loan_against_property_view5, name='braclap5'),
 
 
-    ###  PATH FOR BRAC BANK EDUCATION LOAN ###
+    ###  PATH FOR EDUCATION LOAN ###
     path('educationloaneligibility/', views.educationloaneligibility_view ),
+
+    ### BRAC BANK ###
 
     path('braced1/', views.brac_edu_loan_1, name='braced1'),
     path('braced2/', views.brac_edu_loan_2, name='braced2'),
@@ -84,9 +92,11 @@ urlpatterns = [
     path('braced5/', views.brac_edu_loan_5, name='braced5'),
 
     
-    ###  PATH FOR BRAC BANK PERSONAL LOAN ###
+    ###  PATH FOR PERSONAL LOAN ###
 
     path('personalloaneligibility/', views.personalloaneligibility_view),
+
+    ### BRAC BANK ###
 
     path('bracpl1/', views.brac_personal_loan_1, name='bracpl1'),
     path('bracpl2/', views.brac_personal_loan_2, name='bracpl2'),
@@ -94,10 +104,14 @@ urlpatterns = [
     path('bracpl4/', views.brac_personal_loan_4, name='bracpl4'),
     path('bracpl5/', views.brac_personal_loan_5, name='bracpl5'),
     
+    ### CITY BANK ###
 
-    ###  PATH FOR BRAC BANK STARTUP LOAN ###
+
+    ###  PATH FOR STARTUP LOAN ###
 
     path('startuploaneligibility/', views.startuploaneligibility_view),
+
+    ### BRAC BANK ###
 
     path('bracsl1/', views.brac_startup_loan_1, name='bracsl1'),
     path('bracsl2/', views.brac_startup_loan_2, name='bracsl2'),
@@ -105,7 +119,14 @@ urlpatterns = [
     path('bracsl4/', views.brac_startup_loan_4, name='bracsl4'),
     path('bracsl5/', views.brac_startup_loan_5, name='bracsl5'),
 
-
+    ###  PATH FOR CREDIT CARD ###
+    
+    ### BRAC BANK ###
+    path('braccc1/', views.brac_credit_card_1, name='braccc1'),
+    path('braccc2/', views.brac_credit_card_2, name='braccc2'),
+    path('braccc3/', views.brac_credit_card_3, name='braccc3'),
+    path('braccc4/', views.brac_credit_card_4, name='braccc4'),
+    path('braccc5/', views.brac_credit_card_5, name='braccc5'),
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
