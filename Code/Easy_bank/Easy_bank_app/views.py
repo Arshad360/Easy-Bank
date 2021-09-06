@@ -906,3 +906,93 @@ def brac_edu_loan_5(request):
             
     else:
          return render(request, 'brac_edu_loan/h5.html')      
+
+
+def brac_personal_loan_1(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
+
+            saverecord=models.brac_personal_loan_form1()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.loan_type=request.POST.get('loan_type')
+            saverecord.save()
+            return HttpResponseRedirect('/bracpl2')
+            
+    else:
+         return render(request, 'brac_personal_loan/h1.html')
+
+def brac_personal_loan_2(request):
+    if request.method=='POST':
+        if request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no') and request.POST.get('second_email') :
+
+            saverecord=models.brac_personal_loan_form2()
+            saverecord.full_address=request.POST.get('full_address')
+            saverecord.city=request.POST.get('city')
+            saverecord.postal_code=request.POST.get('postal_code')
+            saverecord.p_address=request.POST.get('p_address')
+            saverecord.second_contact_no=request.POST.get('second_contact_no')
+            saverecord.second_email=request.POST.get('second_email')
+            saverecord.save()
+            return HttpResponseRedirect('/bracpl3')
+    
+    else:
+         return render(request, 'brac_personal_loan/h2.html')
+    
+def brac_personal_loan_3(request):
+    if request.method=='POST':
+        if request.POST.get('property_type') and request.POST.get('no_of_property') and request.POST.get('property_details') and request.POST.get('others') and request.POST.get('expected_possesion') and request.POST.get('date_expected'):
+            save=models.brac_personal_loan_form3()
+            save.property_type =request.POST.get('property_type')
+            save.no_of_property =request.POST.get('no_of_property')
+            save.property_details =request.POST.get('property_details')
+            save.others=request.POST.get('others')
+            save.expected_possesion =request.POST.get('expected_possesion')
+            save.date_expected =request.POST.get('date_expected')
+            save.save()
+            return HttpResponseRedirect('/bracpl4')
+
+    else:
+        return render(request,'brac_personal_loan/h3.html')
+
+def brac_personal_loan_4(request):
+    if request.method=='POST':
+        if request.POST.get('loan_requested') and request.POST.get('balance_amount') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3'):
+            
+            saverecord=models.brac_personal_loan_form4()
+            saverecord.loan_requested=request.POST.get('loan_requested')
+            saverecord.balance_amount=request.POST.get('balance_amount')
+            saverecord.payment_source=request.POST.get('payment_source')
+            saverecord.property_selected=request.POST.get('property_selected')
+            saverecord.contact_2=request.POST.get('contact_2')
+            saverecord.email_3=request.POST.get('email_3')
+            saverecord.save()
+            return HttpResponseRedirect('/bracpl5')
+            
+    else:
+        return render(request, 'brac_personal_loan/h4.html')
+
+def brac_personal_loan_5(request):
+    if request.method=='POST':
+        if request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
+
+            saverecord=models.brac_personal_loan_form5()
+            saverecord.organisation_name=request.POST.get('organisation_name')
+            saverecord.designation_department=request.POST.get('designation_department')
+            saverecord.office_address=request.POST.get('office_address')
+            saverecord.allowness=request.POST.get('allowness')
+            saverecord.additional_income=request.POST.get('additional_income')
+            saverecord.salary_total=request.POST.get('salary_total')
+            saverecord.office_no=request.POST.get('office_no')
+            saverecord.save()
+            return HttpResponseRedirect('/bracpl1')
+            
+    else:
+         return render(request, 'brac_personal_loan/h5.html')   

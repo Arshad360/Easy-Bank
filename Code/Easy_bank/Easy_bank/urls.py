@@ -87,6 +87,12 @@ urlpatterns = [
     ###  PATH FOR BRAC BANK PERSONAL LOAN ###
 
     path('personalloaneligibility/', views.personalloaneligibility_view),
+
+    path('bracpl1/', views.brac_personal_loan_1, name='bracpl1'),
+    path('bracpl2/', views.brac_personal_loan_2, name='bracpl2'),
+    path('bracpl3/', views.brac_personal_loan_3, name='bracpl3'),
+    path('bracpl4/', views.brac_personal_loan_4, name='bracpl4'),
+    path('bracpl5/', views.brac_personal_loan_5, name='bracpl5'),
     
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
