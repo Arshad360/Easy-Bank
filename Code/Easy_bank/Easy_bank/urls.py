@@ -95,6 +95,18 @@ urlpatterns = [
     path('bracpl5/', views.brac_personal_loan_5, name='bracpl5'),
     
 
+    ###  PATH FOR BRAC BANK STARTUP LOAN ###
+
+    path('startuploaneligibility/', views.startuploaneligibility_view),
+
+    path('bracsl1/', views.brac_startup_loan_1, name='bracsl1'),
+    path('bracsl2/', views.brac_startup_loan_2, name='bracsl2'),
+    path('bracsl3/', views.brac_startup_loan_3, name='bracsl3'),
+    path('bracsl4/', views.brac_startup_loan_4, name='bracsl4'),
+    path('bracsl5/', views.brac_startup_loan_5, name='bracsl5'),
+
+
+
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
     #path('testhloan', views.testhloan_view, name='testhloan'),
