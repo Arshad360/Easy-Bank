@@ -44,15 +44,6 @@ urlpatterns = [
     path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
 
 
- 
-    
-    path('educationloaneligibility/', views.educationloaneligibility_view ),
-    #path('brac_edu_loan_1/',views.brac_edu_loan_view, name='brac_edu_loan_1'),
-    
-    
-    
-
-    #path('brachf1/', LoginView.as_view(template_name='brac_bank_home_loan/h1.html'), name='brachf1'),
     ###  PATH FOR BRAC BANK HOME LOAN ###
     path('homeloaneligibility/', views.homeloaneligibility_view ),
 
@@ -83,6 +74,17 @@ urlpatterns = [
     path('braclap5/', views.brac_loan_against_property_view5, name='braclap5'),
 
 
+    ###  PATH FOR BRAC BANK EDUCATION LOAN ###
+    path('educationloaneligibility/', views.educationloaneligibility_view ),
+
+    path('braced1/', views.brac_edu_loan_1, name='braced1'),
+    path('braced2/', views.brac_edu_loan_2, name='braced2'),
+    path('braced3/', views.brac_edu_loan_3, name='braced3'),
+    path('braced4/', views.brac_edu_loan_4, name='braced4'),
+    path('braced5/', views.brac_edu_loan_5, name='braced5'),
+
+    
+    ###  PATH FOR BRAC BANK PERSONAL LOAN ###
 
     path('personalloaneligibility/', views.personalloaneligibility_view),
     

@@ -820,3 +820,89 @@ def brac_loan_against_property_view5(request):
             
     else:
          return render(request, 'brac_loanagainstproperty/h5.html')     
+
+def brac_edu_loan_1(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
+
+            saverecord=models.brac_education_loan_form1()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.loan_type=request.POST.get('loan_type')
+            saverecord.save()
+            return HttpResponseRedirect('/braced2')
+            
+    else:
+         return render(request, 'brac_edu_loan/h1.html')
+
+def brac_edu_loan_2(request):
+    if request.method=='POST':
+        if request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no') and request.POST.get('second_email') :
+
+            saverecord=models.brac_education_loan_form2()
+            saverecord.full_address=request.POST.get('full_address')
+            saverecord.city=request.POST.get('city')
+            saverecord.postal_code=request.POST.get('postal_code')
+            saverecord.p_address=request.POST.get('p_address')
+            saverecord.second_contact_no=request.POST.get('second_contact_no')
+            saverecord.second_email=request.POST.get('second_email')
+            saverecord.save()
+            return HttpResponseRedirect('/braced3')
+    
+    else:
+         return render(request, 'brac_edu_loan/h2.html')
+    
+def brac_edu_loan_3(request):
+    if request.method=='POST':
+        if request.POST.get('course_name') and request.POST.get('total_duration') and request.POST.get('date_of_complete') and request.POST.get('nationality_2') and request.POST.get('yearly_expenses'):
+            save=models.brac_education_loan_form3()
+            save.course_name =request.POST.get('course_name')
+            save.total_duration =request.POST.get('total_duration')
+            save.date_of_complete =request.POST.get('date_of_complete')
+            save.nationality_2=request.POST.get('nationality_2')
+            save.yearly_expenses =request.POST.get('yearly_expenses')
+            save.save()
+            return HttpResponseRedirect('/braced4')
+
+    else:
+        return render(request,'brac_edu_loan/h3.html')
+
+def brac_edu_loan_4(request):
+    if request.method=='POST':
+        if request.POST.get('tution_fees') and request.POST.get('exam_fees') and request.POST.get('book_expense') and request.POST.get('scholarship') and request.POST.get('contact_2') and request.POST.get('email_3'):
+            
+            saverecord=models.brac_education_loan_form4()
+            saverecord.tution_fees=request.POST.get('tution_fees')
+            saverecord.exam_fees=request.POST.get('exam_fees')
+            saverecord.book_expense=request.POST.get('book_expense')
+            saverecord.scholarship=request.POST.get('scholarship')
+            saverecord.contact_2=request.POST.get('contact_2')
+            saverecord.email_3=request.POST.get('email_3')
+            saverecord.save()
+            return HttpResponseRedirect('/braced5')
+            
+    else:
+        return render(request, 'brac_edu_loan/h4.html')
+
+def brac_edu_loan_5(request):
+    if request.method=='POST':
+        if request.POST.get('ssc_gpa') and request.POST.get('school') and request.POST.get('hsc_gpa') and request.POST.get('college') and request.POST.get('other_qualification') :
+
+            saverecord=models.brac_education_loan_form5()
+            saverecord.ssc_gpa=request.POST.get('ssc_gpa')
+            saverecord.school=request.POST.get('school')
+            saverecord.hsc_gpa=request.POST.get('hsc_gpa')
+            saverecord.college=request.POST.get('college')
+            saverecord.other_qualification=request.POST.get('other_qualification')
+            saverecord.save()
+            return HttpResponseRedirect('/braced1')
+            
+    else:
+         return render(request, 'brac_edu_loan/h5.html')      
