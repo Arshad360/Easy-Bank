@@ -396,20 +396,38 @@ def uttara_bank_lap_form_view(request):
 def homeloaneligibility_view(request):
     return render(request, 'Eligibility_Form/homeloan.html')
 
+def homeloaneligibility2_view(request):
+    return render(request, 'Eligibility_Form/homeloan_2.html')
+
 def carloaneligibility_view(request):
     return render(request, 'Eligibility_Form/carloan.html')
+
+def carloaneligibility2_view(request):
+    return render(request, 'Eligibility_Form/carloan_2.html')
 
 def educationloaneligibility_view(request):
     return render(request, 'Eligibility_Form/educationloan.html')
 
+def educationloaneligibility2_view(request):
+    return render(request, 'Eligibility_Form/educationloan_2.html')   
+
 def personalloaneligibility_view(request):
     return render(request, 'Eligibility_Form/personalloan.html')
+
+def personalloaneligibility2_view(request):
+    return render(request, 'Eligibility_Form/personalloan_2.html')
 
 def startuploaneligibility_view(request):
     return render(request, 'Eligibility_Form/startuploan.html')
 
+def startuploaneligibility2_view(request):
+    return render(request, 'Eligibility_Form/startuploan_2.html')
+
 def loanagainstpropertyeligibility_view(request):
      return render(request, 'Eligibility_Form/loanagainst.html')
+
+def loanagainstpropertyeligibility2_view(request):
+     return render(request, 'Eligibility_Form/loanagainst_2.html')
 
 def credit_card_view(request):
     return render(request,'Easy_bank_app/credit_card.html')
@@ -1258,7 +1276,7 @@ def city_credit_card_4(request):
     else:
         return render(request, 'citybank_creditcard/h4.html')
 
-def city_credit_card_5(request):
+def city_credit_card_5(request): 
     if request.method=='POST':
         if request.POST.get('account_no') and request.POST.get('account_type') and request.POST.get('balance_amount') and request.POST.get('contact_no_2') and request.POST.get('email') :
 
@@ -1273,3 +1291,93 @@ def city_credit_card_5(request):
             
     else:
          return render(request, 'citybank_creditcard/h5.html')
+
+def city_home_loan_1(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
+
+            saverecord=models.city_home_loan_form1()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.loan_type=request.POST.get('loan_type')
+            saverecord.save()
+            return HttpResponseRedirect('/cityhf2')
+            
+    else:
+         return render(request, 'city_bank_home_loan/h1.html')
+
+def city_home_loan_2(request):
+    if request.method=='POST':
+        if request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no') and request.POST.get('second_email') :
+
+            saverecord=models.city_home_loan_form2()
+            saverecord.full_address=request.POST.get('full_address')
+            saverecord.city=request.POST.get('city')
+            saverecord.postal_code=request.POST.get('postal_code')
+            saverecord.p_address=request.POST.get('p_address')
+            saverecord.second_contact_no=request.POST.get('second_contact_no')
+            saverecord.second_email=request.POST.get('second_email')
+            saverecord.save()
+            return HttpResponseRedirect('/cityhf3')
+    
+    else:
+         return render(request, 'city_bank_home_loan/h2.html')
+    
+def city_home_loan_3(request):
+    if request.method=='POST':
+        if request.POST.get('property_type') and request.POST.get('floor_size') and request.POST.get('flat_no') and request.POST.get('nationality_2') and request.POST.get('utility') and request.POST.get('expected_possesion') and request.POST.get('date_expected'):
+            save=models.city_home_loan_form3()
+            save.property_type =request.POST.get('property_type')
+            save.floor_size =request.POST.get('floor_size')
+            save.flat_no =request.POST.get('flat_no')
+            save.nationality_2=request.POST.get('nationality_2')
+            save.utility =request.POST.get('utility')
+            save.expected_possesion =request.POST.get('expected_possesion')
+            save.date_expected =request.POST.get('date_expected')
+            save.save()
+            return HttpResponseRedirect('/cityhf4')
+
+    else:
+        return render(request,'city_bank_home_loan/h3.html')
+
+def city_home_loan_4(request):
+    if request.method=='POST':
+        if request.POST.get('zip_code') and request.POST.get('neutral_landmark') and request.POST.get('city_code') and request.POST.get('area_code') and request.POST.get('contact_2') and request.POST.get('email_3'):
+
+            saverecord=models.city_home_loan_form4()
+            saverecord.zip_code=request.POST.get('zip_code')
+            saverecord.neutral_landmark=request.POST.get('neutral_landmark')
+            saverecord.city_code=request.POST.get('city_code')
+            saverecord.area_code=request.POST.get('area_code')
+            saverecord.contact_2=request.POST.get('contact_2')
+            saverecord.email_3=request.POST.get('email_3')
+            saverecord.save()
+            return HttpResponseRedirect('/cityhf5')
+            
+    else:
+         return render(request, 'city_bank_home_loan/h4.html')
+
+def city_home_loan_5(request):
+    if request.method=='POST':
+        if request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
+
+            saverecord=models.city_home_loan_form5()
+            saverecord.organisation_name=request.POST.get('organisation_name')
+            saverecord.designation_department=request.POST.get('designation_department')
+            saverecord.office_address=request.POST.get('office_address')
+            saverecord.allowness=request.POST.get('allowness')
+            saverecord.additional_income=request.POST.get('additional_income')
+            saverecord.salary_total=request.POST.get('salary_total')
+            saverecord.office_no=request.POST.get('office_no')
+            saverecord.save()
+            return HttpResponseRedirect('/cityhf1')
+            
+    else:
+         return render(request, 'city_bank_home_loan/h5.html')    
