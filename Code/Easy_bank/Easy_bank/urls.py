@@ -97,6 +97,14 @@ urlpatterns = [
     path('braclap4/', views.brac_loan_against_property_view4, name='braclap4'),
     path('braclap5/', views.brac_loan_against_property_view5, name='braclap5'),
 
+    ### CITY BANK ###
+    path('loanagainsteligibility2/', views.loanagainstpropertyeligibility2_view),
+
+    path('citylap1/', views.city_loan_against_property_view1, name='citylap1'),
+    path('citylap2/', views.city_loan_against_property_view2, name='citylap2'),
+    path('citylap3/', views.city_loan_against_property_view3, name='citylap3'),
+    path('citylap4/', views.city_loan_against_property_view4, name='citylap4'),
+    path('citylap5/', views.city_loan_against_property_view5, name='citylap5'),
 
     ###  PATH FOR EDUCATION LOAN ###
     path('educationloaneligibility/', views.educationloaneligibility_view ),
