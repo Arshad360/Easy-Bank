@@ -132,7 +132,14 @@ urlpatterns = [
     path('bracpl5/', views.brac_personal_loan_5, name='bracpl5'),
     
     ### CITY BANK ###
+    path('personalloaneligibility2/', views.personalloaneligibility2_view),
 
+    path('citypl1/', views.city_personal_loan_1, name='citypl1'),
+    path('citypl2/', views.city_personal_loan_2, name='citypl2'),
+    path('citypl3/', views.city_personal_loan_3, name='citypl3'),
+    path('citypl4/', views.city_personal_loan_4, name='citypl4'),
+    path('citypl5/', views.city_personal_loan_5, name='citypl5'),
+    
 
     ###  PATH FOR STARTUP LOAN ###
 
