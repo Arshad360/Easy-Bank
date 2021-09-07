@@ -1364,7 +1364,7 @@ def city_home_loan_4(request):
     else:
          return render(request, 'city_bank_home_loan/h4.html')
 
-def city_home_loan_5(request):
+def city_home_loan_5(request): 
     if request.method=='POST':
         if request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
 
@@ -1381,3 +1381,93 @@ def city_home_loan_5(request):
             
     else:
          return render(request, 'city_bank_home_loan/h5.html')    
+
+def city_car_loan_1(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('loan_type') :
+
+            saverecord=models.city_car_loan_form1()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.loan_type=request.POST.get('loan_type')
+            saverecord.save()
+            return HttpResponseRedirect('/citycl2')
+            
+    else:
+         return render(request, 'city_car_loan/h1.html')
+
+def city_car_loan_2(request):
+    if request.method=='POST':
+        if request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no') and request.POST.get('second_email') :
+
+            saverecord=models.city_car_loan_form2()
+            saverecord.full_address=request.POST.get('full_address')
+            saverecord.city=request.POST.get('city')
+            saverecord.postal_code=request.POST.get('postal_code')
+            saverecord.p_address=request.POST.get('p_address')
+            saverecord.second_contact_no=request.POST.get('second_contact_no')
+            saverecord.second_email=request.POST.get('second_email')
+            saverecord.save()
+            return HttpResponseRedirect('/citycl3')
+    
+    else:
+         return render(request, 'city_car_loan/h2.html')
+    
+def city_car_loan_3(request):
+    if request.method=='POST':
+        if request.POST.get('amount_of_loan') and request.POST.get('loan_in_word') and request.POST.get('no_of_month_to_close') and request.POST.get('nationality_2') and request.POST.get('area') and request.POST.get('date_expected'):
+            save=models.city_car_loan_form3()
+            save.amount_of_loan =request.POST.get('amount_of_loan')
+            save.loan_in_word =request.POST.get('loan_in_word')
+            save.no_of_month_to_close =request.POST.get('no_of_month_to_close')
+            save.nationality_2=request.POST.get('nationality_2')
+            save.area =request.POST.get('area')
+            save.date_expected =request.POST.get('date_expected')
+            save.save()
+            return HttpResponseRedirect('/citycl4')
+
+    else:
+        return render(request,'city_car_loan/h3.html')
+
+def city_car_loan_4(request):
+    if request.method=='POST':
+        if request.POST.get('car_model') and request.POST.get('manufacturing_year') and request.POST.get('loan_percentage') and request.POST.get('payment_source') and request.POST.get('property_selected') and request.POST.get('contact_2') and request.POST.get('email_3'):
+            
+            saverecord=models.city_car_loan_form4()
+            saverecord.car_model=request.POST.get('car_model')
+            saverecord.manufacturing_year=request.POST.get('manufacturing_year')
+            saverecord.loan_percentage=request.POST.get('loan_percentage')
+            saverecord.payment_source=request.POST.get('payment_source')
+            saverecord.property_selected=request.POST.get('property_selected')
+            saverecord.contact_2=request.POST.get('contact_2')
+            saverecord.email_3=request.POST.get('email_3')
+            saverecord.save()
+            return HttpResponseRedirect('/citycl5')
+            
+    else:
+        return render(request, 'city_car_loan/h4.html')
+
+def city_car_loan_5(request):
+    if request.method=='POST':
+        if request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
+
+            saverecord=models.city_car_loan_form5()
+            saverecord.organisation_name=request.POST.get('organisation_name')
+            saverecord.designation_department=request.POST.get('designation_department')
+            saverecord.office_address=request.POST.get('office_address')
+            saverecord.allowness=request.POST.get('allowness')
+            saverecord.additional_income=request.POST.get('additional_income')
+            saverecord.salary_total=request.POST.get('salary_total')
+            saverecord.office_no=request.POST.get('office_no')
+            saverecord.save()
+            return HttpResponseRedirect('/citycl1')
+            
+    else:
+         return render(request, 'city_car_loan/h5.html')   

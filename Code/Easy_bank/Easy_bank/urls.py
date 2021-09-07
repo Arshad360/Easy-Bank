@@ -76,6 +76,15 @@ urlpatterns = [
     path('braccl4/', views.brac_car_loan_4, name='braccl4'),
     path('braccl5/', views.brac_car_loan_5, name='braccl5'),
 
+    ### CITY BANK ###  
+    path('carloaneligibility2/', views.carloaneligibility2_view),
+
+    path('citycl1/', views.city_car_loan_1, name='citycl1'),
+    path('citycl2/', views.city_car_loan_2, name='citycl2'),
+    path('citycl3/', views.city_car_loan_3, name='citycl3'),
+    path('citycl4/', views.city_car_loan_4, name='citycl4'),
+    path('citycl5/', views.city_car_loan_5, name='citycl5'),
+
 
     ###  PATH FOR LOAN AGAINST PROPERTY ###
     path('loanagainsteligibility/', views.loanagainstpropertyeligibility_view),
