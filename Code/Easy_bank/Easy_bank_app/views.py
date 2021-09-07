@@ -1180,3 +1180,96 @@ def brac_credit_card_5(request):
             
     else:
          return render(request, 'brac_creditcard/h5.html')
+        
+def city_credit_card_1(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('credit_card_type') :
+
+            saverecord=models.city_credit_card_form1()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.credit_card_type=request.POST.get('credit_card_type')
+            saverecord.save()
+            return HttpResponseRedirect('/citycc2')
+            
+    else:
+         return render(request, 'citybank_creditcard/h1.html')
+
+def city_credit_card_2(request):
+    if request.method=='POST':
+        if request.POST.get('full_address') and request.POST.get('city') and request.POST.get('postal_code') and request.POST.get('p_address') and request.POST.get('second_contact_no') and request.POST.get('second_email') :
+
+            saverecord=models.city_credit_card_form2()
+            saverecord.full_address=request.POST.get('full_address')
+            saverecord.city=request.POST.get('city')
+            saverecord.postal_code=request.POST.get('postal_code')
+            saverecord.p_address=request.POST.get('p_address')
+            saverecord.second_contact_no=request.POST.get('second_contact_no')
+            saverecord.second_email=request.POST.get('second_email')
+            saverecord.save()
+            return HttpResponseRedirect('/citycc3')
+    
+    else:
+         return render(request, 'citybank_creditcard/h2.html')
+    
+def city_credit_card_3(request):
+    if request.method=='POST':
+        if request.POST.get('organisation_name') and request.POST.get('designation_department') and request.POST.get('office_address') and request.POST.get('allowness') and request.POST.get('additional_income') and request.POST.get('salary_total') and request.POST.get('office_no') :
+
+            saverecord=models.city_credit_card_form3()
+            saverecord.organisation_name=request.POST.get('organisation_name')
+            saverecord.designation_department=request.POST.get('designation_department')
+            saverecord.office_address=request.POST.get('office_address')
+            saverecord.allowness=request.POST.get('allowness')
+            saverecord.additional_income=request.POST.get('additional_income')
+            saverecord.salary_total=request.POST.get('salary_total')
+            saverecord.office_no=request.POST.get('office_no')
+            saverecord.save()
+            return HttpResponseRedirect('/citycc4')
+
+    else:
+        return render(request,'citybank_creditcard/h3.html')
+
+def city_credit_card_4(request):
+    if request.method=='POST':
+        if request.POST.get('applicants_name') and request.POST.get('applicants_full_name') and request.POST.get('applicants_father_name') and request.POST.get('applicants_mother_name') and request.POST.get('nationality') and request.POST.get('gender') and request.POST.get('contatct_no') and request.POST.get('email') and request.POST.get('nid') and request.POST.get('credit_card_type') :
+
+            saverecord=models.city_credit_card_form4()
+            saverecord.applicants_name=request.POST.get('applicants_name')
+            saverecord.applicants_full_name=request.POST.get('applicants_full_name')
+            saverecord.applicants_father_name=request.POST.get('applicants_father_name')
+            saverecord.applicants_mother_name=request.POST.get('applicants_mother_name')
+            saverecord.nationality=request.POST.get('nationality')
+            saverecord.gender=request.POST.get('gender')
+            saverecord.contatct_no=request.POST.get('contatct_no')
+            saverecord.email=request.POST.get('email')
+            saverecord.nid=request.POST.get('nid')
+            saverecord.credit_card_type=request.POST.get('credit_card_type')
+            saverecord.save()
+            return HttpResponseRedirect('/citycc5')
+            
+    else:
+        return render(request, 'citybank_creditcard/h4.html')
+
+def city_credit_card_5(request):
+    if request.method=='POST':
+        if request.POST.get('account_no') and request.POST.get('account_type') and request.POST.get('balance_amount') and request.POST.get('contact_no_2') and request.POST.get('email') :
+
+            saverecord=models.city_credit_card_form5()
+            saverecord.account_no=request.POST.get('account_no')
+            saverecord.account_type=request.POST.get('account_type')
+            saverecord.balance_amount=request.POST.get('balance_amount')
+            saverecord.contact_no_2=request.POST.get('contact_no_2')
+            saverecord.email=request.POST.get('email')
+            saverecord.save()
+            return HttpResponseRedirect('/citycc1')
+            
+    else:
+         return render(request, 'citybank_creditcard/h5.html')

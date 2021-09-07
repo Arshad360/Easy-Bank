@@ -128,6 +128,14 @@ urlpatterns = [
     path('braccc4/', views.brac_credit_card_4, name='braccc4'),
     path('braccc5/', views.brac_credit_card_5, name='braccc5'),
 
+    ### CITY BANK ###
+    path('citycc1/', views.city_credit_card_1, name='citycc1'),
+    path('citycc2/', views.city_credit_card_2, name='citycc2'),
+    path('citycc3/', views.city_credit_card_3, name='citycc3'),
+    path('citycc4/', views.city_credit_card_4, name='citycc4'),
+    path('citycc5/', views.city_credit_card_5, name='citycc5'),
+
+
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
     #path('testhloan', views.testhloan_view, name='testhloan'),
