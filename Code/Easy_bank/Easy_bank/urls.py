@@ -161,6 +161,17 @@ urlpatterns = [
     path('bracsl4/', views.brac_startup_loan_4, name='bracsl4'),
     path('bracsl5/', views.brac_startup_loan_5, name='bracsl5'),
 
+    ### BRAC BANK ###
+    path('startuploaneligibility2/', views.startuploaneligibility2_view),
+
+    path('citysl1/', views.city_startup_loan_1, name='citysl1'),
+    path('citysl2/', views.city_startup_loan_2, name='citysl2'),
+    path('citysl3/', views.city_startup_loan_3, name='citysl3'),
+    path('citysl4/', views.city_startup_loan_4, name='citysl4'),
+    path('citysl5/', views.city_startup_loan_5, name='citysl5'),
+
+
+
     ###  PATH FOR CREDIT CARD ###
     
     ### BRAC BANK ###
