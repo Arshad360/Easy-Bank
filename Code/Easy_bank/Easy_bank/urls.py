@@ -109,7 +109,16 @@ urlpatterns = [
     path('braced4/', views.brac_edu_loan_4, name='braced4'),
     path('braced5/', views.brac_edu_loan_5, name='braced5'),
 
-    
+    ### CITY BANK ###
+    path('educationloaneligibility2/', views.educationloaneligibility2_view ),
+
+    path('cityed1/', views.city_edu_loan_1, name='cityed1'),
+    path('cityed2/', views.city_edu_loan_2, name='cityed2'),
+    path('cityed3/', views.city_edu_loan_3, name='cityed3'),
+    path('cityed4/', views.city_edu_loan_4, name='cityed4'),
+    path('cityed5/', views.city_edu_loan_5, name='cityed5'),
+
+
     ###  PATH FOR PERSONAL LOAN ###
 
     path('personalloaneligibility/', views.personalloaneligibility_view),
