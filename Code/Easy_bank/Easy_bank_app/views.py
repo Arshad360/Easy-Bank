@@ -39,22 +39,17 @@ def afterlogin_view(request):
 @login_required(login_url='adminlogin')
 def admin_dashboard_view(request):
     # for cards on dashboard
-    customer= models.Customer.objects.all()
+   # customer=models.Customer.objects.all()
+   # customercount=models.Customer.objects.all().count()
     customercount=models.Customer.objects.all().count()
+    loancount = models.brac_car_loan_form1.objects.all().filter(status=True).count()
     
-    orders=models.Customer.objects.all()
-    ordered_products=[]
-    ordered_bys=[]
-    for order in orders:
-        ordered_product=models.Product.objects.all().filter(id=order.product.id)
-        ordered_by=models.Customer.objects.all().filter(id = order.customer.id)
-        ordered_products.append(ordered_product)
-        ordered_bys.append(ordered_by)
 
     mydict={
     'customercount':customercount,
-    'customer': customer,
-    'data':zip(ordered_products,ordered_bys,orders),
+    #'customer': customer,
+    'loancount' : loancount
+   # 'data':zip(ordered_products,ordered_bys,orders),
     }
     return render(request,'Easy_Bank_app/admin_dashboard.html',context=mydict)
 
@@ -87,6 +82,7 @@ def customer_signup_view(request):
         userForm=forms.CustomerUserForm(request.POST)
         customerForm=forms.CustomerForm(request.POST,request.FILES)
         if userForm.is_valid() and customerForm.is_valid():
+            
             user=userForm.save()
             user.set_password(user.password)
             user.save()
@@ -99,7 +95,17 @@ def customer_signup_view(request):
     
     return render(request,'Easy_bank_app/usersignup.html',context=easy_bank_app)
 
-        
+
+def show_customer(request):
+    customer=models.Customer.objects.all()
+
+    context= {
+        'customer': customer
+    }
+
+    return render(request, 'Easy_bank_app\cus_render.html', context)
+
+
 def showdata(request): 
     results=models.Loan.objects.all()
     return render(request,'Easy_bank_app/loan.html',{"data": results})
@@ -432,52 +438,6 @@ def loanagainstpropertyeligibility2_view(request):
 def credit_card_view(request):
     return render(request,'Easy_bank_app/credit_card.html')
 
-#def Insertcareligibility(request):
-#    if request.method=='POST':
-#        
-#        bangladeshi = request.POST.get('bangladeshi')
-#        username = request.POST.get('username')
-#        age = request.POST.get('age')
-#        number = request.POST.get('number')
-#        gender = request.POST.get('gender')
-#        net_income = request.POST.get('net_income')
-#        email = request.POST.get('email')
-
-#        data = {
-#            'bangladeshi':  bangladeshi,
-#            'username': username,
-#            'age': age,
-#            'number':number,
-#            'gender':gender,
-#            'net_income':net_income,
-#            'email':email
-#        }
-
-##        if request.POST.get('name') and request.POST.get('email') and request.POST.get('phone') and request.POST.get('message'):
- #           saverecord=models.Carloaneligibility()
- #           saverecord.bangladeshi=request.POST.get('bangladeshi')
- #           saverecord.username=request.POST.get('username')
- #           saverecord.age=request.POST.get('age')
- #           saverecord.number=request.POST.get('number')
- #           saverecord.gender=request.POST.get('gender')
- #           saverecord.net_income=request.POST.get('net_income')
- #           saverecord.email=request.POST.get('email')
- #           saverecord.save()
-
-       # if request.POST.get('bangladeshi') and request.POST.get('username') and request.POST.get('age') and request.POST.get('number') and request.POST.get('gender') and request.POST.get('net_income') and request.POST.get('email'):
-        #    saverecord=models.Carloaneligibility()
-        #    saverecord.bangladeshi=request.POST.get('bangladeshi')
-         #   saverecord.username=request.POST.get('username')
-         #   saverecord.age=request.POST.get('age')
-         #   saverecord.number=request.POST.get('number')
-         #   saverecord.gender=request.POST.get('gender')
-         #  saverecord.net_income=request.POST.get('net_income')
-         #   saverecord.email=request.POST.get('email')
-         #   saverecord.save()
-        # return HttpResponse('brac')
-           
-    # else:
-   #     return render(request,'Eligibility_Form/carloan.html')
 
 def brac_home_loan_1(request):
     if request.method=='POST':

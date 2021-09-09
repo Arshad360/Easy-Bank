@@ -6,6 +6,7 @@ from django.db.models.fields import  EmailField
 
 class Customer(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
+    username=models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     mobile = models.CharField(max_length=11,null=False)
     @property

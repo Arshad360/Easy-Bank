@@ -191,6 +191,7 @@ urlpatterns = [
 
     path('showcontacts', views.show_contacts, name='showcontacts'),
     path('createpdf',views.pdf_report_create, name='createpdf'),
+    path('showcus', views.show_customer, name='showcus'),
     #path('testhloan', views.testhloan_view, name='testhloan'),
     #path('hform1', views.homeloan_one_view, name='hform1'),
     #path('hform2', views.homeloan_two_view, name='hform2'),
