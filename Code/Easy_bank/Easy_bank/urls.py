@@ -208,6 +208,7 @@ urlpatterns = [
 
     path('showform', views.show_brac_home_loan_form, name='showform'),
     path('createpdf2',views.pdf_report_create2, name='createpdf2'),
+    path('createpdf4',views.pdf_report_create4, name='createpdf4'),
    
 
 

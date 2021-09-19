@@ -578,11 +578,30 @@ def pdf_report_create2(request):
         'brac_home_loan5':brac_home_loan5
     
     }
+
+def pdf_report_create4(request):
+    city_car_loan1=models.city_car_loan_form1.objects.all()
+    city_car_loan2=models.city_car_loan_form2.objects.all()
+    city_car_loan3=models.city_car_loan_form3.objects.all()
+    city_car_loan4=models.city_car_loan_form4.objects.all()
+    city_car_loan5=models.city_car_loan_form5.objects.all()
+  
+
+    template_path = 'All_home_loan/city_bank_car_loan_pdf.html'
+
+    context= {
+        'city_car_loan1': city_car_loan1,
+        'city_car_loan2': city_car_loan2,
+        'city_car_loan3': city_car_loan3,
+        'city_car_loan4': city_car_loan4,
+        'city_car_loan5': city_car_loan5
+    
+    }
     
 
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="home_loan_application.pdf"'
+    response['Content-Disposition'] = 'attachment; filename="car_loan_application.pdf"'
     # find the template and render it.
     template = get_template(template_path)
     html = template.render(context)
