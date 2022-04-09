@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import django_heroku
 from pathlib import Path
 import psycopg2.extensions
 
@@ -28,7 +29,7 @@ SECRET_KEY = 'j&d65xkd-d%f5*rzgz1$lg)dmi5f7s9(fof+g2m-kmdg%!o-+6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,6 +137,8 @@ STATICFILES_DIRS=[STATIC_DIR,]
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'Static')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 LOGIN_REDIRECT_URL='/afterlogin'
 
 #APPEND_SLASH=False
@@ -154,3 +157,5 @@ EMAIL_HOST_PASSWORD = 'ojmvhgaiulmextlw' # host email password required
 # otherwise you will get SMTPAuthenticationError at /contactus
 # this process is required because google blocks apps authentication by default
 EMAIL_RECEIVING_USER = ['easybank444@gmail.com'] # email on which you will receive messages sent from website
+
+django_heroku.settings(locals())
